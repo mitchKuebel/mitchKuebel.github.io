@@ -1,0 +1,116 @@
+
+  body{
+      overflow-y:scroll;
+      overflow-x: hidden;
+      background-color: #461257;
+      width: 100%;
+  }
+
+
+#menu{
+	font-family: belshaw,monospace; color: white
+}
+
+#links a:hover{
+  color:rgb(161, 145, 70);
+  text-decoration: underline;
+  text-underline-position:below 10px;
+}
+
+
+
+#slideshow {
+    position: relative;
+	text-align:center;
+    height: 500px; /* set a height for the container */
+    width: 100%; /* set a width for the container */
+  }
+  
+  #slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    height: 100%; /* set the height of the image to match the container */
+    width: 100%; /* set the width of the image to match the container */
+  }
+  
+  #slideshow img.active {
+    opacity: 1;
+  }
+
+
+  #links a{
+	  color:black;
+	  text-decoration: none;
+  }
+
+  ul li { display: inline; }
+
+
+
+
+  #header{
+	  background-color: #73648A;
+	  padding:5px;
+	  margin:-10px;
+	  height:200px;
+  }
+
+  #message{
+	  background-color: #453750;
+	  height:50px;
+	  margin:-10px;
+	  float:none;
+  }
+  #message h1{
+	  margin-top: 0.5%;
+	  margin-left: 42%;
+	  font-family:Robot1,monospace
+  }
+  *#links{
+	  margin: -10px;
+	  font-family: Daydream, sans-serif;
+	  /*break-after: column;*/
+  }
+
+
+  .link{
+	  padding: 17px;
+  }
+
+
+  ul li:nth-child(even){
+	  padding:3%
+  }
+
+  
+
+
+  /*about us css*/
+  #about:nth-child(even){
+    padding:3%;
+  }
+
+  #faq:nth-child(even){
+    padding:3%;
+  }
+
+  #faq{
+    text-transform: lowercase;
+  }
+  #faq h2{
+    font-size: 30px;
+}
+
+footer {
+  background-color: #4b0082;
+  color: #ffffff;
+  text-align: center;
+  font-family: robot2, monospace;
+  padding: 1rem;
+}
+footer a{
+  color:wheat
+}

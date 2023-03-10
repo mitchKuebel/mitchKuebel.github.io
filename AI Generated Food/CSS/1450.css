@@ -1,0 +1,13 @@
+@media (max-width: 1450px) {
+	  /* CSS that should be displayed if width is equal to or less than 1600px goes here */
+
+
+	*#links{
+		font-size:21px;
+	}
+
+	.link{
+		padding: 20px;
+	}
+
+}

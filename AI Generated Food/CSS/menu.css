@@ -1,0 +1,35 @@
+.menu-seperator{
+
+}
+
+.menu-page{
+    padding-right: 30px;
+}
+
+.menuItem{
+    width: 300px;
+    height:250px;
+    background-color: rgb(46, 46, 46);
+}
+
+.menuItem img{
+    height:100px;
+    width:130px;
+    float:left;
+}
+
+.desc {
+    font-family:robot1,monospace;
+    font-size:110%;
+}
+.desc h3{
+    color:rgb(209, 227, 227);
+
+}
+.desc p{
+    color:rgb(209, 227, 227);
+}
+
+.menu-page:first-child{
+    float:left;
+}

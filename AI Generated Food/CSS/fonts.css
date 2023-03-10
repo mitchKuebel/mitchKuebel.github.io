@@ -1,0 +1,102 @@
+@font-face {
+    font-family: Belshaw;
+    src: url(../Fonts/Belshaw.ttf);
+}
+@font-face {
+    font-family: Daydream;
+    src: url(../Fonts/Daydream.ttf);
+}
+@font-face {
+    font-family: Robot1;
+    src: url(../Fonts/Robot.otf);
+}
+
+@font-face {
+    font-family: Robot2;
+    src: url(../Fonts/Robota.otf);
+}
+
+@font-face {
+    font-family: Robot3;
+    src: url(../Fonts/robotech.ttf);
+}
+
+@font-face {
+    font-family:Robot4;
+    src: url(../Fonts/Robotica.ttf);
+}
+
+
+
+/*BELOW THIS WILL BE A LOT OF FONTS TO SAY THE SAME FONT, JUST VARIATIONS*/
+@font-face {
+    font-family:RB1 ;
+    src: url(../Fonts/roboto/1.ttf);
+}
+@font-face {
+    font-family:RB2 ;
+    src: url(../Fonts/roboto/2.ttf);
+}
+@font-face {
+    font-family:RB3 ;
+    src: url(../Fonts/roboto/3.ttf);
+}
+@font-face {
+    font-family:RB4 ;
+    src: url(../Fonts/roboto/4.ttf);
+}
+@font-face {
+    font-family:RB5 ;
+    src: url(../Fonts/roboto/5.ttf);
+}
+@font-face {
+    font-family:RB6 ;
+    src: url(../Fonts/roboto/6.ttf);
+}
+@font-face {
+    font-family:RB7 ;
+    src: url(../Fonts/roboto/7.ttf);
+}
+@font-face {
+    font-family:RB8 ;
+    src: url(../Fonts/roboto/8.ttf);
+}
+@font-face {
+    font-family:RB9 ;
+    src: url(../Fonts/roboto/9.ttf);
+}
+@font-face {
+    font-family:RB10 ;
+    src: url(../Fonts/roboto/10.ttf);
+}
+@font-face {
+    font-family:RB11 ;
+    src: url(../Fonts/roboto/11.ttf);
+}
+@font-face {
+    font-family:RB12 ;
+    src: url(../Fonts/roboto/12.ttf);
+}
+@font-face {
+    font-family:RB13 ;
+    src: url(../Fonts/roboto/13.ttf);
+}
+@font-face {
+    font-family:RB14 ;
+    src: url(../Fonts/roboto/14.ttf);
+}
+@font-face {
+    font-family:RB15 ;
+    src: url(../Fonts/roboto/15.ttf);
+}
+@font-face {
+    font-family:RB16 ;
+    src: url(../Fonts/roboto/16.ttf);
+}
+
+
+@font-face {
+    font-family:squealembossed;
+    src: url(../Fonts/Squealer\ Embossed.otf);
+}
+
