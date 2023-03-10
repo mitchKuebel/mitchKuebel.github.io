@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+#header {
+  background-color: #f15a29;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+#current-trends,
+#current-applications,
+#ethical-considerations,
+#future-developments,
+#history-of-ai,
+#future-implications,
+#conclusion {
+  padding: 20px;
+}
+
+#current-trends h2,
+#current-applications h2,
+#ethical-considerations h2,
+#future-developments h2,
+#history-of-ai h2,
+#future-implications h2,
+#conclusion h2 {
+  color: #f15a29;
+}
+
+#current-trends ul,
+#current-applications ul,
+#ethical-considerations ul,
+#future-developments ul,
+#history-of-ai ul,
+#future-implications ul,
+#conclusion ul {
+  margin-left: 20px;
+}
+
+#current-trends li:before,
+#current-applications li:before,
+#ethical-considerations li:before,
+#future-developments li:before,
+#history-of-ai li:before,
+#future-implications li:before,
+#conclusion li:before {
+  color: #f15a29;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+#current-trends p,
+#current-applications p,
+#ethical-considerations p,
+#future-developments p,
+#history-of-ai p,
+#future-implications p,
+#conclusion p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#current-trends {
+  background-color: #f9d6c7;
+}
+
+#current-applications {
+  background-color: #fdebd3;
+}
+
+#ethical-considerations {
+  background-color: #fff2e6;
+}
+
+#future-developments {
+  background-color: #ffe8d6;
+}
+
+#history-of-ai {
+  background-color: #ffe3c3;
+}
+
+#future-implications {
+  background-color: #ffd8b8;
+}
+
+#conclusion {
+  background-color: #ffc58b;
+  color: #fff;
+}
+
+#theme-select {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+
+#human-mode {
+  position: fixed;
+  top: 10px;
+  right: 160px;
+  z-index: 9998;
+  
+}

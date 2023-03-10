@@ -1,0 +1,86 @@
+/* Set background color and font-family for the body */
+body {
+  background-color: #F5E5D5;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Style the header */
+#header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Set the color and font size for the h1 and h2 elements */
+h1, h2 {
+  color: #37474F;
+  font-size: 48px;
+}
+
+/* Set the color and font size for the p element */
+p {
+  color: #333333;
+  font-size: 24px;
+}
+
+/* Style the current-trends section */
+#current-trends {
+  background-color: #C8E6C9;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+/* Style the current-applications section */
+#current-applications {
+  background-color: #FFF9C4;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+/* Style the ethical-considerations section */
+#ethical-considerations {
+  background-color: #FFCCBC;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+/* Style the future-developments section */
+#future-developments {
+  background-color: #B2EBF2;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+/* Style the history-of-ai section */
+#history-of-ai {
+  background-color: #E1BEE7;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+/* Style the future-implications section */
+#future-implications {
+  background-color: #BBDEFB;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+/* Style the conclusion section */
+#conclusion {
+  background-color: #FFE0B2;
+  padding: 50px;
+}
+
+#theme-select {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+
+#human-mode {
+  position: fixed;
+  top: 10px;
+  right: 160px;
+  z-index: 9998;
+  
+}

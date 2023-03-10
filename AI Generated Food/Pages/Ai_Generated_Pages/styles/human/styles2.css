@@ -1,0 +1,69 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #F3EAFB;
+  }
+  
+  h1, h2 {
+    color:F3EAFB;
+  }
+  
+  #header {
+    background-color: #4B0082;
+    color: white;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  #current-trends, #current-applications, #ethical-considerations, #future-developments, #history-of-ai {
+    margin: 50px 0;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 2px #4B0082;
+  }
+  
+  #current-trends h2, #current-applications h2, #ethical-considerations h2, #future-developments h2, #history-of-ai h2 {
+    color: #4B0082;
+  }
+  
+  #current-trends li:before, #current-applications li:before, #ethical-considerations li:before, #future-developments li:before, #history-of-ai li:before {
+    content: "\2022";
+    color: #4B0082;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
+  #current-trends li, #current-applications li, #ethical-considerations li, #future-developments li, #history-of-ai li {
+    color: #4B0082;
+  }
+  
+  #current-trends p, #current-applications p, #ethical-considerations p, #future-developments p, #history-of-ai p {
+    color: #4B0082;
+    line-height: 1.5;
+  }
+  
+  #theme-select {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+  }
+  
+  #human-mode {
+    position: fixed;
+    top: 10px;
+    right: 160px;
+    z-index: 9998;
+    
+  }

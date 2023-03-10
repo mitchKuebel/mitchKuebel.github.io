@@ -1,0 +1,224 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+a {
+  color: #0093E9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #01447e;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+/* Page-specific styles */
+#header {
+  background-color: #d7e5f0;
+  padding: 1rem;
+  text-align: center;
+}
+
+#header h1 {
+  color: #2c3e50;
+  font-size: 3.5rem;
+}
+
+#header h2 {
+  color: #5d6d7e;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#current-trends,
+#current-applications,
+#ethical-considerations,
+#future-developments,
+#history-of-ai,
+#future-implications,
+#conclusion {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#current-trends h2,
+#current-applications h2,
+#ethical-considerations h2,
+#future-developments h2,
+#history-of-ai h2,
+#future-implications h2,
+#conclusion h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#current-trends li,
+#current-applications li,
+#ethical-considerations li,
+#future-developments li,
+#history-of-ai li,
+#future-implications li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+#current-trends {
+  background-color: #eff7f9;
+}
+
+#current-trends li {
+  background-color: #b1d4e0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#current-applications {
+  background-color: #f9f1e7;
+}
+
+#current-applications li {
+  background-color: #ffc299;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#ethical-considerations {
+  background-color: #f6e2d2;
+}
+
+#ethical-considerations li {
+  background-color: #e6b3b3;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#future-developments {
+  background-color: #e4e4e4;
+}
+
+#future-developments li {
+  background-color: #d4d4d4;
+  padding: 0.5rem;
+}
+
+#history-of-ai {
+  background-color: #f3f3f3;
+}
+
+#history-of-ai li {
+  background-color: #c7c7c7;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#future-implications {
+  background-color: #f2e8d1;
+}
+
+#future-implications li {
+  background-color: #d4b897;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#conclusion {
+  background-color: #f2f2f2;
+}
+
+#conclusion p {
+  font-style: italic;
+}
+
+/* Footer styles */
+#footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+#footer p {
+  margin-bottom: 0;
+}
+
+#footer a {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  #header h1 {
+    font-size: 2.5rem;
+  }
+
+  #header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #current-trends h2,
+  #current-applications h2,
+  #ethical-considerations h2,
+  #future-developments h2,
+  #history-of-ai h2,
+  #future-implications h2,
+  #conclusion h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+  #theme-select {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+  }
+  
+  #human-mode {
+    position: fixed;
+    top: 10px;
+    right: 160px;
+    z-index: 9998;
+    
+  }
