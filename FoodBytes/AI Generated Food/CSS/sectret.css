@@ -1,0 +1,61 @@
+#info{
+    font-size:3em;
+}
+
+.done{
+    color:green
+}
+
+.done a{
+    color:green;
+}
+.not-done{
+    color:red;
+}
+
+.not-done a{
+    color:red;
+}
+
+#info:nth-child(even){
+    padding:3%;
+}
+
+#info a:nth-child(odd){
+    padding:3%;
+}
+
+
+
+#guhs{
+    text-align: right;
+    visibility: hidden;
+}
+#secret{
+    text-align: right;
+    visibility: hidden;
+    padding: 20px 32px;
+    margin-left:50%;
+}
+@media (min-width: 1940px){
+    #guhs{
+        visibility:visible;
+        font-size: 50px;
+        size: 50px;
+    }
+}
+
+#my-secrets{
+    font-size: 30px;
+    font-family: monospace;
+    color:white
+}
+
+.hide{
+    color:black;
+    background-color: black;
+}
+
+.hide:hover{
+    background-color: white;
+}

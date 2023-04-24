@@ -1,0 +1,109 @@
+@font-face {
+    font-family: point;
+    src: url(../fonts/pointfree.ttf);
+}
+
+
+
+#windows95{
+    display: none;
+}
+#portal{
+    display: none;
+}
+
+html
+{
+    overflow: hidden;
+}
+
+body
+{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: point;
+}
+
+html, body
+{
+    height: 100%;
+    width: 100%;
+    /* border:rgb(14, 255, 34) 3px solid;  */
+}
+#resnick{
+    background-image: url("../images/eatorhome.PNG");
+    background-size: cover;
+    z-index: 1;
+    height:100%;
+
+    /* border:rgb(128, 105, 0) 3px solid; */
+
+}
+
+#frosty{
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  border-radius: 5px;
+  /* background-color: rgba(255, 255, 255, .15); */
+  background-color: #92efff71;
+  backdrop-filter: blur(8px);
+    /* background-color: #e2f7f18a; */
+    z-index: 2;
+    min-height:100%;
+
+    /* border:rgb(128, 0, 0) 3px solid; */
+
+}
+#top{
+    z-index:3;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------- */
+/* -----------------ANIMATIONS-------------------- */
+/* ----------------------------------------------- */
+
+.item {
+    animation: text 2s ease-in-out 0s infinite alternate-reverse both;
+    border:rgb(14, 255, 34) 3px solid; 
+    width:fit-content;
+    position: absolute;
+    font-size: 30px;
+    
+}
+
+@keyframes text {
+	0% {
+		transform: translate(0);
+	}
+
+	20% {
+		transform: translate(-2px, 2px);
+	}
+
+	40% {
+		transform: translate(-2px, -2px);
+	}
+
+	60% {
+		transform: translate(2px, 2px);
+	}
+
+	80% {
+		transform: translate(2px, -2px);
+	}
+
+	100% {
+		transform: translate(0);
+	}
+}

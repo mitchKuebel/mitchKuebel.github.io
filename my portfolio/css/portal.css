@@ -1,0 +1,63 @@
+html
+{
+    overflow: hidden;
+}
+
+body
+{
+    margin: 0;
+    box-sizing: border-box;
+
+    background-image: url(../images/portal.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+html, body
+{
+    height: 100%;
+    width: 100%;
+    /* border:rgb(14, 255, 34) 3px solid;  */
+}
+
+#resnick{
+    visibility: hidden;
+}
+
+#windows95{
+    visibility: hidden;
+}
+
+#frame { height: 2350px; border: 10px solid red; }
+#frame {
+    zoom: 0.5;
+    transform: scale(0.2);
+    transform-origin: 0 0;
+    -moz-transform: scale(0.2);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.2);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.2);
+    -webkit-transform-origin: 0 0;
+    border-radius: 50%;
+  width: 1425px;
+}
+#wrap { 
+    width: 150px; height: 600px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    
+}
+
+.linked{
+    width: 150px; height: 235px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    left:60px;
+    top:125px;
+    border-radius: 20% / 50%;
+    /* border: 1px rgb(9, 255, 0) solid; */
+    z-index : 22
+}

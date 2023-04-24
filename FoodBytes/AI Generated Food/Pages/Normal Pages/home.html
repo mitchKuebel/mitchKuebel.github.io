@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Food Bytes</title>
+        <link rel = "stylesheet" type="text/css" href= "../../CSS/fonts.css"/>
+        <link rel = "stylesheet" type="text/css" href = "../../CSS/sectret.css"/>
+
+        <!--MONITOR TYPES-->
+        <link rel = "stylesheet" type="text/css" href= "../../CSS/1920.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../CSS/1600.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../CSS/1450.css"/>
+        <link rel = "stylesheet" type="text/css" href = "../../CSS/default.css"/>
+		
+        <style>
+            #info a{
+                color:white;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+            <div id = "header">
+                <div id = "logo">
+                    <a href = "home.html"><img src = "../../Pictures/Logos/FoodBytesMustard.png" style = "float:left" alt = "logo" width = "200px"/></a>
+                </div>
+                <div id="message">
+                    <h1>Try our food <span style = "color:#A30000">BIT</span> by <span style = "color:#A30000">BIT</span></h1>
+                </div>
+                <div id = "links">
+                    <ul id = "link">
+                        <li><a href = "menu.html" class="link">Menu</a></li>
+						<li><a href = "review.html" class = "link">Leave a Review</a></li>
+                        <li><a href = "merch.html" class = "link">Merch</a></li>
+                        <li><a href = "about.html" class = "link">About Us</a></li>
+                        <li><a href = "location.html" class = "link">Location</a></li>
+						<br/><br/>
+						<li><a href = "order.html" class = "link" style = "margin-left: 30% ; margin-top: 10px">Order Online</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br/><br/>
+		
+		 <div id="slideshow">
+            <img src="../../Pictures/main.png" onload="console.log('image loaded')"  class = "active"/>
+            <img src="../../Pictures/IMG_7067.JPG" onload="console.log('image loaded')" style = "margin-left:40%;width: 500px"/>
+            <img src="../../Pictures/reviews.png" onload="console.log('image loaded')"/>
+        </div>
+		
+		
+		
+		<div id = "content">
+		</div>
+            <div id="info" style = "font-family: Robot4, monospace; color:white; display: none;">
+                <h1 class = "not-done">hide these</h1>
+                <a href = "../Secrets/fonts.html" style = "color:green">Fonts Page</a>
+                <a href = "../Never_To_Be_Seen/checklist.html" class = "not-done">Checklist</a>
+            </div>
+		
+		<script>
+			const images = document.querySelectorAll('#slideshow img');
+			let currentIndex = 0;
+
+			setInterval(() => {
+			  images[currentIndex].classList.remove('active');
+			  currentIndex = (currentIndex + 1) % images.length;
+			  images[currentIndex].classList.add('active');
+			}, 3000);
+		</script>
+
+        <footer>
+            <p>THIS WEBSITE IS AN ARG. IF YOU DO NOT FIND EVERYTHING, BUT WISH TO, this is a link to solve your problems</p>
+            <a href = "../Secrets/secret.html">Secrets Answers!</a>
+        </footer>
+    </body>
+</html>

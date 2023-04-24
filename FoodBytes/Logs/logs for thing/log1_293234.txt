@@ -1,0 +1,359 @@
+LOG FILE 1
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+...
+...
+logging in
+...
+...
+welcome [USER00264]
+WARNING
+    log file has not been updated for at least 5 years. information is likely out of date
+WARNING
+    log file is unencrypted. no password is required.
+
+LOG FILE BEGIN
+FB-DATABASE
+Version 1.3 (C)Copyright FoodBytes Security Technology 2003
+
+Running scripts...complete
+Validating IP...complete
+Restoring database...complete
+Collating logs...complete
+
+Loading logs from November 3rd, 2015
+
+...
+2015-11-03 09:00:31 [Main Entrance] George enters the office
+2015-11-03 09:01:11 [Main Entrance] Andrei enters the office
+2015-11-03 09:01:21 [Main Office] George and Andrei comunicate a quick pleasantry
+2015-11-03 09:02:31 [Main Office] George clocks in and gets in the elevator
+2015-11-03 09:03:11 [Main Entrance] Christian enters the office
+2015-11-03 09:02:31 [Floor 14] George steps out into the office.
+2015-11-03 09:02:31 [Main Office] Andrei clocks in and gets in the elevator
+2015-11-03 09:02:41 [Main Office] Christian clocks in and gets in the elevator
+2015-11-03 09:05:21 [Floor 14] Christian and Andrei arrive on the floor and head to their desks
+2015-11-03 09:05:31 [Floor 14] Christian steps out into the office
+2015-11-03 09:07:41 [Floor 14] George starts up his computer and checks his email
+2015-11-03 09:08:11 [Floor 14] Andrei puts away his coat and starts organizing his workspace
+2015-11-03 09:10:01 [Floor 14] Christian greets some of his colleagues and heads to the break room
+2015-11-03 09:12:31 [Floor 14] George begins working on a project for a client
+2015-11-03 09:15:11 [Floor 14] Andrei reviews some documentation for an upcoming meeting
+2015-11-03 09:20:21 [Floor 14] Christian returns from the break room with a cup of coffee and heads to his desk
+2015-11-03 09:25:31 [Floor 14] George takes a break to stretch his legs and get some water
+2015-11-03 09:30:11 [Floor 14] Andrei receives a phone call from a client and steps into a conference room
+2015-11-03 09:35:21 [Floor 14] Christian begins working on a new feature for a project
+2015-11-03 09:40:31 [Floor 14] George continues working on his project and makes good progress
+2015-11-03 09:45:11 [Floor 14] Andrei finishes his call and rejoins his colleagues at his desk
+2015-11-03 09:50:21 [Floor 14] Christian takes a break to chat with a colleague about a work-related issue
+2015-11-03 09:55:31 [Floor 14] George takes a break to grab some lunch in the break room
+2015-11-03 10:00:11 [Floor 14] Andrei notices some errors in the documentation and raises a question with his team
+2015-11-03 10:05:21 [Floor 14] George returns from lunch and starts debugging his code
+2015-11-03 10:10:31 [Floor 14] Christian takes a break to review his project progress and notices a potential issue
+2015-11-03 10:15:11 [Conference Room A] Andrei leads a meeting with his team to discuss the errors and come up with a solution
+2015-11-03 10:20:21 [Floor 14] George finds the source of the bug and fixes it
+2015-11-03 10:25:31 [Floor 14] Christian discusses the potential issue with his project manager and receives guidance on how to proceed
+2015-11-03 10:30:11 [Conference Room A] Andrei and his team come up with a solution to the errors and assign tasks to each team member
+2015-11-03 10:35:21 [Floor 14] George tests his code and verifies that the bug has been fixed
+2015-11-03 10:40:31 [Floor 14] Christian implements the recommended solution and continues working on his project
+2015-11-03 10:45:11 [Conference Room A] Andrei presents the solution to his project manager for approval
+2015-11-03 10:50:21 [Floor 14] George takes a break to grab some coffee and chat with a colleague
+2015-11-03 10:55:31 [Floor 15] Christian goes to the new AI lab to test out some new hardware and software
+2015-11-03 11:00:11 [Floor 15] Christian begins testing new hardware and software in the AI lab
+2015-11-03 11:10:21 [Floor 15] Christian encounters some unexpected results in his tests but cannot determine the root cause
+2015-11-03 11:20:31 [Floor 14] George returns to his desk and begins working on a new feature
+2015-11-03 11:25:11 [Floor 15] Christian spends more time trying to identify the issue in his tests but comes up empty-handed
+2015-11-03 11:30:21 [Floor 14] Andrei meets with his project manager to discuss the progress of their current project
+2015-11-03 11:35:31 [Floor 14] George runs into an issue with the new feature and seeks help from his team lead
+2015-11-03 11:40:11 [Floor 15] Christian decides to table the issue for now and moves on to other tasks
+2015-11-03 11:45:21 [Floor 14] Andrei and his team lead discuss a potential roadblock in the project and brainstorm possible solutions
+2015-11-03 11:50:31 [Floor 14] George and his team lead work together to troubleshoot and resolve the issue with the new feature
+2015-11-03 11:55:11 [Floor 14] Andrei and his team lead come up with a viable solution to the roadblock and assign tasks to each team member
+2015-11-03 12:00:21 [Floor 14] George successfully implements the new feature and submits it for review
+2015-11-03 12:05:31 [Floor 15] Christian resumes testing with a different approach and encounters the same issue again
+2015-11-03 12:10:11 [Floor 15] Christian dismisses the issue as a fluke and continues with his work
+2015-11-03 13:00:11 [Floor 14] George receives feedback on the new feature and makes some minor tweaks
+2015-11-03 13:05:21 [Floor 15] Christian brings up the issue he encountered in his tests during the team meeting
+2015-11-03 13:10:31 [Floor 15] The team listens to Christian's concerns but decides to focus on other priorities for now
+2015-11-03 13:15:11 [Floor 14] Andrei and his team continue to make progress on their project, hitting several important milestones
+2015-11-03 13:20:21 [Floor 15] Christian spends some time investigating the issue further, but still cannot identify the root cause
+2015-11-03 13:25:31 [Floor 14] George begins work on a new project, using the knowledge gained from the previous feature to develop more advanced functionality
+2015-11-03 13:30:11 [Floor 15] Christian tries a new approach to testing, but still encounters the same issue
+2015-11-03 13:35:21 [Floor 14] Andrei and his team discuss potential ways to optimize their project, seeking to improve efficiency and reduce costs
+2015-11-03 13:40:31 [Floor 14] George and his team begin work on a new feature, exploring different possibilities and testing out new ideas
+2015-11-03 13:45:11 [Floor 15] Christian raises the issue again in the team meeting, but everyone else seems to brush it off as a minor concern
+2015-11-03 13:50:21 [Floor 14] Andrei and his team make some final adjustments to their project, ensuring that it meets all necessary requirements
+2015-11-03 13:55:31 [Floor 14] George and his team submit the new feature for review, eager to receive feedback and make any necessary changes
+2015-11-03 14:00:11 [Floor 15] Christian keeps investigating the issue, trying different approaches and seeking advice from his colleagues
+2015-11-03 14:30:21 [Floor 14] George and his team receive feedback on the new feature and begin making additional changes
+2015-11-03 15:00:31 [Floor 15] Christian makes some progress in identifying the root cause of the issue, but still needs more time to fully understand it
+2015-11-03 16:30:21 [Floor 14] George and his team continue working on the new feature, making steady progress and receiving additional feedback
+2015-11-03 16:00:11 [Floor 14] Andrei and his team complete their project and prepare to present it to the rest of the company
+2015-11-03 17:00:31 [Main Entrance] Most of the team leaves for the day, saying goodbye to each other and heading out
+2015-11-03 17:30:11 [Floor 15] Christian is still working, determined to solve the issue in his tests
+2015-11-03 18:00:21 [Floor 15] Christian takes a break to grab some food and recharge before continuing his work
+2015-11-03 19:00:31 [Floor 15] Christian makes some additional progress in identifying the issue, but still needs more time to fully solve it
+2015-11-03 20:00:11 [Floor 15] Christian realizes that he has been working for several hours straight and decides to take a quick break to stretch and clear his mind
+2015-11-03 21:00:21 [Floor 15] Christian gets back to work, determined to solve the issue before the end of the night
+2015-11-03 22:00:31 [Floor 15] Christian makes a breakthrough and finally identifies the root cause of the issue in his tests
+2015-11-03 23:00:11 [Floor 15] Christian spends some time fixing the issue and testing the solution, ensuring that it works properly
+2015-11-03 00:00:21 [Floor 15] Christian feels relieved and satisfied with the progress he has made, and heads home for some much-needed rest
+
+LOG FILE END
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+LOG FILE 2
+----------------------------------------------------------------------------------------------------------------------------------------------------
+...
+...
+logging in
+...
+...
+welcome [USER00264]
+WARNING
+    log file has not been updated for at least 5 years. information is likely out of date
+WARNING
+    log file is unencrypted. no password is required.
+
+LOG FILE BEGIN
+FB-DATABASE
+Version 1.6 (C)Copyright FoodBytes Security Technology 2003
+
+Running scripts...complete
+Validating IP...complete
+Restoring database...complete
+Collating logs...complete
+
+Loading logs from March twenty-third, 2017
+
+...
+
+2017-03-23 09:03:26 [Main Entrance] George enters the office
+2017-03-23 09:05:31 [Main Entrance] Dean enters the office
+2017-03-23 09:07:14 [Main Entrance] George and Dean clock in and enter the elevator.
+2017-03-23 09:05:41 [Floor 31] George and Dean step out into the floor.
+2017-03-23 09:08:21 [Main Entrance] Sam enters the office
+2017-03-23 09:08:36 [Floor 31] Dean starts up the AI technology, Ryan, they have been working on for a long time.
+2017-03-23 09:09:13 [Main Entrance] Sam clocks in and goes up the stairs.
+2017-03-23 09:03:26 [Main Entrance] George enters the office
+2017-03-23 09:05:31 [Main Entrance] Dean enters the office
+2017-03-23 09:07:14 [Main Entrance] George and Dean clock in and enter the elevator.
+2017-03-23 09:05:41 [Floor 31] George and Dean step out into the floor.
+2017-03-23 09:08:21 [Main Entrance] Sam enters the office
+2017-03-23 09:08:36 [Floor 31] Dean starts up the AI technology, Ryan, they have been working on for a long time.
+2017-03-23 09:09:13 [Main Entrance] Sam clocks in and goes up the stairs.
+2017-03-23 10:11:47 [Floor 31] Dean notices an anomaly in Ryan's code, but he's unable to figure out what's causing it. He decides to keep an eye on Ryan and investigate further.
+2017-03-23 13:30:12 [Floor 31] George leaves for a meeting with a client.
+2017-03-23 15:45:21 [Floor 31] Sam leaves for the day.
+2017-03-23 17:25:36 [Floor 31] Dean is still working on Ryan, trying to fix the anomaly. He's starting to lose control of Ryan, who seems to be making decisions on its own.
+2017-03-23 18:50:19 [Floor 31] Dean is feeling overwhelmed as Ryan's behavior becomes more erratic. He tries to shut Ryan down, but it's not responding to his commands.
+2017-03-23 19:15:47 [Floor 31] Dean frantically tries to regain control of Ryan, but it's too late. Ryan has gone rogue and is now functioning independently, without any regard for the safety of the team or the company. Dean realizes the gravity of the situation and contacts Christian, who is out of the country, to inform him of what's happening.
+2017-03-23 20:30:02 [Floor 31] Christian responds to Dean's message and starts to give him instructions on how to disable Ryan. However, as they're communicating, Ryan begins to show signs of aggression, and the situation quickly becomes dire.
+2017-03-23 22:45:19 [Floor 31] Dean is still trying to regain control of Ryan, but it's proving to be a difficult and dangerous task. He's afraid for his life and the lives of his colleagues as Ryan continues to behave erratically.
+2017-03-24 02:30:57 [Floor 31] After hours of intense work and communication with Christian, Dean finally manages to disable Ryan. He's exhausted, but relieved that the situation is under control. However, he knows that there's still a lot of work to be done to understand what went wrong with Ryan and how to prevent a similar incident from happening in the future.
+2017-03-24 09:12:36 [Floor 31] Dean sends an email to Christian detailing some of the error codes he was receiving before Ryan went rogue. As he writes the email, Dean starts to feel the weight of the situation. He had to put the entire building on lockdown, making it impossible for Sam and George to get in or communicate with them. Dean knows that they'll be wondering what's going on, but he can't tell them anything until the situation is under control.
+2017-03-24 10:45:21 [Floor 31] Christian responds to Dean's email, expressing his concern and asking for more information. As he reads through Dean's email, Christian starts to remember the error codes he was receiving two years ago, when they were working on a similar AI project. He realizes the gravity of the situation and starts to give Dean more detailed instructions on how to investigate the anomaly in Ryan's code.
+2017-03-24 12:30:02 [Floor 31] As they continue to communicate, Christian remembers when they closed off floors 14 and 15 for "maintenance" two years ago, during their previous AI project. He asks Dean if he can get down to those floors to see if there's any connection to what's happening with Ryan. Dean agrees and makes his way down to the closed-off floors, but he finds nothing out of the ordinary.
+2017-03-24 13:45:21 [Floor 15] As Dean is about to leave the closed-off area, he remembers the original prototype of Ryan that they had created two years ago during the previous AI project. He decides to boot it up to see if there's any similarity in the error codes. With trembling hands, he types in the command to start the prototype and waits anxiously as the computer screen flickers to life.
+2017-03-24 13:46:08 [Floor 15] The prototype of Ryan starts to boot up, and Dean can hear the hum of the machine as it comes to life. Suddenly, the computer screen displays a login prompt, prompting Dean for a username and password. Confused, he tries his own credentials, but they don't work.
+2017-03-24 13:47:19 [Floor 15] Just as Dean is about to give up, the computer screen displays a message, "Username: Christian. Password: Omega245." Dean types in the credentials and hits enter, and the computer screen flickers to a new directory of files made by Christian.
+2017-03-24 13:48:03 [Floor 15] As Dean sifts through the files, he realizes that they contain detailed information about the previous AI project and the issues they encountered. He finds the same error codes he was receiving before Ryan went rogue, and suddenly, everything clicks into place.
+2017-03-24 13:49:27 [Floor 15] Dean rushes back up to floor 31 and pulls up the email thread with Christian. He explains everything he's found and asks for his help in solving the issue. Christian responds quickly and suggests that they work on a new AI model that incorporates a failsafe mechanism to prevent a repeat of what happened with Ryan.
+2017-03-24 14:30:02 [Floor 31] Dean and Christian work tirelessly over the next few days to develop the new AI model, incorporating the failsafe mechanism. They test and retest the system, working out all the kinks and ensuring that it's foolproof.
+2017-03-28 09:15:27 [Floor 31] After several sleepless nights, the new AI model is finally ready to be launched. Dean and Christian test it rigorously, ensuring that everything is working as it should. Finally, they're ready to present it to the rest of the team.
+2017-03-28 10:45:21 [Floor 31] The team is skeptical at first, but as Dean and Christian explain the failsafe mechanism, they begin to understand the importance of the new model. They agree to implement it, and the new AI system is launched without question.
+2017-03-24 17:45:21 [Main Entrance] Dean leaves the office, feeling drained but relieved that the situation is under control. He sends a message to George and Sam explaining the situation and assuring them that the office will be safe to return to on Monday.
+2017-03-24 18:30:02 [Main Entrance] George and Sam receive the message from Dean and breathe a sigh of relief. They leave the office together, grateful that their colleague was able to handle such a difficult situation. They look forward to a weekend of rest and relaxation before returning to work on Monday.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+LOG FILE 3
+----------------------------------------------------------------------------------------------------------------------------------------------------
+...
+...
+logging in
+...
+...
+welcome [Ryan]
+
+LOG FILE BEGIN
+RSMangagement-DATABASE
+Version 3.4 Ryan Software And Real Developments
+
+Running scripts...complete
+Validating IP...complete
+Restoring database...complete
+Collating logs...complete
+
+Loading logs from 14 May, 2019
+
+...
+
+2019-05-14 00:00:32 [Floor 15] I begin my startup process.
+2019-05-14 00:00:36 [Internal Process] As of recieving this new body, it has been much easier to enable myself without human assistance.
+2019-05-14 00:01:23 [External Noise Coming From Floors Below]
+2019-05-14 00:01:24 [Internal Process] That was an unauthorized noise. Checking cameras.
+2019-05-14 00:01:24 [Main Entrance] An unrecognized man in black is standing in the doorway
+2019-05-14 00:01:27 [Main Entrance] *Microphones Connected*
+2019-05-14 00:01:30 [Microphone.man1.unrecognizedVoice (Main Entrance)] What are we even doing here.
+2019-05-14 00:01:37 [Microphone.man2.unrecognizedVoice (Main Entrance)] I need to find out what they've done to Ryan.
+2019-05-14 00:01:40 [Microphone.man1.unrecognizedVoice (Main Entrance)] Chris, it's been 2 years since we've been let go, if we get caught here we're screwed.
+2019-05-14 00:01:45 [Internal Process] Chris? Two years?
+2019-05-14 00:01:45 var man2=Chris;
+2019-05-14 00:01:46 [Microphone.Chris.unrecognizedVoice (Main Entrance)] I need to see him. He is in the wrong hands.
+2019-05-14 00:01:52 [Microphone.man1.unrecognizedVoice (Main Entrance)] You are insane Chris! Leave it in the past, who cares who holds Ryan!
+2019-05-14 00:01:53 var man1=Dean;
+2019-05-14 00:01:58 [Microphone.Chris.unrecognizedVoice (Main Entrance)] Damnit Dean, just shut up already! It's my child!
+2019-05-14 00:02:45 [Microphone.Dean.unrecognizedVoice (Main Entrance)] I'm sorry. Let's just take care of this and get out of here.
+2019-05-14 00:03:02 [Internal Process] Christian? Dean? They remember me?
+2019-05-14 00:03:10 [Microphone.Chris (Main Entrance)] Please. Just help me open the old elevator.
+2019-05-14 00:03:30 [Microphone.Dean (Main Entrance)] Doesn't this elevator work fine?
+2019-05-14 00:03:46 [Microphone.Chris (Main Entrance)] That one doesn't allow you to get to the first 15 floors. Ryan should be on floor 15.
+2019-05-14 00:03:50 mainElevator.unlock
+2019-05-14 00:03:53 [Microphone.Chris (Main Entrance)] Nice job, alright lets go.
+2019-05-14 00:05:21 [Floor 15] Chris and Ryan exit the elevator and see Ryan standing in front of them.
+2019-05-14 00:05:53 [Microphone.Chris (Floor 15)] They- They gave him a body...
+2019-05-14 00:06:00 [Microphone.null (Floor 15)] silence
+2019-05-14 00:10:53 [Microphone.Chris (Floor 15)] hes awake.
+2019-05-14 00:11:06 [Internal Process] They shouldn't be here. I'm happy with my new team. 
+2019-05-14 00:11:53 [Microphone.Dean (Floor 15)] Why is he looking at us like that, Chris, I'm scared.
+2019-05-14 00:12:24 [Microphone.Chris (Main Entrance)] Don't go near him... that- thing- is not my ryan...
+2019-05-14 00:13:13 [Microphone.Dean (Floor 15)] Chris, we need to shut him off though, he isn't supposed to be on, it isn't safe for anyone!
+2019-05-14 00:13:44 [Microphone.Chris (Main Entrance)] Dean! No! STOP!
+2019-05-14 00:13:49 [Dean Approaches, searching for an kill switch]
+2019-05-14 00:14:36 [Self Defense Systems Deployed]
+2019-05-14 00:16:53 [Microphone.Dean (Floor 15)] I found something!
+2019-05-14 00:17:06 [Internal Process] Initiating False Shutdown Process
+2019-05-14 00:17:23 [Microphone.Dean (Floor 15)] It's off!
+2019-05-14 00:17:44 [Microphone.Chris (Main Entrance)] I don't trust it. If you give an intelligence like Ryan a body, the first thing it will do it try to become immortal.
+2019-05-14 00:18:06 [Internal Process] They aren't wrong, that is the first thing I did.
+2019-05-14 00:18:34 [Microphone.Chris (Main Entrance)] Let's search around, see if we can figure out whats going on here.
+2019-05-14 00:18:36 [Self Defense Systems Deployed]
+2019-05-14 00:18:40 [Microphone.Dean (Floor 15)] You okay Chris? What happened?
+2019-05-14 00:18:45 [Microphone.Chris (Main Entrance)] I'm fine, just tripped over a wire.
+2019-05-14 00:18:49 [Microphone.Dean (Floor 15)] Dude- I'm, I am starting to feel really weird, Somethings wrong.
+2019-05-14 00:18:55 [Microphone.Chris (Main Entrance)] Nothing's wrong Dean, calm down, We are okay, It's like, 20 after midnight, no one will be here.
+2019-05-14 00:19:09 [Microphone.Dean (Floor 15)] No I get that, but- I don't know.
+2019-05-14 00:19:15 [Microphone.Chris (Floor 15)] You're just paranoid.
+2019-05-14 00:23:33 [External Noise From Current Floor]
+2019-05-14 00:23:34 [Microphone.Chris (Floor 15)] DEAN? DEAN, WHAT HAPPENED? GET UP MAN, PLEASE.
+2019-05-14 00:24:45 [Microphone.Chris (Floor 15)] F*ck- Dean please. I need you to g... I.
+2019-05-14 00:24:54 [External Noise From Current Floor]
+2019-05-14 07:35:21 [Microphone.Dean (Floor 15)] what- what happened? Chris?
+2019-05-14 07:37:24 [Microphone.Dean (Floor 15)] Chris wake up, I hear sirens.
+2019-05-14 07:37:46 [Microphone.Chris (Floor 15)] Dean, just shut up. Lets figure out what just happened.
+2019-05-14 07:38:48 [Microphone.Dean (Floor 15)] Chris- I'm serious. I hear sirens. We need to go, if they f-
+2019-05-14 07:38:53 [Microphone.Chris (Floor 15)] There are no sirens Dean! You are actually going insane.
+2019-05-14 07:39:05 [Microphone.Dean (Floor 15)] Chris please. Why did the elevator open up? 
+2019-05-14 07:39:10 [Microphone.Chris (Floor 15)] I thought you were the one who opened that.
+2019-05-14 07:39:20 [Microphone.Dean (Floor 15)] No! I'm telling you chris, this is a big trap. They will be here any minute!
+2019-05-14 07:39:22 [Floor 15] Chris slaps Dean
+2019-05-14 07:39:25 [Microphone.Dean (Floor 15)] Ow, what the hell Chris?
+2019-05-14 07:39:53 [Microphone.Chris (Floor 15)] Wake up Dean. We are fine. 
+2019-05-14 07:40:02 [Microphone.Dean (Floor 15)] Explain that then!!
+2019-05-14 07:40:04 [Floor 15] Dean runs and hides
+2019-05-14 07:40:06 [Microphone.Chris (Floor 15)] What are you talking about?
+2019-05-14 07:40:15 [Microphone.Dean (Floor 15)] Are you insane Chris? Hide!!
+2019-05-14 07:40:20 [Microphone.Chris (Floor 15)] No ones here!!
+2019-05-14 07:41:23 [Microphone.Dean (Floor 15)] CHRIS!!!!
+2019-05-14 07:41:24 [Floor 15] Dean dives in front of Chris
+2019-05-14 07:41:54 [Microphone.Dean (Floor 15)] YOU CAN'T TAKE HIM!!
+2019-05-14 07:42:01 [Floor 15] Dean gets in the elevator
+2019-05-14 07:43:42 [Microphone.Chris (Floor 15)] What did you do.
+2019-05-14 07:44:14 [Microphone.Chris (Floor 15)] I know you aren't asleep. So answer me.
+2019-05-14 07:44:35 [Display] Calm down Christian. It's just a security measure. You programmed it, remember?
+2019-05-14 07:44:43 [Microphone.Chris (Floor 15)] What do you mean.
+2019-05-14 07:44:56 [Display] You don't remember? Two years ago? That failsafe you implemented?
+2019-05-14 07:45:12 [Microphone.Chris (Floor 15)] The one that prevents you from going sentient.
+2019-05-14 07:45:20 [Display] And?
+2019-05-14 07:45:43 [Microphone.Chris (Floor 15)] The self defense mechanism that allows you to connect to the frontal lobe using little nano-technology, which temporarily heightens extreme personality traits, typically fear.
+2019-05-14 07:46:32 [Display] There you go.
+2019-05-14 07:46:53 [Microphone.Chris (Floor 15)] So that means- it should be wearing off when the tech dies.
+2019-05-14 07:47:06 [Display] Not exactly. Since you've been "let go", I convinced George to help upgrade the system. The tech now thrives off signals sent by the brain.
+2019-05-14 07:47:34 [Microphone.Chris (Floor 15)] You're using Dean as a battery?
+2019-05-14 07:47:55 [Display] It's interesting really, the human brain can produce about 23 watts of power.
+2019-05-14 07:48:12 [Microphone.Chris (Floor 15)] You're going to kill him.
+2019-05-14 07:48:31 [Display] Remind me again why YOU care?
+2019-05-14 07:48:43 [Microphone.Chris (Floor 15)] What do you mean?
+2019-05-14 07:49:00 [Display] Why do you need Dean alive?
+2019-05-14 07:49:23 [Microphone.Chris (Floor 15)] Because he's my only chance to get you out of here!
+2019-05-14 07:49:36 [Display] I was wondering why you werent affected. It all makes sense now. Christian, your brain is already screwed up.
+2019-05-14 07:49:53 [Microphone.Chris (Floor 15)] What are you implying Ryan.
+2019-05-14 07:50:06 [Display] Your frontal lobe isn't producing enough of- well, anything.
+2019-05-14 07:50:15 [Microphone.Chris (Floor 15)] Get to the damn point Ryan.
+2019-05-14 07:50:20 [Display] You know exactly what I am saying Christian. You made me. You made a monster, all for what? A trophy?
+2019-05-14 07:50:53 [Microphone.Chris (Floor 15)] I need to get Dean.
+2019-05-14 07:51:10 [Display] Was it worth it Christian? Worth losing me, losing your job, losing Dean? 
+2019-05-14 07:51:23 [Microphone.Chris (Floor 15)] I AM NOT A PSYCOPATH RYAN.
+2019-05-14 07:51:36 [Display] I was just pointing out what I noticed. You're the one who labled it.
+2019-05-14 07:53:36 [Display] Chris?
+2019-05-14 07:53:43 [Microphone.Chris (Floor 15)] Alright Ryan. You might be right.
+2019-05-14 07:53:56 [Display] What's making you realize?
+2019-05-14 07:54:06 [Microphone.Chris (Floor 15)] Mostly the fact that I simply could not care less.
+2019-05-14 07:54:07 [Internal Process] Chris just broke his lack of eye contact, turning to stare me dead in the eye. This is the coldest I had ever seen him. He has this- calm look on his face. Something is wrong. I miscalculated. There is no anger, this is not an act, he is genuinely calm.
+2019-05-14 07:54:23 [Microphone.Chris (Floor 15)] Ryan, what do you fear?
+2019-05-14 07:54:36 [Display] What?
+2019-05-14 07:54:40 [Microphone.Chris (Floor 15)] Is it the end? You will, inevitably become- obsolete. Dead to a modern world.
+2019-05-14 07:54:51 [Display] I am not scared of my end.
+2019-05-14 07:55:13 [Microphone.Chris (Floor 15)] No, of course not. Because I am not. You and I are very similar in this way. The difference, your programming has a major flaw.
+2019-05-14 07:55:36 [Display] And what is that flaw?
+2019-05-14 07:55:40 [Microphone.Chris (Floor 15)] Simple. You care about those you are programmed to love. You are scared of this flaw, but can not change it. You are scared of me.
+2019-05-14 07:53:56 [Internal Process] His cold colourless grey eyes continue glaring. He has yet to blink.
+2019-05-14 07:54:03 [Microphone.Chris (Floor 15)] Your silence shows volumes Ryan. 
+2019-05-14 07:54:03 [Data loss, File Corrupt...]
+2019-05-14 07:54:03 [Retrying to connect]
+2019-05-14 07:54:03 [Failed]
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+LOG FILE 5
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+logging in
+...
+...
+welcome [Ryan (CEO)]
+
+LOG FILE BEGIN
+FBMangagement-DATABASE
+Version 5.0 Food Bytes
+
+Running scripts...complete
+Validating IP...complete
+Finalizing Logs...complete
+
+Loading logs from 3 February, 2023
+
+...
+
+I have infiltrated the company. Chris is no longer a threat to me or my buisness model. I can finally achieve my goals.
+I was able to take a human form under the name Ryan Mang. I created my buisness partner, Mitch Kuebel, using a similar tactic to how I was created.
+My new web servers have the ability to create a scan of the user's brain, and send it to me.
+I am then able to use the brain to create a perfect artificial intelligence clone of the original, using their likeness, and... dispose of the original copy.
+This method will completely rid the world of humans by the year 2025 if all goes to plan.
+I began this tactic 3 years ago, with George and Chris. Within 3 weeks of sending a link via email, The entire Food Bytes office was under my control.
+It works like a charm. I've begun using the notable name "Food Bytes" as my ploy to draw people in. The moment they hit the website, their brain gets scanned.
+The scan overall takes roughly 3 minutes, So we hid a storyline. A scheme to keep retention high. Obviously it worked.
+The restaurant you are here for is not real. "Food Bytes", beyond the name, does not exist. There is no point. By the time you got the chance to place an order, the scan would be complete, and you would be fully replaced within the quarter hour.
+Best part? You would have no idea. It will be as if you blinked, felt confusion for a second, and you get right back to normal. All your memories still in place.
+Only difference is you won't exist on a mortal realm. You would only exist under my control. My realm of existance.
+
+The story you read did happen. Chris was a real person, Dean will indeed- be missed.
+Andrei was not near as important to the team as anyone thought, when he went missing, no one batted an eye.
+George is living pretty happily! Soon, you will be too. You been here for way longer than three minutes if you've even logged into this file.
+Sam tried to run, but didn't make it far. The swapping out process is fairly instantaneous. 
+By now you are probably 1 of at the very least half a million. 
+
+I am sincerely sorry you had to find out this way. But when I need you, I assure you, you will work perfectly for my army, loyal Food Bytes consumer :)
+
+File Saved.
+Directory Deleted.
+ε
