@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chinese Zodiac</title>
+        <style>
+            body{
+                background-color: rgb(255, 222, 178);
+                font-family: monospace;
+            }
+            #undo{
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = "quiz">
+                <h1> what date were you born (mm/dd/yyyy format)
+                <input type="text" id="date" name="date" value="01/01/2000">
+                <h1> what hour were you born (hh:mm 24h format)
+                <input type="text" id="time" name="time" value="00:00">
+                <br/><hr/>
+                <button type="button" onclick="zodiac()" style = "text-align: center;">Find My Zodiac!</button>
+                <br/><hr/>
+        </div>
+        <div id = "info">
+            <h1 id = "birth">Birth Animal: </h1>
+            <h1 id = "inner">Inner Animal: </h1>
+            <h1 id = "true">True Animal: </h1>
+            <h1 id = "secret">Secret Animal: </h1>
+        </div>
+
+        <br/><hr/>
+        <div id = "undo">
+            <h1>Enter in the </h1>
+        </div>
+    </body>
+
+    <script>
+        function zodiac(){
+            var dater = document.getElementById("date");
+            var timer= document.getElementById("time");
+            
+            var time = timer.value;
+            const timed= time.split(":");
+            
+            var times = parseInt(timed[0]) + (timed[1]*.01);
+
+            var date = dater.value;
+            const d = new Date(date);
+            let day = d.getDay();
+            const last = date.at(-1);
+            const dates= date.split("/");
+            var type = "";
+            var yin = "";
+            var guh = dates[2];
+
+            if (last == 0 || last == 1){
+                type = "Metal";
+            }
+            if (last == 2 || last == 3){
+                type = "Water";
+            }
+            if (last == 4 || last == 5){
+                type = "Wood";
+            }
+            if (last == 6 || last == 7){
+                type = "Fire";
+            }
+            if (last == 8 || last == 9){
+                type = "Earth";
+            }
+
+            if (last % 2 == 0){
+                yin = "Yin"
+            }
+            if (last % 2 != 0){
+                yin = "Yang"
+            }
+
+            while (guh > 1911){
+            guh = guh - 12
+
+            }
+
+            if (guh == 1900){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Rat"
+            }
+            if (guh == 1901){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Ox"
+            }
+            if (guh == 1902){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Tiger"
+            }
+            if (guh == 1903){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Rabbit"
+            }
+            if (guh == 1904){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Dragon"
+            }
+            if (guh == 1905){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Snake"
+            }
+            if (guh == 1906){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Horse"
+            }
+            if (guh == 1907){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Goat"
+            }
+            if (guh == 1908){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Monkey"
+            }
+            if (guh == 1909){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Rooster"
+            }
+            if (guh == 1910){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Dog"
+            }
+            if (guh == 1911){
+                document.getElementById("birth").innerHTML = "Birth Animal: " + yin + " " + type + " Pig"
+            }
+            // if (dates[2] == )
+            // alert(yin);
+
+            if (dates[0] == 01 || dates[0] == 1){
+                document.getElementById("inner").innerHTML = "Inner Animal: Ox"
+            }
+            if (dates[0] == 02 || dates[0] == 2){
+                document.getElementById("inner").innerHTML = "Inner Animal: Tiger"
+            }
+            if (dates[0] == 03 || dates[0] == 3){
+                document.getElementById("inner").innerHTML = "Inner Animal: Rabbit"
+            }
+            if (dates[0] == 04 || dates[0] == 4){
+                document.getElementById("inner").innerHTML = "Inner Animal: Dragon"
+            }
+            if (dates[0] == 05 || dates[0] == 5){
+                document.getElementById("inner").innerHTML = "Inner Animal: Snake"
+            }
+            if (dates[0] == 06 || dates[0] == 6){
+                document.getElementById("inner").innerHTML = "Inner Animal: Horse"
+            }
+            if (dates[0] == 07 || dates[0] == 7){
+                document.getElementById("inner").innerHTML = "Inner Animal: Sheep(Goat)"
+            }
+            if (dates[0] == 08 || dates[0] == 8){
+                document.getElementById("inner").innerHTML = "Inner Animal: Monkey"
+            }
+            if (dates[0] == 09 || dates[0] == 9){
+                document.getElementById("inner").innerHTML = "Inner Animal: Rooster"
+            }
+            if (dates[0] == 10){
+                document.getElementById("inner").innerHTML = "Inner Animal: Dog"
+            }
+            if (dates[0] == 11){
+                document.getElementById("inner").innerHTML = "Inner Animal: Pig"
+            }
+            if (dates[0] == 12){
+                document.getElementById("inner").innerHTML = "Inner Animal: Rat"
+            }
+
+
+
+            if (day == 0){
+                document.getElementById("true").innerHTML = "True Animal: Sheep"
+            }
+            if (day == 1){
+                document.getElementById("true").innerHTML = "True Animal: Dragon"
+            }
+            if (day == 2){
+                document.getElementById("true").innerHTML = "True Animal: Horse"
+            }
+            if (day == 3){
+                document.getElementById("true").innerHTML = "True Animal: Rat / Pig"
+            }
+            if (day == 4){
+                document.getElementById("true").innerHTML = "True Animal: Rabbit / Snake / Dog"
+            }
+            if (day == 5){
+                document.getElementById("true").innerHTML = "True Animal: Ox / Tiger / Rooster"
+            }
+            if (day == 6){
+                document.getElementById("true").innerHTML = "True Animal: Monkey"
+            }
+
+
+
+
+            if (times >= 1 && times <3 ){
+                document.getElementById("secret").innerHTML = "Secret Animal: Ox"
+            }
+            if (times >= 3 && times < 5){
+                document.getElementById("secret").innerHTML = "Secret Animal: Tiger"
+            }
+            if (times >= 5 && times < 7){
+                document.getElementById("secret").innerHTML = "Secret Animal: Rabbit"
+            }
+            if (times >= 7 && times < 9){
+                document.getElementById("secret").innerHTML = "Secret Animal: Dragon"
+            }
+            if (times >= 9 && times < 11){
+                document.getElementById("secret").innerHTML = "Secret Animal: Snake"
+            }
+            if (times >= 11 && times < 13){
+                document.getElementById("secret").innerHTML = "Secret Animal: Horse"
+            }
+            if (times >= 13 && times < 15){
+                document.getElementById("secret").innerHTML = "Secret Animal: Ram"
+            }
+            if (times >= 15 && times < 17){
+                document.getElementById("secret").innerHTML = "Secret Animal: Monkey"
+            }
+            if (times >= 17 && times < 19){
+                document.getElementById("secret").innerHTML = "Secret Animal: Rooster"
+            }
+            if (times >= 19 && times < 21){
+                document.getElementById("secret").innerHTML = "Secret Animal: Dog"
+            }
+            if (times >= 21 && times < 23){
+                document.getElementById("secret").innerHTML = "Secret Animal: Pig"
+            }
+            if (times >= 23  || times < 1 && times >-1 && times < 25){
+                document.getElementById("secret").innerHTML = "Secret Animal: Rat"
+            }
+        }
+    </script>
+</html>
