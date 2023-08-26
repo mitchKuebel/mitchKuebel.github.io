@@ -57,14 +57,14 @@
                 <img src = "../images/clock.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:20%; top: 3%;"/>
                 <img src = "../images/comments.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:17%; top: 3%;"/>
                 <a href ="notes.html"><img src = "../images/notes.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:14%; top: 3%;"/></a>
-                <img src = "../images/share.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:11%; top: 3%;"/>
+                <img src = "../images/share.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:11%; top: 3%;" onclick="send()"/>
                 <img src = "../images/eagle.png" id="clock" alt = "clock" width = 200px style = "position: absolute; right:0%; top: -1px;"/>
 
                 <div id = "tabs">
-                    <button onclick="classbutton()">Class Info</button>
-                    <button onclick="generalbutton()">General Notes</button>
-                    <button onclick="homeworkbutton()">Homework</button>
-                    <button onclick="goofybutton()">goofy things</button>
+                    <button onclick="classbutton()" id = "classbuttons" style = "background-color: #7a3168; color:white">Class Info</button>
+                    <button onclick="generalbutton()" id = "generalbuttons">General Notes</button>
+                    <button onclick="homeworkbutton()" id = "homeworkbuttons">Homework</button>
+                    <button onclick="goofybutton()" id = "goofybuttons">goofy things</button>
                 </div>
             </div>
         </div>
@@ -98,29 +98,65 @@
             const y = document.getElementById("general");
             const z = document.getElementById("homework");
             const a = document.getElementById("goofythings");
+            const xx = document.getElementById("classbuttons");
+            const yy = document.getElementById("generalbuttons");
+            const zz = document.getElementById("homeworkbuttons");
+            const aa = document.getElementById("goofybuttons");
             function classbutton(){
                 x.style.display = "flex";
                 y.style.display = "none";
                 z.style.display = "none";
                 a.style.display = "none";
+                xx.style.backgroundColor = "#7a3168";
+                xx.style.color="white";
+                yy.style.backgroundColor="#d382bf";
+                yy.style.color="black";
+                zz.style.backgroundColor="#d382bf";
+                zz.style.color="black";
+                aa.style.backgroundColor="#d382bf";
+                aa.style.color="black";
             }
             function generalbutton(){
                 x.style.display = "none";
                 y.style.display = "flex";
                 z.style.display = "none";
                 a.style.display = "none";
+                yy.style.backgroundColor = "#7a3168";
+                yy.style.color="white";
+                xx.style.backgroundColor="#d382bf";
+                xx.style.color="black";
+                zz.style.backgroundColor="#d382bf";
+                zz.style.color="black";
+                aa.style.backgroundColor="#d382bf";
+                aa.style.color="black";
             }
             function homeworkbutton(){
                 x.style.display = "none";
                 y.style.display = "none";
                 z.style.display = "flex";
                 a.style.display = "none";
+                zz.style.backgroundColor = "#7a3168";
+                zz.style.color="white";
+                yy.style.backgroundColor="#d382bf";
+                yy.style.color="black";
+                xx.style.backgroundColor="#d382bf";
+                xx.style.color="black";
+                aa.style.backgroundColor="#d382bf";
+                aa.style.color="black";
             }
             function goofybutton(){
                 x.style.display = "none";
                 y.style.display = "none";
                 z.style.display = "none";
                 a.style.display = "flex";
+                aa.style.backgroundColor = "#7a3168";
+                aa.style.color="white";
+                yy.style.backgroundColor="#d382bf";
+                yy.style.color="black";
+                zz.style.backgroundColor="#d382bf";
+                zz.style.color="black";
+                xx.style.backgroundColor="#d382bf";
+                xx.style.color="black";
             }
 
 
@@ -203,6 +239,12 @@
             const goofyContent = localStorage.getItem('goofynotesContent');
             if (goofyContent) {
                 goofynotes.innerHTML = goofyContent;
+            }
+
+
+            //sending to html code
+            function sending(){
+
             }
         </script>   
     </body>
