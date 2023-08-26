@@ -12,12 +12,16 @@
                 background-color: #d382bf;
                 margin:0;
             }
-            #editor {
-                width: 100%;
-                height: 400px;
+            .editor {
+                width: 75%;
+                height: 100%;
                 border: 1px solid #c874b3;
                 padding: 10px;
                 box-sizing: border-box;
+                margin: auto;
+                margin-top: 5%;
+                background-color: #e4b4d8;
+
             }
 
             #topbar{
@@ -27,6 +31,20 @@
                 box-sizing: border-box;
                 overflow: hidden;
             }
+            #tabs{
+                background-color: #d382bf;
+                border-radius: 20px;
+                width:75%;
+                margin: auto;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                display: flex;
+            }
+            button{
+                background-color: #ab459200;
+                border-radius: 20px;
+                flex: 1 1 30%
+            }
         </style>
 
     </head>
@@ -35,20 +53,81 @@
         <div id = topbar>
             <div style = "height: max-content">
                 <img id = "docslogo" src = "../images/docs.png" alt = "logo" width = 30px; style = "margin: 10px; float: left;"/>
-                <h2 id="editor1" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden;"> Untitled Doc</h2>
+                <h2 id="editor1" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden;"> Untitled Document</h2>
                 <img src = "../images/clock.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:20%; top: 3%;"/>
                 <img src = "../images/comments.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:17%; top: 3%;"/>
                 <a href ="notes.html"><img src = "../images/notes.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:14%; top: 3%;"/></a>
                 <img src = "../images/share.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:11%; top: 3%;"/>
                 <img src = "../images/eagle.png" id="clock" alt = "clock" width = 200px style = "position: absolute; right:0%; top: -1px;"/>
+
+                <div id = "tabs">
+                    <button onclick="classbutton()">Class Info</button>
+                    <button onclick="generalbutton()">General Notes</button>
+                    <button onclick="homeworkbutton()">Homework</button>
+                    <button onclick="goofybutton()">goofy things</button>
+                </div>
             </div>
         </div>
         <!-- <h1>Mitchgle Docs</h1> -->
-        <div id="editor" contenteditable="true">
-            Start typing here...
+
+        <div id = "class">
+            <div class="editor" contenteditable="true" id = "classnotes">
+                Write Class Info Here
+            </div>
         </div>
+        <div id = "general" style = "display: none;">
+            <div class="editor" contenteditable="true" id = "generalnotes">
+                Write General Notes Here
+            </div>
+        </div>
+
+        <div id = "homework" style = "display: none;">
+            <div class="editor" contenteditable="true" id = "homeworknotes">
+                Write Homework Notes Here
+            </div>
+        </div>
+
+        <div id = "goofythings" style = "display: none;">
+            <div class="editor" contenteditable="true" id = "goofynotes">
+                Write Goofy Notes Here
+            </div>
+        </div>
+        
         <script>
-            const editor = document.getElementById('editor');
+            const x = document.getElementById("class");
+            const y = document.getElementById("general");
+            const z = document.getElementById("homework");
+            const a = document.getElementById("goofythings");
+            function classbutton(){
+                x.style.display = "flex";
+                y.style.display = "none";
+                z.style.display = "none";
+                a.style.display = "none";
+            }
+            function generalbutton(){
+                x.style.display = "none";
+                y.style.display = "flex";
+                z.style.display = "none";
+                a.style.display = "none";
+            }
+            function homeworkbutton(){
+                x.style.display = "none";
+                y.style.display = "none";
+                z.style.display = "flex";
+                a.style.display = "none";
+            }
+            function goofybutton(){
+                x.style.display = "none";
+                y.style.display = "none";
+                z.style.display = "none";
+                a.style.display = "flex";
+            }
+
+
+
+
+
+            const editor = document.getElementById('generalnotes');
             const editor1 = document.getElementById('editor1');
 
             //This is for the title
@@ -67,21 +146,64 @@
 
 
 
-            //This is for the body
+            //This is for the class
 
             // Save content to local storage whenever changes occur
-            editor.addEventListener('input', () => {
-                const content = editor.innerHTML;
-                localStorage.setItem('editorContent', content);
+            classnotes.addEventListener('input', () => {
+                const content = classnotes.innerHTML;
+                localStorage.setItem('classnotesContent', content);
             });
     
             // Load content from local storage on page load
-            const savedContent = localStorage.getItem('editorContent');
-            if (savedContent) {
-                editor.innerHTML = savedContent;
+            const classContent = localStorage.getItem('classnotesContent');
+            if (classContent) {
+                classnotes.innerHTML = classContent;
             }
 
 
+            //This is for the general notes
+
+            // Save content to local storage whenever changes occur
+            generalnotes.addEventListener('input', () => {
+                const content = generalnotes.innerHTML;
+                localStorage.setItem('generalnotesContent', content);
+            });
+    
+            // Load content from local storage on page load
+            const generalContent = localStorage.getItem('generalnotesContent');
+            if (generalContent) {
+                generalnotes.innerHTML = generalContent;
+            }
+
+
+            //This is for the homework
+
+            // Save content to local storage whenever changes occur
+            homeworknotes.addEventListener('input', () => {
+                const content = homeworknotes.innerHTML;
+                localStorage.setItem('homeworknotesContent', content);
+            });
+    
+            // Load content from local storage on page load
+            const homeworkContent = localStorage.getItem('homeworknotesContent');
+            if (homeworkContent) {
+                homeworknotes.innerHTML = homeworkContent;
+            }
+
+
+            //This is for the goofy
+
+            // Save content to local storage whenever changes occur
+            goofynotes.addEventListener('input', () => {
+                const content = goofynotes.innerHTML;
+                localStorage.setItem('goofynotesContent', content);
+            });
+    
+            // Load content from local storage on page load
+            const goofyContent = localStorage.getItem('goofynotesContent');
+            if (goofyContent) {
+                goofynotes.innerHTML = goofyContent;
+            }
         </script>   
     </body>
 </html>
