@@ -46,6 +46,18 @@
                 flex: 1 1 30%;
                 cursor: pointer;
             }
+            .popup {
+                display: block;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(209, 73, 200);
+                padding: 20px;
+                border: 2px solid #333;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
         </style>
 
     </head>
@@ -57,40 +69,53 @@
                 <h2 id="editor1" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden;"> Untitled Document</h2>
                 <img src = "../images/clock.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:20%; top: 3%;"/>
                 <img src = "../images/comments.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:17%; top: 3%;"/>
-                <a href ="notes.html"><img src = "../images/notes.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:14%; top: 3%;"/></a>
+                <a href = "notes.html"><img src = "../images/notes.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:14%; top: 3%;"/></a>
                 <img src = "../images/share.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:11%; top: 3%;cursor: pointer;" onclick="send()"/>
                 <img src = "../images/eagle.png" id="clock" alt = "clock" width = 200px style = "position: absolute; right:0%; top: -1px;"/>
 
                 <div id = "tabs">
-                    <button onclick="classbutton()" id = "classbuttons" style = "background-color: #7a3168; color:white">Class Info</button>
-                    <button onclick="generalbutton()" id = "generalbuttons">General Notes</button>
-                    <button onclick="homeworkbutton()" id = "homeworkbuttons">Homework</button>
-                    <button onclick="goofybutton()" id = "goofybuttons">goofy things</button>
+                    <button onclick="tabswitcher(x,xx)" id = "classbuttons" style = "background-color: #7a3168; color:white">Class Info</button>
+                    <button onclick="tabswitcher(y,yy)" id = "generalbuttons">General Notes</button>
+                    <button onclick="tabswitcher(z,zz)" id = "homeworkbuttons">Homework</button>
+                    <button onclick="tabswitcher(a,aa)" id = "goofybuttons">goofy things</button>
                 </div>
             </div>
         </div>
         <!-- <h1>Mitchgle Docs</h1> -->
 
-        <div id = "class">
-            <div class="editor" contenteditable="true" id = "classnotes">
-                Write Class Info Here
+        <div id = "noting">
+            <div id = "class">
+                <div class="editor" contenteditable="true" id = "classnotes">
+                    Write Class Info Here
+                </div>
             </div>
-        </div>
-        <div id = "general" style = "display: none;">
-            <div class="editor" contenteditable="true" id = "generalnotes">
-                Write General Notes Here
+            <div id = "general" style = "display: none;">
+                <div class="editor" contenteditable="true" id = "generalnotes">
+                    Write General Notes Here
+                </div>
+            </div>
+
+            <div id = "homework" style = "display: none;">
+                <div class="editor" contenteditable="true" id = "homeworknotes">
+                    Write Homework Notes Here
+                </div>
+            </div>
+
+            <div id = "goofythings" style = "display: none;">
+                <div class="editor" contenteditable="true" id = "goofynotes">
+                    Write Goofy Notes Here
+                </div>
             </div>
         </div>
 
-        <div id = "homework" style = "display: none;">
-            <div class="editor" contenteditable="true" id = "homeworknotes">
-                Write Homework Notes Here
-            </div>
-        </div>
-
-        <div id = "goofythings" style = "display: none;">
-            <div class="editor" contenteditable="true" id = "goofynotes">
-                Write Goofy Notes Here
+        <div id = "share" style="display: none;">
+            <!-- The pop-up -->
+            <div id="export-popup" class="popup">
+            <h2>Export Options</h2>
+            <button id="export-pdf">Export as PDF</button>
+            <button id="export-text">Export as Text</button>
+            <button id="export-html" onclick = "downloadHTML()">Export as HTML</button>
+            <button id="close-popup">Close</button>
             </div>
         </div>
         
@@ -103,65 +128,87 @@
             const yy = document.getElementById("generalbuttons");
             const zz = document.getElementById("homeworkbuttons");
             const aa = document.getElementById("goofybuttons");
-            function classbutton(){
-                x.style.display = "flex";
+            const shares = document.getElementById("share");
+            const noting = document.getElementById("noting");
+            
+
+            function tabswitcher(section,button){
+                x.style.display = "none";
                 y.style.display = "none";
                 z.style.display = "none";
                 a.style.display = "none";
-                xx.style.backgroundColor = "#7a3168";
-                xx.style.color="white";
+
+
+                xx.style.backgroundColor = "#d382bf";
+                xx.style.color="black";
                 yy.style.backgroundColor="#d382bf";
                 yy.style.color="black";
                 zz.style.backgroundColor="#d382bf";
                 zz.style.color="black";
                 aa.style.backgroundColor="#d382bf";
                 aa.style.color="black";
-            }
-            function generalbutton(){
-                x.style.display = "none";
-                y.style.display = "flex";
-                z.style.display = "none";
-                a.style.display = "none";
-                yy.style.backgroundColor = "#7a3168";
-                yy.style.color="white";
-                xx.style.backgroundColor="#d382bf";
-                xx.style.color="black";
-                zz.style.backgroundColor="#d382bf";
-                zz.style.color="black";
-                aa.style.backgroundColor="#d382bf";
-                aa.style.color="black";
-            }
-            function homeworkbutton(){
-                x.style.display = "none";
-                y.style.display = "none";
-                z.style.display = "flex";
-                a.style.display = "none";
-                zz.style.backgroundColor = "#7a3168";
-                zz.style.color="white";
-                yy.style.backgroundColor="#d382bf";
-                yy.style.color="black";
-                xx.style.backgroundColor="#d382bf";
-                xx.style.color="black";
-                aa.style.backgroundColor="#d382bf";
-                aa.style.color="black";
-            }
-            function goofybutton(){
-                x.style.display = "none";
-                y.style.display = "none";
-                z.style.display = "none";
-                a.style.display = "flex";
-                aa.style.backgroundColor = "#7a3168";
-                aa.style.color="white";
-                yy.style.backgroundColor="#d382bf";
-                yy.style.color="black";
-                zz.style.backgroundColor="#d382bf";
-                zz.style.color="black";
-                xx.style.backgroundColor="#d382bf";
-                xx.style.color="black";
-            }
 
+                section.style.display="flex";
+                button.style.backgroundColor="#7a3168";
+                button.style.color="white";
 
-
+            }
+            // function classbutton(){
+            //     x.style.display = "flex";
+            //     y.style.display = "none";
+            //     z.style.display = "none";
+            //     a.style.display = "none";
+            //     xx.style.backgroundColor = "#7a3168";
+            //     xx.style.color="white";
+            //     yy.style.backgroundColor="#d382bf";
+            //     yy.style.color="black";
+            //     zz.style.backgroundColor="#d382bf";
+            //     zz.style.color="black";
+            //     aa.style.backgroundColor="#d382bf";
+            //     aa.style.color="black";
+            // }
+            // function generalbutton(){
+            //     x.style.display = "none";
+            //     y.style.display = "flex";
+            //     z.style.display = "none";
+            //     a.style.display = "none";
+            //     yy.style.backgroundColor = "#7a3168";
+            //     yy.style.color="white";
+            //     xx.style.backgroundColor="#d382bf";
+            //     xx.style.color="black";
+            //     zz.style.backgroundColor="#d382bf";
+            //     zz.style.color="black";
+            //     aa.style.backgroundColor="#d382bf";
+            //     aa.style.color="black";
+            // }
+            // function homeworkbutton(){
+            //     x.style.display = "none";
+            //     y.style.display = "none";
+            //     z.style.display = "flex";
+            //     a.style.display = "none";
+            //     zz.style.backgroundColor = "#7a3168";
+            //     zz.style.color="white";
+            //     yy.style.backgroundColor="#d382bf";
+            //     yy.style.color="black";
+            //     xx.style.backgroundColor="#d382bf";
+            //     xx.style.color="black";
+            //     aa.style.backgroundColor="#d382bf";
+            //     aa.style.color="black";
+            // }
+            // function goofybutton(){
+            //     x.style.display = "none";
+            //     y.style.display = "none";
+            //     z.style.display = "none";
+            //     a.style.display = "flex";
+            //     aa.style.backgroundColor = "#7a3168";
+            //     aa.style.color="white";
+            //     yy.style.backgroundColor="#d382bf";
+            //     yy.style.color="black";
+            //     zz.style.backgroundColor="#d382bf";
+            //     zz.style.color="black";
+            //     xx.style.backgroundColor="#d382bf";
+            //     xx.style.color="black";
+            // }
 
 
             const editor = document.getElementById('generalnotes');
@@ -245,7 +292,36 @@
 
             //sending to html code
             function send(){
+                shares.style="display:block";
+                noting.style="display:none";
+            }
 
+            function downloadHTML() {
+                const filename = editor1.innerHTML + ".html";
+                // Generate the HTML code
+                const htmlCode = generateHTML(); // Your code to generate the HTML
+
+                // Create a Blob from the HTML code
+                const blob = new Blob([htmlCode], { type: 'text/html' });
+
+                // Create a URL from the Blob
+                const url = URL.createObjectURL(blob);
+
+                // Create a download link
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.download = filename;
+                downloadLink.textContent = 'Download HTML';
+
+                // Programmatically trigger the click
+                downloadLink.click();
+
+                // Clean up by revoking the URL object
+                URL.revokeObjectURL(url);
+            }
+            
+            function generateHTML(){
+                
             }
         </script>   
     </body>
