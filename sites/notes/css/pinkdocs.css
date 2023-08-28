@@ -1,0 +1,170 @@
+body {
+    font-family: robotoL, sans-serif;
+    background-color: #d382bf;
+    margin:0;
+    height:100%;
+}
+
+html{
+    height:100%;
+}
+
+#topbar{
+    background-color: #72205d;
+    overflow: hidden;
+}
+#classes{
+    background-color: #c874b3;
+    width: 100%;
+    height:325px;
+    clear:both;
+    overflow: hidden;
+}
+#inside{
+    background-color: #c874b3;
+    width:60%;
+    height:325px;
+    margin: auto;
+    overflow: hidden;
+}
+
+h2,h3,h4,h5,h6,h1{
+    font-family: robotoT, monospace;
+}
+.item{
+    width:133px;
+    height:211px;
+    flex: 1 1 5%;
+}
+
+.item-contents{
+    width:133px;
+    height:211px;
+}
+
+.item-image{
+    width:133px;
+    height:171.89px;
+    overflow-wrap: break-word;
+}
+
+.item-text{
+    margin-top:10px;
+}
+
+#items{
+    display: flex;
+    
+    height:325px;
+}
+
+.notes-content{
+    width:60%;
+    height:325px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.note{
+    display:flex;
+    height:49px;
+    width:100%;
+    margin: auto;
+    padding-left:2%;
+    align-items: center;
+    
+    
+}
+.notes-item:hover{
+    background-color: #72205d;
+    border-radius: 20px;
+    cursor:pointer;
+}
+.note-image{
+    background-image: url("../images/docs.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width:30px;
+    height:49px;
+    background-size: 30px;
+    flex:0 4 70%;
+}
+.note-name{
+    flex:4 2 70%;
+    padding-left:3%;
+
+}
+.note-date{
+    flex:1 2 70%;
+    padding-right:5%;
+    align-items: center;
+}
+
+.name-label{
+    flex:0 1 40%;
+    padding-left:3%;
+}
+.date-label{
+    flex:0 1 40%;
+    padding-right:5%;
+    align-items: center;
+}
+.note-hamburger{
+    background-image: url("../images/hamburger.png");
+    background-repeat: no-repeat;
+    width:30px;
+    height:49px;
+    background-size: 30px;
+    flex:0 4 70%;
+    background-position: 50%;
+    padding-right:5%;
+}
+
+
+.editor {
+    width: 75%;
+    height: 100%;
+    border: 1px solid #c874b3;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 5%;
+    background-color: #e4b4d8;
+
+}
+
+#topbar{
+    background-color: #ab4592;
+    height: max-content;
+    width: 100%; /* This line is the magic! */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#tabs{
+    background-color: #d382bf;
+    border-radius: 20px;
+    width:75%;
+    margin: auto;
+    padding: 5px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    display: flex;
+}
+button{
+    background-color: #ab459200;
+    border-radius: 20px;
+    flex: 1 1 30%;
+    cursor: pointer;
+}
+.popup {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(209, 73, 200);
+    padding: 20px;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}

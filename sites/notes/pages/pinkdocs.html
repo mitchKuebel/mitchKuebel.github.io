@@ -3,62 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Food Bytes</title>
-        <link rel = "stylesheet" type="text/css" href= "../../CSS/fonts.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../CSS/fonts.css"/>
         <link rel = "stylesheet" type="text/css" href = "../css/pinkdocs.css"/>
-		
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #d382bf;
-                margin:0;
-            }
-            .editor {
-                width: 75%;
-                height: 100%;
-                border: 1px solid #c874b3;
-                padding: 10px;
-                box-sizing: border-box;
-                margin: auto;
-                margin-top: 5%;
-                background-color: #e4b4d8;
-
-            }
-
-            #topbar{
-                background-color: #ab4592;
-                height: max-content;
-                width: 100%; /* This line is the magic! */
-                box-sizing: border-box;
-                overflow: hidden;
-            }
-            #tabs{
-                background-color: #d382bf;
-                border-radius: 20px;
-                width:75%;
-                margin: auto;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                display: flex;
-            }
-            button{
-                background-color: #ab459200;
-                border-radius: 20px;
-                flex: 1 1 30%;
-                cursor: pointer;
-            }
-            .popup {
-                display: block;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: rgb(209, 73, 200);
-                padding: 20px;
-                border: 2px solid #333;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-            }
-        </style>
 
     </head>
 
@@ -66,43 +12,63 @@
         <div id = topbar>
             <div style = "height: max-content">
                 <img id = "docslogo" src = "../images/docs.png" alt = "logo" width = 30px; style = "margin: 10px; float: left;"/>
-                <h2 id="editor1" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden;"> Untitled Document</h2>
+                <h2 id="editor1" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden;"> Untitled Document</h2>
                 <img src = "../images/clock.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:20%; top: 3%;"/>
                 <img src = "../images/comments.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:17%; top: 3%;"/>
                 <a href = "notes.html"><img src = "../images/notes.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:14%; top: 3%;"/></a>
                 <img src = "../images/share.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:11%; top: 3%;cursor: pointer;" onclick="send()"/>
                 <img src = "../images/eagle.png" id="clock" alt = "clock" width = 200px style = "position: absolute; right:0%; top: -1px;"/>
-
+            </div>
+            <p  id="author" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden;">by: </p>
                 <div id = "tabs">
-                    <button onclick="tabswitcher(x,xx)" id = "classbuttons" style = "background-color: #7a3168; color:white">Class Info</button>
+                    <button onclick="tabswitcher(x,xx)" id = "classbuttons">Class Info</button>
                     <button onclick="tabswitcher(y,yy)" id = "generalbuttons">General Notes</button>
                     <button onclick="tabswitcher(z,zz)" id = "homeworkbuttons">Homework</button>
                     <button onclick="tabswitcher(a,aa)" id = "goofybuttons">goofy things</button>
                 </div>
-            </div>
         </div>
         <!-- <h1>Mitchgle Docs</h1> -->
 
         <div id = "noting">
-            <div id = "class">
-                <div class="editor" contenteditable="true" id = "classnotes">
+            <div id = "class"  style = "display: none;">
+                <div class = "thingy" style = "text-align: center; width:100%; float:left ">
+                    <h1>Class Information</h1>
+                    <p>Includes Class name, Teacher, Topic for the day, etc.</p>
+                    <hr style = "width:50%; text-align: center;border-color: black;"/>
+                </div>
+                <div class="editor" contenteditable="true" id = "classnotes" style = "clear:both; margin-right: 2%;">
                     Write Class Info Here
                 </div>
             </div>
             <div id = "general" style = "display: none;">
-                <div class="editor" contenteditable="true" id = "generalnotes">
+                <div class = "thingy" style = "text-align: center; width:100%; float:left ">
+                    <h1 >General Notes</h1>
+                    <p>All notes relating to the topics. sub-notes are allowed</p>
+                    <hr style = "width:50%; text-align: center;border-color: black;"/>
+                </div>
+                <div class="editor" contenteditable="true" id = "generalnotes" style = "clear:both; margin-right: 2%;">
                     Write General Notes Here
                 </div>
             </div>
 
             <div id = "homework" style = "display: none;">
-                <div class="editor" contenteditable="true" id = "homeworknotes">
+                <div class = "thingy" style = "text-align: center; width:100%; float:left ">
+                    <h1>Homework Notes</h1>
+                    <p>This includes what the homework for tonight is!</p>
+                    <hr style = "width:50%; text-align: center;border-color: black;"/>
+                </div>
+                <div class="editor" contenteditable="true" id = "homeworknotes" style = "clear:both; margin-right: 2%;">
                     Write Homework Notes Here
                 </div>
             </div>
 
             <div id = "goofythings" style = "display: none;">
-                <div class="editor" contenteditable="true" id = "goofynotes">
+                <div class = "thingy" style = "text-align: center; width:100%; float:left ">
+                    <h1 >Goofy Notes</h1>
+                    <p>All notes that are not related to the class</p>
+                    <hr style = "width:50%; text-align: center;border-color: black;"/>
+                </div>
+                <div class="editor" contenteditable="true" id = "goofynotes" style = "clear:both; margin-right: 2%;">
                     Write Goofy Notes Here
                 </div>
             </div>
@@ -228,6 +194,20 @@
                 editor1.innerHTML = savedContent1;
             }
 
+             //This is for the author
+
+            // Save content to local storage whenever changes occur
+            author.addEventListener('input', () => {
+                const authors = author.innerHTML;
+                localStorage.setItem('authorContent', authors);
+            });
+    
+            // Load content from local storage on page load
+            const authorsContent = localStorage.getItem('authorContent');
+            if (authorsContent) {
+                author.innerHTML = authorsContent;
+            }
+
 
 
             //This is for the class
@@ -294,6 +274,12 @@
             function send(){
                 shares.style="display:block";
                 noting.style="display:none";
+
+
+                
+
+
+
             }
 
             function downloadHTML() {
@@ -321,8 +307,56 @@
             }
             
             function generateHTML(){
-                
+                const noteTitles = editor1.innerHTML;
+                const classInfoNotes = classnotes.innerHTML;
+                const generalNoting = generalnotes.innerHTML;
+                const homeworkNoting = homeworknotes.innerHTML;
+                const goofySidenotes = goofynotes.innerHTML;
+                const authorName = author.innerHTML;
+
+                // Your template with placeholders
+                const template = `
+                <!doctype html>
+                <html>
+                    <head>
+                        <meta charset="utf-8">
+                        <title>${noteTitles}</title>
+                        <link rel="stylesheet" type="text/css" href="../../../CSS/fonts.css"/>
+                        <link rel="stylesheet" type="text/css" href="../../../css/notes.css"/>
+                    </head>
+                    <body>
+                        <img src="../../../images/docs.png" id="docslogo" alt="logo" width="60px" style="margin: 10px; float: left; margin-top: auto; cursor: pointer;" onclick="window.location.href='../../pinkdocs.html'"/>
+                        <div id="title">
+                            <h1>${noteTitles}</h1>
+                            <p>${authorName}</p>
+                            <hr/>
+                        </div>
+                        <div id="info">
+                            <h2>Class Info:</h2>
+                            <p>${classInfoNotes}</p>
+                            <hr/>
+                        </div>
+                        <div id="info">
+                            <h2>General Notes:</h2>
+                            <p>${generalNoting}</p>
+                            <hr/>
+                        </div>
+                        <div id="homework">
+                            <h2>What's for homework!</h2>
+                            <p>${homeworkNoting}</p>
+                            <hr/>
+                        </div>
+                        <div id="goofy">
+                            <h2>Goofy Sidenotes:</h2>
+                            <p>${goofySidenotes}</p>
+                            <hr/>
+                        </div>
+                    </body>
+                </html>
+                `;
+                return template; //returns the template to the above function
             }
+            
         </script>   
     </body>
 </html>

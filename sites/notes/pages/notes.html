@@ -7,137 +7,9 @@
         <link rel = "stylesheet" type="text/css" href = "../css/pinkdocs.css"/>
 		
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #d382bf;
-                margin:0;
-                height:100%;
-            }
-            html{
-                height:100%;
-            }
-
             #topbar{
                 background-color: #72205d;
-                
-                
-                
                 overflow: hidden;
-            }
-            #classes{
-                background-color: #c874b3;
-                width: 100%;
-                height:325px;
-                clear:both;
-                overflow: hidden;
-            }
-            #inside{
-                background-color: #c874b3;
-                width:60%;
-                height:325px;
-                margin: auto;
-                overflow: hidden;
-            }
-            /* #classes:hover{
-                background-color: #6dc818;
-            }
-            #inside:hover{
-                background-color: #c42926;
-            } */
-            h2,h3,h4,h5,h6,h1{
-                font-family: robotoT, monospace;
-            }
-            .item{
-                width:133px;
-                height:211px;
-                flex: 1 1 5%;
-            }
-            
-            .item-contents{
-                width:133px;
-                height:211px;
-            }
-
-            .item-image{
-                width:133px;
-                height:171.89px;
-                overflow-wrap: break-word;
-            }
-            /* .item:hover{
-                background-color: aqua;
-            } */
-            .item-text{
-                margin-top:10px;
-            }
-
-            #items{
-                display: flex;
-                
-                height:325px;
-            }
-
-            .notes{
-
-            }
-            .notes-content{
-                width:60%;
-                height:325px;
-                margin: auto;
-                overflow: hidden;
-            }
-
-            .note{
-                display:flex;
-                height:49px;
-                width:100%;
-                margin: auto;
-                padding-left:2%;
-                align-items: center;
-                
-                
-            }
-            .notes-item:hover{
-                background-color: #72205d;
-                border-radius: 20px;
-            }
-            .note-image{
-                background-image: url("../images/docs.png");
-                background-repeat: no-repeat;
-                background-position: 50%;
-                width:30px;
-                height:49px;
-                background-size: 30px;
-                flex:0 4 70%;
-            }
-            .note-name{
-                flex:4 2 70%;
-                padding-left:3%;
-
-            }
-            .note-date{
-                flex:1 2 70%;
-                padding-right:5%;
-                align-items: center;
-            }
-
-            .name-label{
-                flex:0 1 40%;
-                padding-left:3%;
-            }
-            .date-label{
-                flex:0 1 40%;
-                padding-right:5%;
-                align-items: center;
-            }
-            .note-hamburger{
-                background-image: url("../images/hamburger.png");
-                background-repeat: no-repeat;
-                width:30px;
-                height:49px;
-                background-size: 30px;
-                flex:0 4 70%;
-                background-position: 50%;
-                padding-right:5%;
             }
         </style>
 
@@ -147,127 +19,110 @@
         <div id = topbar>
             <div style = "height: max-content">
                 <img src = "../images/hamburger.png" id = "hamburgermenu" alt = "menu" width = 30px style = "margin:13px; float:left;"/>
-                <img src = "../images/docs.png" id = "docslogo" alt = "logo" width = 30px style = "margin: 10px; float: left;"/>
+                <img src = "../images/docs.png" id = "docslogo" alt = "logo" width = 30px style = "margin: 10px; float: left; cursor: pointer;" onclick="window.location.href='pinkdocs.html'"/>
                 <h2 style = "margin:15px;float:left; font-family: robotoT,monospace; color:white">Mitchgle Docs</h2>
-                <!-- <img src = "../images/clock.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:20%; top: 1.75%;"/>
-                <img src = "../images/comments.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:17%; top: 1.75%;"/>
-                <a href = "notes.html"><img src = "../images/notes.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:14%; top: 1.75%;"/></a> -->
-                <!-- <img src = "../images/share.png" id="clock" alt = "clock" width = 30px style = "position: absolute; right:11%; top: 1.75%;cursor: pointer;" onclick="send()"/> -->
                 <img src = "../images/eagle.png" id="clock" alt = "clock" width = 150px style = "position: absolute; right:1%; top: -1px;"/>
             </div>
         </div>
-                <div id = "classes">
-                    <div id = "inside">
-                        <h2>Select the class</h2>
+        <div id = "classes">
+            <div id = "inside">
+                <h2>Select the class</h2>
                         
-                        <div id = items>
-                            <div class = "item">
-                                <div class = "item-contents">
-                                    <img src = "../images/scla.jpg" alt = "SCLA" class = "item-image"/>
-                                    <h4 class = "item-text">SCLA</h4>
-                                </div>
-                            </div>
-
-                            <div class = "item">
-                                <div class = "item-contents">
-                                    <img src = "../images/CITLec.jpg" alt = "CIT" class = "item-image"/>
-                                    <h4 class = "item-text">Intro to Systems Lecture</h4>
-                                </div>
-                                
-                            </div>
-
-                            <!-- <div class = "item">
-                                <div class = "item-contents">
-                                    <img src = "../images/CITLab.jpg" alt = "CIT Lab" class = "item-image"/>
-                                    <h4 class = "item-text">Intro to Systems Lab</h4>
-                                </div>
-                                
-                            </div> -->
-
-                            <div class = "item">
-                                <div class = "item-contents">
-                                    <img src = "../images/CALC.jpg" alt = "Calc" class = "item-image"/>
-                                    <h4 class = "item-text">Applied Calculus 1</h4>
-                                </div>
-                                
-                            </div>
-
-                            <div class = "item">
-                                <div class = "item-contents">
-                                    <img src = "../images/TLI.jpg" alt = "TLI" class = "item-image"/>
-                                    <h4 class = "item-text">TLI</h4>
-                                </div>
-                                
-                            </div>
-
-                            <div class = "item">
-                                <div class = "item-contents">
-                                    <img src = "../images/EAPS.jpg" alt = "EAPS" class = "item-image"/>
-                                    <h4 class = "item-text">EAPS</h4>
-                                </div>
-                                
-                            </div>
-
-                            <div class = "item">
-                                <div class = "item-contents">
-                                    <img src = "../images/Python.jpg" alt = "Python" class = "item-image"/>
-                                    <h4 class = "item-text">Python</h4>
-                                </div>
-                                
-                            </div>
-
-                            <div class = "item">
-                                <div class = "item-contents">
-                                    <img src = "../images/fun.jpg" alt = "Python" class = "item-image"/>
-                                    <h4 class = "item-text">Other</h4>
-                                </div>
-                                
-                            </div>
+                <div id = items>
+                    <div class = "item">
+                        <div class = "item-contents">
+                            <img src = "../images/scla.jpg" alt = "SCLA" class = "item-image"/>
+                            <h4 class = "item-text">SCLA</h4>
                         </div>
-                        
                     </div>
-                </div>
 
-                <div id = "all-notes" class = "notes">
-                    <div class = "notes-content">
-                        <h2>All Notes</h2>
+                    <div class = "item">
+                        <div class = "item-contents">
+                            <img src = "../images/CITLec.jpg" alt = "CIT" class = "item-image"/>
+                            <h4 class = "item-text">Intro to Systems Lecture</h4>
+                        </div>      
+                    </div>
 
-                        <!--Labels for what the user is looking at.-->
-                            <div class = "note">
+                <!--<div class = "item">
+                        <div class = "item-contents">
+                            <img src = "../images/CITLab.jpg" alt = "CIT Lab" class = "item-image"/>
+                            <h4 class = "item-text">Intro to Systems Lab</h4>
+                        </div> 
+                    </div> -->
+
+                    <div class = "item">
+                        <div class = "item-contents">
+                            <img src = "../images/CALC.jpg" alt = "Calc" class = "item-image"/>
+                            <h4 class = "item-text">Applied Calculus 1</h4>
+                        </div>       
+                    </div>
+
+                    <div class = "item">
+                        <div class = "item-contents">
+                            <img src = "../images/TLI.jpg" alt = "TLI" class = "item-image"/>
+                            <h4 class = "item-text">TLI</h4>
+                        </div>     
+                    </div>
+
+                    <div class = "item">
+                        <div class = "item-contents">
+                            <img src = "../images/EAPS.jpg" alt = "EAPS" class = "item-image"/>
+                            <h4 class = "item-text">EAPS</h4>
+                        </div>    
+                    </div>
+
+                    <div class = "item">
+                        <div class = "item-contents">
+                            <img src = "../images/Python.jpg" alt = "Python" class = "item-image"/>
+                            <h4 class = "item-text">Python</h4>
+                        </div>    
+                    </div>
+
+                    <div class = "item">
+                        <div class = "item-contents">
+                            <img src = "../images/fun.jpg" alt = "Python" class = "item-image"/>
+                            <h4 class = "item-text">Other</h4>
+                        </div>       
+                    </div>
+                </div>        
+            </div>
+        </div>
+
+        <div id = "all-notes" class = "notes">
+            <div class = "notes-content">
+                <h2>All Notes</h2>
+
+                <!--Labels for what the user is looking at.-->
+                <div class = "note">
                                 <div class = "name-label">
                                     <h2>Notes Name</h2>
                                 </div>
                                 <div class = "date-label">
                                     <h2>Notes Date</h2>
                                 </div>
-                            </div>
-
-
-                        <div class = "notes-item">
-                            <div class = "note">
-                                <div class = "note-image"></div>
-                                <div class = "note-name">
-                                    <h3>This note is a place holder</h3>
-                                </div>
-                                <div class = "note-date">
-                                    <h3>8/27/2023</h3>
-                                </div>
-                                <div class = "note-hamburger"></div>
-                            </div>
+                </div>
+                <div class = "notes-item" onclick="openNote('template.html' , 'other')">
+                    <div class = "note">
+                        <div class = "note-image"></div>
+                        <div class = "note-name">
+                                <h3>This note is a place holder</h3>
                         </div>
-                        
+                        <div class = "note-date">
+                                <h3>8/27/2023</h3>
+                        </div>
+                        <div class = "note-hamburger"></div>
                     </div>
                 </div>
-                <!-- <div id = "tabs">
-                    <button onclick="tabswitcher(x,xx)" id = "classbuttons" style = "background-color: #7a3168; color:white">Class Info</button>
-                    <button onclick="tabswitcher(y,yy)" id = "generalbuttons">General Notes</button>
-                    <button onclick="tabswitcher(z,zz)" id = "homeworkbuttons">Homework</button>
-                    <button onclick="tabswitcher(a,aa)" id = "goofybuttons">goofy things</button>
-                </div> -->
-            
-        
-        <!-- <h1>Mitchgle Docs</h1> -->
-
-     
+            </div>
+        </div>
     </body>
+
+    <script>
+        const ext = "";
+        const folder = "";
+        function openNote(ext, folder){
+            const url = "notes/"+folder+ "/" + ext;
+            window.location.href = url;
+        }
+    </script>
 </html>
