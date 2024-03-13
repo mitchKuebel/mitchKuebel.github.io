@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: links;
+    src: url(../../fonts/TLOZ-Minish-Cap-A-Link-to-the-Past-Four-Sword.ttf);
+}
+
+#linksforme{
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 8px 24px 1px rgba(0, 0, 0, 0.28);
+    width: 100px;
+    font-family: links,sans-serif;
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(../../pictures/background.jpg) 10% round;
+    text-align: center;
+    margin-left:600px
+}
+
+#linksforme a:hover{
+    color:red;
+    -webkit-animation: text-shadow-drop-center 0.6s both;
+        animation: text-shadow-drop-center 0.6s both;
+}

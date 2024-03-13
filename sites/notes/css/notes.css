@@ -2,6 +2,8 @@ body{
     background-image: url(../images/paper.jpg);
     background-size:cover;
     font-family: monday, sans-serif;
+    font-size: 50px;
+    cursor:url('../images/png-transparent-white-cursor-computer-mouse-pointer-mouse-cursor-miscellaneous-angle-white\ -\ Copy.png'), auto;
 }
 
 #title{

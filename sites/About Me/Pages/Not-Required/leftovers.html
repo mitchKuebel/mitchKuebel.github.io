@@ -1,0 +1,485 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Leftovers</title>
+		<link rel = "stylesheet" type="text/css" href= "../../Stylesheets/MyCode/MyCode1.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../Stylesheets/NotMyCode/NotMyCode1.css"/>
+        <link rel = "stylesheet" type = "text/css" href="../../Stylesheets/NotMyCode/NotMyCode2.css"/>
+	</head>
+
+	<body>
+        <div class= "backing">
+            <h1 id = "title">Extra Pictures!</h1>
+        </div>
+		
+		<a href = "secret.html" style = "float:none;margin-left:500px;font-size:20px">secrets hints!</a>
+        <div id = "links">
+            <a href = "../Required/Home.html">Home</a>
+            <br class = "br"/>
+            <a href = "../Required/History.html">History</a>
+            <br class = "br"/>
+            <a href="../Required/Survey.html">Surveys</a>
+            <br class = "br"/>
+            <a href = "../Required/Family.html">Family</a>
+            <br class = "br"/>
+            <a href = "../Required/Hobbies.html">Hobbies</a>
+            <br class = "br"/>
+            <a href = "leftovers.html" style = "color:rgb(235, 111, 62)">Pictures</a>
+        </div>
+
+
+
+        <!--THE FIRST SLIDES-->
+        
+		<!-- Slideshow container -->
+    <div class="slideshow-container">
+        <h1 style = "text-align: center">Marching Band</h1>
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+        <div class="numbertext">1 / 7</div>
+        <img src="../../pictures/ExtraPictures/moremilk.PNG" alt = "he got it." style="width:50%"/>
+        <div class="text">Caleb Has The Milk</div>
+        </div>
+    
+        <div class="mySlides fade">
+        <div class="numbertext">2 / 7</div>
+        <img src="../../pictures/ExtraPictures/THEMILK.JPG" alt = "we got it." style="width:70%"/>
+        <div class="text">we have the milk.</div>
+        </div>
+    
+        <div class="mySlides fade">
+        <div class="numbertext">3 / 7</div>
+        <img src="../../pictures/ExtraPictures/whoAreThey.jpg" alt = "I DONT KNOW THEM GENUINELY!" style="width:70%"/>
+        <div class="text">WHO ARE THESE PEOPLE!?!?!?</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 7</div>
+            <img src="../../pictures/ExtraPictures/tru.JPG" alt = "Me Gavin and Charlie." style="width:50%"/>
+            <div class="text">Me, Gavin and Charlie</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 7</div>
+                <img src="../../pictures/ExtraPictures/gavinHold.JPG" alt = "gavin is carrying me" style="width:70%"/>
+                <div class="text">Me and Gavin :)</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">6 / 7</div>
+                <img src="../../pictures/ExtraPictures/huh.jpg" alt = "Me and the fellas watching bands" style="width:50%"/>
+                <div class="text">Me and some fellas watchin some bands</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">7 / 7</div>
+                <img src="../../pictures/ExtraPictures/UwU.jpg" alt = "Me in uniform." style="width:50%"/>
+                <div class="text">UwU!</div>
+            </div>
+    
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+    </div>
+
+
+    <!--THIS IS FOR THE FIRST SLIDES-->
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+    <!--THE SECOND SLIDES-->
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    	<!-- Slideshow container 2 -->
+        <div class="slideshow-container2">
+            <h1 style = "text-align: center">Friends</h1>
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides2 fade">
+            <div class="numbertext2">1 / 7</div>
+            <img src="../../pictures/ExtraPictures/TheBoys.jpg" alt = "Me and caleb standing with a nerf gun." style="width:50%"/>
+            <div class="text2">The Heist.</div>
+            </div>
+        
+            <div class="mySlides2 fade">
+            <div class="numbertext2">2 / 7</div>
+            <img src="../../pictures/ExtraPictures/meBiteZane.jpg" alt = "I bit zanes ear." style="width:50%"/>
+            <div class="text2">I bit Zanes Ear. Oops.</div>
+            </div>
+        
+            <div class="mySlides2 fade">
+            <div class="numbertext2">3 / 7</div>
+            <img src="../../pictures/ExtraPictures/benGold.JPG" alt = "Ben in Nothing gold can stay" style="width:70%"/>
+            <div class="text2">Nothing Gold Can Stay.</div>
+            </div>
+    
+            <div class="mySlides2 fade">
+                <div class="numbertext2">4 / 7</div>
+                <img src="../../pictures/ExtraPictures/Skirvin.jpg" alt = "Skirvin but baby" style="width:60%"/>
+                <div class="text2">Cameron Skirvin. (he has perfect pitch)</div>
+            </div>
+
+            <div class="mySlides2 fade">
+                <div class="numbertext2">5 / 7</div>
+                <img src="../../pictures/ExtraPictures/Noah.jpg" alt = "NOAH BUT GLASSES?" style="width:60%"/>
+                <div class="text2">its Noah Wikel!</div>
+            </div>
+
+            <div class="mySlides2 fade">
+                <div class="numbertext2">6 / 7</div>
+                <img src="../../pictures/ExtraPictures/Adam.jpg" alt = "ADAM BUT YOUNG?" style="width:60%"/>
+                <div class="text2">Adam Richard? Huh?!</div>
+            </div>
+
+            <div class="mySlides2 fade">
+                <div class="numbertext2">7 / 7</div>
+                <img src="../../pictures/ExtraPictures/calebism.PNG" alt = "Caleb went goofy on us again" style="width:60%"/>
+                <div class="text2">Calebisms.</div>
+            </div>
+        
+            <!-- Next and previous buttons -->
+            <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
+            <a class="next2" onclick="plusSlides2(1)">&#10095;</a>
+        </div>
+        <br>
+        
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot2" onclick="currentSlide2(1)"></span>
+            <span class="dot2" onclick="currentSlide2(2)"></span>
+            <span class="dot2" onclick="currentSlide2(3)"></span>
+            <span class="dot2" onclick="currentSlide2(4)"></span>
+            <span class="dot2" onclick="currentSlide2(5)"></span>
+            <span class="dot2" onclick="currentSlide2(6)"></span>
+            <span class="dot2" onclick="currentSlide2(7)"></span>
+        </div>
+
+
+
+
+
+
+<!--THIS IS FOR THE SECOND SLIDES-->
+
+<script>
+    let slideIndex2 = 1;
+showSlides2(slideIndex2);
+
+// Next/previous controls
+function plusSlides2(n) {
+showSlides2(slideIndex2 += n);
+}
+
+// Thumbnail image controls
+function currentSlide2(n) {
+showSlides2(slideIndex2 = n);
+}
+
+function showSlides2(n) {
+let i2;
+let slides2 = document.getElementsByClassName("mySlides2");
+let dots2 = document.getElementsByClassName("dot2");
+if (n > slides2.length) {slideIndex2 = 1}
+if (n < 1) {slideIndex2 = slides2.length}
+for (i2 = 0; i2 < slides2.length; i2++) {
+slides2[i2].style.display = "none";
+}
+for (i2 = 0; i2 < dots2.length; i2++) {
+dots2[i2].className = dots2[i2].className.replace(" active", "");
+}
+slides2[slideIndex2-1].style.display = "block";
+dots2[slideIndex2-1].className += " active";
+}
+</script>
+
+
+
+
+        <!--THIS IS FOR SLIDES 3-->
+
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    	<!-- Slideshow container 3 -->
+        <div class="slideshow-container3">
+            <h1 style = "text-align: center">Myself!</h1>
+            <!-- Full-width images with number and caption text -->
+
+            <div class="mySlides3 fade">
+                <div class="numbertext3">1 / 8</div>
+                <img src="../../pictures/ExtraPictures/theBridgeToPoland.jpg" alt = "I am standing on the gay bridge"style="width:50%"/>
+                <div class="text3">GAY BRIDGE GO IT!</div>
+            </div>
+
+
+            <div class="mySlides3 fade">
+            <div class="numbertext3">2 / 8</div>
+            <img src="../../pictures/ExtraPictures/curtis.JPG" alt = "IM CURTIS THE CURD NERD." style="width:50%"/>
+            <div class="text3">Curtis The Curd Nerd</div>
+            </div>
+        
+            <div class="mySlides3 fade">
+                <div class="numbertext3">3 / 8</div>
+                <img src="../../pictures/ExtraPictures/icandrive.JPG" alt = "I am actively driving in this image." style="width:50%"/>
+                <div class="text3">I am driving!!!!</div>
+            </div>
+        
+            <div class="mySlides3 fade">
+            <div class="numbertext3">4 / 8</div>
+            <img src="../../pictures/ExtraPictures/hottie.jpg" alt = "I got blue hair!" style="width:50%"/>
+            <div class="text3">WHAT HAPPENED TO MY HJAIR!!</div>
+            </div>
+    
+            <div class="mySlides3 fade">
+                <div class="numbertext3">5 / 8</div>
+                <img src="../../pictures/ExtraPictures/help.JPG" alt = "PLEASE HELP IM IN THE OCEAN." style="width:80%"/>
+                <div class="text3" style = "color:rgb(170, 19, 19)">help. please</div>
+            </div>
+
+            <div class="mySlides3 fade">
+                <div class="numbertext3">6 / 8</div>
+                <img src="../../pictures/ExtraPictures/glowUp.JPG" alt = "I had a glow up." style="width:90%"/>
+                <div class="text3">I glew up.</div>
+            </div>
+
+            <div class="mySlides3 fade">
+                <div class="numbertext3">7 / 8</div>
+                <img src="../../pictures/ExtraPictures/meandjames.JPG" alt = "Me and my best friend James." style="width:50%"/>
+                <div class="text3">its my buddy james!</div>
+            </div>
+
+            <div class="mySlides3 fade">
+                <div class="numbertext3">8 / 8</div>
+                <img src="../../pictures/ExtraPictures/WHERE.JPG" alt = "MY HAIR!" style="width:50%"/>
+                <div class="text3">WHAT HAPPENED WHERE AM I!</div>
+            </div>
+
+        
+            <!-- Next and previous buttons -->
+            <a class="prev3" onclick="plusSlides3(-1)">&#10094;</a>
+            <a class="next3" onclick="plusSlides3(1)">&#10095;</a>
+        </div>
+        <br>
+        
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot3" onclick="currentSlide3(1)"></span>
+            <span class="dot3" onclick="currentSlide3(2)"></span>
+            <span class="dot3" onclick="currentSlide3(3)"></span>
+            <span class="dot3" onclick="currentSlide3(4)"></span>
+            <span class="dot3" onclick="currentSlide3(5)"></span>
+            <span class="dot3" onclick="currentSlide3(6)"></span>
+            <span class="dot3" onclick="currentSlide3(7)"></span>
+            <span class="dot3" onclick="currentSlide3(8)"></span>
+        </div>
+
+
+
+
+
+
+<!--THIS IS FOR THE THIRD SLIDES-->
+
+<script>
+    let slideIndex3 = 1;
+showSlides3(slideIndex3);
+
+// Next/previous controls
+function plusSlides3(n) {
+showSlides3(slideIndex3 += n);
+}
+
+// Thumbnail image controls
+function currentSlide3(n) {
+showSlides3(slideIndex3 = n);
+}
+
+function showSlides3(n) {
+let i3;
+let slides3 = document.getElementsByClassName("mySlides3");
+let dots3 = document.getElementsByClassName("dot3");
+if (n > slides3.length) {slideIndex3 = 1}
+if (n < 1) {slideIndex3 = slides3.length}
+for (i3 = 0; i3 < slides3.length; i3++) {
+slides3[i3].style.display = "none";
+}
+for (i3 = 0; i3 < dots3.length; i3++) {
+dots3[i3].className = dots3[i3].className.replace(" active", "");
+}
+slides3[slideIndex3-1].style.display = "block";
+dots3[slideIndex3-1].className += " active";
+}
+</script>
+
+
+
+
+
+<!--THIS IS FOR SLIDES 4-->
+
+                <!--THIS IS FOR SLIDES 3-->
+
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <!-- Slideshow container 4 -->
+                <div class="slideshow-container4">
+                    <h1 style = "text-align: center">Inanimate Objects and Miscellaneous</h1>
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides4 fade">
+                    <div class="numbertext4">1 / 10</div>
+                    <img src="../../pictures/ExtraPictures/theBatImage.jpg" alt = "the bat picture!!" style="width:50%"/>
+                    <div class="text4">The infamous bat image.</div>
+                    </div>
+                
+                    <div class="mySlides4 fade">
+                        <div class="numbertext4">2 / 10</div>
+                        <img src="../../pictures/ExtraPictures/celerymerch.jpg" alt = "My merch!" style="width:50%"/>
+                        <div class="text4">Its my merch!</div>
+                    </div>
+                
+                    <div class="mySlides4 fade">
+                    <div class="numbertext4">3 / 10</div>
+                    <img src="../../pictures/ExtraPictures/firstsetup.JPG" alt = "My first setup!" style="width:70%"/>
+                    <div class="text4">My first gaming setup!</div>
+                    </div>
+            
+                    <div class="mySlides4 fade">
+                        <div class="numbertext4">4 / 10</div>
+                        <img src="../../pictures/ExtraPictures/Myroom.jpg" alt = "my bedroom before modeling" style="width:80%"/>
+                        <div class="text4">My room!</div>
+                    </div>
+        
+                    <div class="mySlides4 fade">
+                        <div class="numbertext4">5 / 10</div>
+                        <img src="../../pictures/ExtraPictures/gaycar.jpg" alt = "GAY CAR!!" style="width:50%"/>
+                        <div class="text4">its the gay car from kroger!!!! go it!</div>
+                    </div>
+        
+                    <div class="mySlides4 fade">
+                        <div class="numbertext4">6 / 10</div>
+                        <img src="../../pictures/ExtraPictures/Society.JPG" alt = "society picture of beach" style="width:50%"/>
+                        <div class="text4">society. smh.</div>
+                    </div>
+    
+                    
+                    <div class="mySlides4 fade">
+                        <div class="numbertext4">7 / 10</div>
+                        <img src="../../pictures/ExtraPictures/totalyjuice.jpg" alt = "carton of totally juice."style="width:50%"/>
+                        <div class="text4">we swear its juice.</div>
+                    </div>
+
+                    <div class="mySlides4 fade">
+                        <div class="numbertext4">8 / 10</div>
+                        <img src="../../pictures/ExtraPictures/iMainGreen.PNG" alt = "Among Us Meme" style="width:50%"/>
+                        <div class="text4">I DO MAIN GREEN</div>
+                    </div>
+
+                    <div class="mySlides4 fade">
+                        <div class="numbertext4">9 / 10</div>
+                        <img src="../../pictures/ExtraPictures/freeBorger.PNG" alt = "YOU ALL GET FREE BORGER"style="width:50%"/>
+                        <div class="text4">on the houmse :)</div>
+                    </div>
+                    
+                    <div class="mySlides4 fade">
+                        <div class="numbertext4">10 /10</div>
+                        <img src="../../pictures/ExtraPictures/soMulch.PNG" alt = "SO MUCH MULCH!"style="width:80%"/>
+                        <div class="text4">I LOVE MULCH</div>
+                    </div>
+                
+                    <!-- Next and previous buttons -->
+                    <a class="prev4" onclick="plusSlides4(-1)">&#10094;</a>
+                    <a class="next4" onclick="plusSlides4(1)">&#10095;</a>
+                </div>
+                <br>
+                
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot4" onclick="currentSlide4(1)"></span>
+                    <span class="dot4" onclick="currentSlide4(2)"></span>
+                    <span class="dot4" onclick="currentSlide4(3)"></span>
+                    <span class="dot4" onclick="currentSlide4(4)"></span>
+                    <span class="dot4" onclick="currentSlide4(5)"></span>
+                    <span class="dot4" onclick="currentSlide4(6)"></span>
+                    <span class="dot4" onclick="currentSlide4(7)"></span>
+                    <span class="dot4" onclick="currentSlide4(8)"></span>
+                    <span class="dot4" onclick="currentSlide4(9)"></span>
+                    <span class="dot4" onclick="currentSlide4(10)"></span>
+                </div>
+        
+        
+        
+        
+        
+        
+        <!--THIS IS FOR THE FOURTH SLIDES-->
+        
+        <script>
+            let slideIndex4 = 1;
+        showSlides4(slideIndex4);
+        
+        // Next/previous controls
+        function plusSlides4(n) {
+        showSlides4(slideIndex4 += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide4(n) {
+        showSlides4(slideIndex4 = n);
+        }
+        
+        function showSlides4(n) {
+        let i4;
+        let slides4 = document.getElementsByClassName("mySlides4");
+        let dots4 = document.getElementsByClassName("dot4");
+        if (n > slides4.length) {slideIndex4 = 1}
+        if (n < 1) {slideIndex4 = slides4.length}
+        for (i4 = 0; i4 < slides4.length; i4++) {
+        slides4[i4].style.display = "none";
+        }
+        for (i4 = 0; i4 < dots4.length; i4++) {
+        dots4[i4].className = dots4[i4].className.replace(" active", "");
+        }
+        slides4[slideIndex4-1].style.display = "block";
+        dots4[slideIndex4-1].className += " active";
+        }
+        </script>
+	</body>
+</html>

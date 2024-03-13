@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Font Face*/
+
+@font-face {
+    font-family: Paladins;
+    src: url(../../fonts/paladins.ttf);
+}
+
+@font-face {
+    font-family: links;
+    src: url(../../fonts/TLOZ-Minish-Cap-A-Link-to-the-Past-Four-Sword.ttf);
+}
+
+@font-face {
+  font-family: love;
+  src: url(../../fonts/Love.ttf);
+}
+
+@font-face {
+  font-family: quotes;
+  src: url(../../fonts/KGPrimaryItalics.ttf);
+}
+
+@font-face {
+  font-family: windows;
+  src: url(../../fonts/WindowsRegular.ttf);
+}
+
+@font-face {
+  font-family: upheav;
+  src: url(../../fonts/upheavtt.ttf);
+}
+
+@font-face {
+  font-family: videotype;
+  src: url(../../fonts/videotype.ttf);
+}
+
+@font-face {
+  font-family: hugh;
+  src: url(../../fonts/HughIsLifePersonalUseItalic-K7axe.ttf);
+}
+
+@font-face {
+  font-family: MIT;
+  src: url(../../fonts/AtleticaUNISAL-Regular.ttf);
+}
+
+
+#linksforme{
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 8px 24px 1px rgba(0, 0, 0, 0.28);
+    width: 100px;
+    font-family: links,sans-serif;
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(../pictures/background.jpg) 10% round;
+    text-align: center;
+    margin-left:900px;
+	margin-top:-800px
+}
+
+#linksforme a:hover{
+    color:red;
+    -webkit-animation: text-shadow-drop-center 0.6s both;
+        animation: text-shadow-drop-center 0.6s both;
+}
+
+
+
+
+
+
+
+
+body{
+	background: rgb(255,224,146);
+background: linear-gradient(90deg, rgba(255,224,146,1) 0%, rgba(115,255,153,1) 47%, rgba(0,212,255,1) 100%);
+}

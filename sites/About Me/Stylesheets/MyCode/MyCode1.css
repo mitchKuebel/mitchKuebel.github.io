@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*Font Face*/
+
+@font-face {
+    font-family: Paladins;
+    src: url(../../fonts/paladins.ttf);
+}
+
+@font-face {
+    font-family: links;
+    src: url(../../fonts/TLOZ-Minish-Cap-A-Link-to-the-Past-Four-Sword.ttf);
+}
+
+@font-face {
+  font-family: love;
+  src: url(../../fonts/Love.ttf);
+}
+
+@font-face {
+  font-family: quotes;
+  src: url(../../fonts/KGPrimaryItalics.ttf);
+}
+
+@font-face {
+  font-family: windows;
+  src: url(../../fonts/WindowsRegular.ttf);
+}
+
+@font-face {
+  font-family: upheav;
+  src: url(../../fonts/upheavtt.ttf);
+}
+
+@font-face {
+  font-family: videotype;
+  src: url(../../fonts/videotype.ttf);
+}
+
+@font-face {
+  font-family: hugh;
+  src: url(../../fonts/HughIsLifePersonalUseItalic-K7axe.ttf);
+}
+
+@font-face {
+  font-family: MIT;
+  src: url(../../fonts/AtleticaUNISAL-Regular.ttf);
+}
+
+/*page assets*/
+
+#title{
+    text-align:center;
+    font-family:Paladins, sans-serif
+}
+
+#links{
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 8px 24px 1px rgba(0, 0, 0, 0.28);
+    width: 200px;
+    font-family: links,sans-serif;
+    float:left;
+}
+
+#links a{
+  text-indent: 5px;
+  color:rgb(229, 60, 209);
+  text-decoration: dashed;
+}
+
+#links a:hover{
+  color:#12b894;
+}
+
+.content{
+  clear:right;
+  margin-left: 300px;
+  background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 8px 24px 1px rgba(0, 0, 0, 0.28);
+}
+
+/*how do i make this work? */
+.br{
+  background-color: rgba(255, 255, 255, 0.0);
+}
+
+ol{
+  font-weight:normal;
+  font-family: upheav,windows, sans-serif;
+  font-size:20px;
+}
+
+ul{
+  font-weight:normal;
+  color: rgb(51, 49, 49);
+  width: 600px;
+  font-family: quotes, love, sans-serif;
+  font-size: 18px;
+}
+
+h3{
+	font-family: videotype, sans-serif;  
+}
+
+h1{
+	font-family: videotype, sans-serif; 
+}
+
+
+.text{
+	width:600px;
+	margin-left:20px;
+}
+
+.text p{
+ 	color: rgb(51, 49, 49);
+  	width: 600px;
+  	font-family: quotes, love, sans-serif;
+  	font-size: 20px;
+}
+
+ol{
+}
+
+#mac{
+  font-size:20px;
+  font-weight: bold;
+  font-family:monospace;
+  color:#FF7C7C;
+  text-decoration: line-through;
+}
+
+.first-letter{
+	font-size:60px;
+	width:20px;
+	height:10px;
+	border: 10px groove #2BC019;
+	padding: 10px;
+	padding-right:15px;
+	font-family:hugh, sans-serif;
+}
