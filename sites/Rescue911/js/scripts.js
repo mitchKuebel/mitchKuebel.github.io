@@ -17,9 +17,16 @@ function handleLogin(event) {
 // Simulate Call Logging
 function startCallLogging() {
     const logMessage = document.getElementById('logMessage');
+    const begin = document.getElementById('begin');
+    const log = document.getElementById('log');
     logMessage.textContent = 'Logging call...';
+    begin.textContent = 'Logging call...';
+    log.textContent = ""
     
     setTimeout(() => {
         logMessage.textContent = 'Call logged successfully.';
-    }, 2000); // Simulate call logging delay
+        begin.textContent = 'Begin a Call';
+        log.textContent = "Link to Log"
+    }, 10000); // Simulate call logging delay
+    
 }
