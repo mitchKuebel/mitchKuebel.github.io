@@ -10,9 +10,13 @@ function handleLogin(event) {
         alert('Welcome, ' + username + '!');
         window.location.hash = '#log-calls';
     } 
-    else if (username === 'admin' && password === 'password'){
+    else if (username === 'employee' && password === 'password'){
         alert('Welcome, ' + username + '!');
         window.location.href = 'employee.html'
+    }
+    else if (username === 'admin' && password === 'password'){
+        alert('Welcome, ' + username + '!');
+        window.location.href = 'admin.html'
     }
     else {
         document.getElementById('loginError').textContent = 'Incorrect username or password.';
