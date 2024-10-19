@@ -115,3 +115,50 @@ function verifyAndClockIn() {
                 (seconds < 10 ? '0' + seconds : seconds);
         }, 1000);
     }
+
+
+    function recordCutScene() {
+        // Step 1: Show "Verifying Location" for 3 seconds
+            let customer = prompt("Please enter the customers name: ");
+            
+            // setTimeout(function() {
+                // Step 2: Show "Location Verified"
+                if (customer) {
+                    document.getElementById('timeOnClock').innerText = "Waiting on " + customer + "...";
+                    setTimeout(() => {
+                        
+                        document.getElementById('timeOnClock').innerText = customer + " Has sent their file! Opening in a new tab!";
+                        // Step 3: Ask for employee ID
+                    }, (5000));
+                    setTimeout(() => {
+                        
+                        window.open('record.html')
+                        // Step 3: Ask for employee ID
+                    }, (2000));
+                    // Step 5: Proceed to start the clock
+                    toggleClock(); // This is your clock function from the original code
+                } else {
+                    alert("Report cancelled. No Customer name entered.");
+                }
+            
+    
+                // Step 4: Confirm the employee ID
+               
+            
+            // }, 3000);  // Wait for 3 seconds before showing the next message
+    }
+
+
+    function verify(){
+        document.getElementById('label').innerText = "Verifying patient info, please wait...";
+        setTimeout(() => {
+            document.getElementById('label').innerText = "Patient information verified. This is correct.";
+        }, (10000));
+    }
+
+    function systemize(){
+        document.getElementById('label').innerText = "Connecting to ERIS system... Please wait...";
+        setTimeout(() => {
+            document.getElementById('label').innerText = "Connected to system, Information Uploaded Successfully.";
+        }, (5000));
+    }
