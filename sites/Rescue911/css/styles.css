@@ -54,3 +54,23 @@ input {
     color: red;
     font-size: 0.9rem;
 }
+
+
+.protoMessage{
+    color:grey;
+    font-size: 12px;
+}
+
+#adminInfo{
+    color:black;
+    font-size:45px;
+}
+#adminInfo h2{
+    font-style:italic;
+    font-variant: small-caps;
+    text-decoration: underline;
+}
+
+#admin-sub-head{
+    font-size: 23px;
+}
