@@ -11,8 +11,8 @@
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#login">Log In</a></li>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="#login">Employees</a></li>
             <li><a href="../pages/Calls.html">Call in</a></li>
             <li><a href="#contact">Contact Us</a></li>
             <li><a href="#about">About</a></li>
@@ -23,31 +23,26 @@
     <section id="home" class="section">
         <h1>Welcome to Rescue911 ERIS</h1>
         <p>Streamlining emergency response systems.</p>
-        <button onclick="document.getElementById('login').scrollIntoView()">Get Started</button>
+        <h1 id="timeOnClock">Waiting for request!</h1>
+        <button onclick="recordCutScene()" id="recordButton">Request files from patient</button> 
     </section>
 
     <!-- Log In Section -->
-    <section id="login" class="section">
-        <h2>Log In</h2>
-        <form id="loginForm" onsubmit="handleLogin(event)">
-            <div class = "protoMessage">
-                <p>for prototype purpose:</p>
-                <p>  - username and password for a typical user is: user and password</p>
-                <p>  - username and password for an employee is: employee and password</p>
-                <p>  - username and password for an admin is: admin and password</p>
-            </div>
-            
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Log In</button>
-            <p id="loginError" class="error-message"></p>
-        </form>
+    <section id="adminInfo" class="section">
+        <h2>welcome back valued Administrator, Admin!</h2>
+        <div id = "admin-sub-head">
+            <p>Hello super trusted administrator! Welcome back to your ERIS System dashboard!</p>
+            <p>To retrieve patient records, simply press the green request button above, and type their name!</p>
+            <p>Patients are usually very responsive and quick to give up records...</p>
+            <p>it usually takes around 5 seconds to retrieve!</p>
+            <br>
+            <p>After that, you can verify it, and add it to the system with just clicking the buttons!<p>
+        </div>
     </section>
-
-
     <hr/>
+
+
+    
 
     
     <!-- Contact Section -->
