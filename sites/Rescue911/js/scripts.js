@@ -23,11 +23,32 @@ function handleLogin(event) {
     }
 }
 
-function handleLogin(eventy) {
+function signy(event) {
+    const email= document.getElementById("email").value
+    const user= document.getElementById("username").value
+    const emailer = document.getElementById('emailer');
+    const welcome = document.getElementById('welcome');
+    emailer.textContent = email;
+    welcome.textContent = "Welcome to ERIS, " + user;
+
     document.getElementById("signupform").style.display="none";
-	// document.getElementById("menus").style.display="block";
+	document.getElementById("signedUp").style.display="block";
 }
 
+const form = document.getElementById("signupform");
+
+form.addEventListener("submit", (event) => {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Your JavaScript code to handle the form data
+  // For example, you can get the form data like this:
+  const formData = new FormData(form);
+  const name = formData.get("name");
+
+  // Do something with the data, e.g., send it to an API
+  console.log("Form data:", name); 
+});
 
 // Simulate Call Logging
 function startCallLogging() {
@@ -36,12 +57,12 @@ function startCallLogging() {
     const log = document.getElementById('log');
     logMessage.textContent = 'Logging call...';
     begin.textContent = 'Logging call...';
-    log.textContent = ""
+    log.textContent = "";
     
     setTimeout(() => {
         logMessage.textContent = 'Call logged successfully.';
         begin.textContent = 'Begin a Call';
-        log.textContent = "Link to Log"
+        log.textContent = "Link to Log";
     }, 10000); // Simulate call logging delay
 }
 

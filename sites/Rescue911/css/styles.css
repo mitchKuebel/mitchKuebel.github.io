@@ -83,6 +83,12 @@ input {
     text-decoration: underline;
 }
 
+#signedUp{
+    display: none;
+}
+#signup{
+    display: block;
+}
 #admin-sub-head{
     font-size: 23px;
 }
@@ -91,4 +97,10 @@ input {
     text-align: center;
     padding: 10px;
     color: #777;
+}
+
+.divider{
+    border: none;
+    background-color: #333;  /* Modern Browsers */
+    height: 5px;
 }

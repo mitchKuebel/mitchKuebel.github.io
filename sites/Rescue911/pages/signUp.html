@@ -22,7 +22,8 @@
     <!-- Home Section -->
 
     <div id = signup>
-        <section id = "signup" class = "section">
+        <section id = "signsup" class = "section">
+            <form id="signupform" onsubmit="signy(event)">
             <h2 style = "text-decoration: underline;">Sign Up</h2>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -35,9 +36,16 @@
             </form>
         </section>
     </div>
+    <div id= "signedUp">
+        <section id = "signsded" class = "section">
+            <h2 id = "welcome"> </h2>
+            <p> An confirmation email providing further information has been sent to the following email:</p>
+            <p id="emailer"></p>
+        </section>
+    </div>
    
 
-    
+    <hr class = "divider"/>
 
     
     <!-- Contact Section -->
