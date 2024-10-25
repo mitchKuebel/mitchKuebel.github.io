@@ -29,12 +29,24 @@ nav a {
     margin-top: 1rem;
 }
 
+#or{
+    text-align: center;
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: 200;
+}
+
 button {
     padding: 0.5rem 1rem;
     color: white;
     background-color: #009688;
     border: none;
     cursor: pointer;
+}
+
+
+#signUp{
+    font-size: 30px;
 }
 
 button:hover {

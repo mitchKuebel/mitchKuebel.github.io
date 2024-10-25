@@ -25,11 +25,12 @@
         <p>Streamlining emergency response systems.</p>
         <button onclick="document.getElementById('login').scrollIntoView()">Get Started</button>
     </section>
+    <hr/>
 
     <!-- Log In Section -->
     <section id="login" class="section">
         <h2>Log In</h2>
-        <form id="loginForm" onsubmit="handleLogin(event)">
+        <form id="loginForm" onsubmit="handleLogin(eventy)">
             <div class = "protoMessage">
                 <p>for prototype purpose:</p>
                 <p>  - username and password for a typical user is: user and password</p>
@@ -44,6 +45,12 @@
             <button type="submit">Log In</button>
             <p id="loginError" class="error-message"></p>
         </form>
+    </section>
+<h1 id = "or">OR</h1>
+
+    <section id="createUser" class="section">
+        <button id = "signUp" onclick="window.location.href = 'signUp.html'">Sign Up!</button>
+
     </section>
 
 

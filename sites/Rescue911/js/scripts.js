@@ -23,6 +23,12 @@ function handleLogin(event) {
     }
 }
 
+function handleLogin(eventy) {
+    document.getElementById("signupform").style.display="none";
+	// document.getElementById("menus").style.display="block";
+}
+
+
 // Simulate Call Logging
 function startCallLogging() {
     const logMessage = document.getElementById('logMessage');
