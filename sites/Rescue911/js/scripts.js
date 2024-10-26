@@ -35,7 +35,43 @@ function signy(event) {
 	document.getElementById("signedUp").style.display="block";
 }
 
+
+function report(event) {
+    event.preventDefault();
+    const casenum= document.getElementById("caseNum").value;
+    const date= document.getElementById("date").value;
+    const report = document.getElementById('reportingOff').value;
+    const prepped = document.getElementById('preparedby').value;
+    const incident = document.getElementById('incident').value;
+    const sumsy = document.getElementById("sum").value;
+    const acts = document.getElementById("actions").value;
+    const deets = document.getElementById("detail").value;
+
+    const casenumb1= document.getElementById("casenm");
+    const date1 = document.getElementById("dates");
+    const report1 = document.getElementById('repor');
+    const prepped1 = document.getElementById('prepped');
+    const incident1 = document.getElementById('incy');
+    const sumsy1 = document.getElementById("sumsy");
+    const acts1 = document.getElementById("acts");
+    const deets1 = document.getElementById("deets");
+
+    casenumb1.textContent = casenum;
+    date1.textContent = date;
+    report1.textContent = report;
+    prepped1.textContent = prepped;
+    incident1.textContent = incident;
+    sumsy1.textContent = sumsy;
+    acts1.textContent = acts;
+    deets1.textContent = deets;
+
+
+    alert(deets + " " + acts + " " + sumsy + " " + incident + " " + prepped + " " + report + " " + date + " " + casenum)
+    document.getElementById("reporttype").style.display="none";
+	document.getElementById("official").style.display="block";
+}
 const form = document.getElementById("signupform");
+const reports = document.getElementById("Case-Report-Form");
 
 form.addEventListener("submit", (event) => {
   // Prevent the default form submission behavior
