@@ -35,6 +35,9 @@ function signy(event) {
 	document.getElementById("signedUp").style.display="block";
 }
 
+function generateReport(){
+    window.location.href = 'report.html'
+}
 
 function report(event) {
     event.preventDefault();
