@@ -8,7 +8,7 @@ function handleLogin(event) {
     if (username === 'user' && password === 'password') {
         document.getElementById('loginError').textContent = '';
         alert('Welcome, ' + username + '!');
-        window.location.hash = '#log-calls';
+        window.location.href = 'users.html';
     } 
     else if (username === 'employee' && password === 'password'){
         alert('Welcome, ' + username + '!');
@@ -21,6 +21,10 @@ function handleLogin(event) {
     else {
         document.getElementById('loginError').textContent = 'Incorrect username or password.';
     }
+}
+
+function emt(){
+    window.location.href = 'emtlive.html'
 }
 
 function signy(event) {
