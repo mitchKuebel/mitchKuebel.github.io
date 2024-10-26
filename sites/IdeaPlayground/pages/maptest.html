@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMT Live Tracking</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #004d40;
+        }
+        html {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <section class = "section">
+        <h1 style = "color:white">EMT Live Tracking</h1>
+    </section>
+    
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map and set its view to a specific location (latitude, longitude, and zoom level)
+        const map = L.map('map').setView([40.730610, -73.935242], 13);  // Coordinates of New York City as an example
+
+        // Add the OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Define the EMT's starting position
+        let emtPosition = [40.730610, -73.935242];  // Starting location
+        let emtPosition1 = [40.730610, -73.935242];  // Starting location
+        let emtPosition2 = [40.730610, -73.935242];  // Starting location
+        let emtPosition3 = [40.730610, -73.935242];  // Starting location
+        let emtPosition4 = [40.730610, -73.935242];  // Starting location
+        let emtPosition5 = [40.730610, -73.935242];  // Starting location
+        let emtPosition6 = [40.730610, -73.935242];  // Starting location
+        let emtPosition7 = [40.730610, -73.935242];  // Starting location
+        let emtPosition8= [40.730610, -73.935242];  // Starting location
+        // let emtPosition9 = [40.730610, -73.935242];  // Starting location
+
+        // Add a marker for the EMT
+        const emtMarker = L.marker(emtPosition).addTo(map).bindPopup('EMT 1').openPopup();
+        const emtMarker1 = L.marker(emtPosition).addTo(map).bindPopup('EMT 2').openPopup();
+        const emtMarker2 = L.marker(emtPosition).addTo(map).bindPopup('EMT 3').openPopup();
+        const emtMarker3 = L.marker(emtPosition).addTo(map).bindPopup('EMT 4').openPopup();
+        const emtMarker4 = L.marker(emtPosition).addTo(map).bindPopup('EMT 5').openPopup();
+        const emtMarker5 = L.marker(emtPosition).addTo(map).bindPopup('EMT 6').openPopup();
+        const emtMarker6 = L.marker(emtPosition).addTo(map).bindPopup('EMT 7').openPopup();
+        const emtMarker7 = L.marker(emtPosition).addTo(map).bindPopup('EMT 8').openPopup();
+        const emtMarker8 = L.marker(emtPosition).addTo(map).bindPopup('EMT 9').openPopup();
+        // const emtMarker9 = L.marker(emtPosition).addTo(map).bindPopup('EMT 10').openPopup();
+
+        // Function to simulate the movement of the EMT
+        function updateEMTPosition() {
+            // Simulate random movement by slightly changing the latitude and longitude
+            emtPosition[0] += randomNums();  // Slightly adjust latitude
+            emtPosition[1] += randomNums();  // Slightly adjust longitude
+            emtPosition1[0] += randomNums();  // Slightly adjust latitude
+            emtPosition1[1] += randomNums();  // Slightly adjust longitude
+            emtPosition2[0] += randomNums();  // Slightly adjust latitude
+            emtPosition2[1] += randomNums();  // Slightly adjust longitude
+            emtPosition3[0] += randomNums();  // Slightly adjust latitude
+            emtPosition3[1] += randomNums();  // Slightly adjust longitude
+            emtPosition4[0] += randomNums();  // Slightly adjust latitude
+            emtPosition4[1] += randomNums();  // Slightly adjust longitude
+            emtPosition5[0] += randomNums();  // Slightly adjust latitude
+            emtPosition5[1] += randomNums();  // Slightly adjust longitude
+            emtPosition6[0] += randomNums();  // Slightly adjust latitude
+            emtPosition6[1] += randomNums();  // Slightly adjust longitude
+            emtPosition7[0] += randomNums();  // Slightly adjust latitude
+            emtPosition7[1] += randomNums();  // Slightly adjust longitude
+            emtPosition8[0] += randomNums();  // Slightly adjust latitude
+            emtPosition8[1] += randomNums();  // Slightly adjust longitude
+            // emtPosition9[0] += randomNums();  // Slightly adjust latitude
+            // emtPosition9[1] += randomNums();  // Slightly adjust longitude
+
+
+            // Update the marker position
+            emtMarker.setLatLng(emtPosition).update();
+            emtMarker1.setLatLng(emtPosition1).update();
+            emtMarker2.setLatLng(emtPosition2).update();
+            emtMarker3.setLatLng(emtPosition3).update();
+            emtMarker4.setLatLng(emtPosition4).update();
+            emtMarker5.setLatLng(emtPosition5).update();
+            emtMarker6.setLatLng(emtPosition6).update();
+            emtMarker7.setLatLng(emtPosition7).update();
+            emtMarker8.setLatLng(emtPosition8).update();
+            // emtMarker9.setLatLng(emtPosition9).update();
+            
+            // Keep the map centered on the EMT
+            map.setView(emtPosition, map.getZoom());
+        }
+
+        function randomNums(){
+            let randomNum = (Math.random()) * 0.001;
+            if (Math.random() <= 0.5) {
+                randomNum = randomNum *-1;
+            } else {
+                randomNum = randomNum;
+            }
+            return randomNum;
+        }
+
+        // Simulate EMT movement by updating the position every 2 seconds
+        setInterval(updateEMTPosition, 2000);
+    </script>
+</body>
+</html>
