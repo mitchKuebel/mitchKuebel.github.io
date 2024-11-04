@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Sponge</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* #everything{
+            margin: auto;
+        } */
+
+
+        #typewrites{
+            display: none;
+        }
+        #typewriter{
+            font-family: monospace;
+        }
+        #text::after {
+            content: '|';
+            margin-left: 5px;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+
+        .quantum-sponge {
+            width: 300px;
+            height: 300px;
+            background-image: url('../img/sponge.png'); /* Add the path to your sponge image here */
+            background-size:265px;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.7);
+            border-radius: 50%;
+            position: relative;
+            animation: pulse 1.5s infinite alternate, glitch 0.5s infinite;
+        }
+
+        /* Pulsing effect */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.3);
+            }
+        }
+
+        /* Glitch effect */
+        @keyframes glitch {
+            0% {
+                transform: translate(0, 0);
+            }
+            20% {
+                transform: translate(-3px, 3px);
+            }
+            40% {
+                transform: translate(3px, -3px);
+            }
+            60% {
+                transform: translate(-3px, -3px);
+            }
+            80% {
+                transform: translate(3px, 3px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Text styling */
+        .warning-text {
+            position: absolute;
+            top: 200px;
+            max-width: 600px;
+             
+            color: #0f0;
+            font-size: 1.2em;
+            animation: flicker 3s infinite;
+        }
+
+        /* Flickering text effect */
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id = "sponge">
+        <div class="quantum-sponge"></div>
+        
+    </div>
+    <div class="warning-text" id = "text">
+        <p>The Quantum Sponge is the fabric of reality. Do not stare too long.</p>
+    </div>
+
+
+    <div id = "typewrites">
+        <p id="typewriter"></p>
+    </div>
+
+    <script>
+        const sponge = document.getElementById('sponge');
+        const text = document.getElementById('text');
+        const type = document.getElementById('typewrites');
+        document.querySelector('.quantum-sponge').addEventListener('click', () => {
+            sponge.style.display="none";
+            text.style.display="none";
+            type.style.display="block";
+            typeWriter();
+        });
+
+        var texts = "hello, individual. welcome to my sanctuary.";
+            var index = 0;
+            var speed = 1; // milliseconds per character
+            function typeWriter() {
+                if (index < text.length) {
+                    var char = text.charAt(index);
+                    if (char === '\n') {
+                        document.getElementById("typewriter").innerHTML += "<br>";
+                    } else {
+                        document.getElementById("typewriter").innerHTML += char;
+                    }
+                    index++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+    </script>
+</body>
+</html>
