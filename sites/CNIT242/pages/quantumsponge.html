@@ -18,17 +18,15 @@
             text-align: center;
         }
 
-        /* #everything{
-            margin: auto;
-        } */
-
-
-        #typewrites{
+        #typewrites, #typewrite2, #typewrite3,#typewrite4 {
             display: none;
-        }
-        #typewriter{
             font-family: monospace;
         }
+
+        /* #typewriter2{
+            /* color:blue; */
+    /* } */
+
         #text::after {
             content: '|';
             margin-left: 5px;
@@ -39,12 +37,11 @@
             100% { opacity: 0; }
         }
 
-
         .quantum-sponge {
             width: 300px;
             height: 300px;
             background-image: url('../img/sponge.png'); /* Add the path to your sponge image here */
-            background-size:265px;
+            background-size: 265px;
             background-position: center;
             background-repeat: no-repeat;
             box-shadow: 0 0 30px rgba(0, 255, 0, 0.7);
@@ -53,103 +50,267 @@
             animation: pulse 1.5s infinite alternate, glitch 0.5s infinite;
         }
 
-        /* Pulsing effect */
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.3);
-            }
+            0% { transform: scale(1); }
+            100% { transform: scale(1.3); }
         }
 
-        /* Glitch effect */
         @keyframes glitch {
-            0% {
-                transform: translate(0, 0);
-            }
-            20% {
-                transform: translate(-3px, 3px);
-            }
-            40% {
-                transform: translate(3px, -3px);
-            }
-            60% {
-                transform: translate(-3px, -3px);
-            }
-            80% {
-                transform: translate(3px, 3px);
-            }
-            100% {
-                transform: translate(0, 0);
-            }
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(3px, -3px); }
+            60% { transform: translate(-3px, -3px); }
+            80% { transform: translate(3px, 3px); }
+            100% { transform: translate(0, 0); }
         }
 
-        /* Text styling */
         .warning-text {
             position: absolute;
             top: 200px;
             max-width: 600px;
-             
             color: #0f0;
             font-size: 1.2em;
             animation: flicker 3s infinite;
         }
 
-        /* Flickering text effect */
         @keyframes flicker {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.4;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        #applescontainer {
+            display: none;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .apple {
+            width: 100px;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .apple.visible {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div id = "sponge">
+    <div id="sponge">
         <div class="quantum-sponge"></div>
-        
     </div>
-    <div class="warning-text" id = "text">
+    <div class="warning-text" id="text">
         <p>The Quantum Sponge is the fabric of reality. Do not stare too long.</p>
     </div>
 
-
-    <div id = "typewrites">
+    <div id="typewrites">
         <p id="typewriter"></p>
     </div>
+    <div id="typewrite2">
+        <p id="typewriter2"><span id = "userrespo2" style = "color:blue"></span><span id = "userrespo" style = "color: blue;"></span></p>
+    </div>
+    <div id="typewrite3">
+        <p id="typewriter3"></p>
+    </div>
+    
 
+    <!-- THIS IS WHERE THE APPLES ARE BEING HELD -->
+
+    <div id="applescontainer">
+        <img src="../img/apple.png" alt="Apple 1" class="apple" id="apple1">
+        <img src="../img/apple.png" alt="Apple 2" class="apple" id="apple2">
+        <img src="../img/apple.png" alt="Apple 3" class="apple" id="apple3">
+    </div>
+
+    <div id="typewrite4">
+        <p id="typewriter4"></p>
+    </div>
+  
     <script>
-        const sponge = document.getElementById('sponge');
-        const text = document.getElementById('text');
-        const type = document.getElementById('typewrites');
-        document.querySelector('.quantum-sponge').addEventListener('click', () => {
-            sponge.style.display="none";
-            text.style.display="none";
-            type.style.display="block";
-            typeWriter();
-        });
+    const sponge = document.getElementById('sponge');
+    const text = document.getElementById('text');
+    const typewriterContainer = document.getElementById('typewrites');
+    const typewriter = document.getElementById('typewriter');
+    const typewriter2Container = document.getElementById('typewrite2');
+    const typewriter2 = document.getElementById('typewriter2');
+    const typewriter3Container = document.getElementById('typewrite3');
+    const typewriter3 = document.getElementById('typewriter3');
+    const userrespo = document.getElementById('userrespo'); // Ensure this element exists
+    const typewriter4Container = document.getElementById('typewrite4');
+    const typewriter4 = document.getElementById('typewriter4');
 
-        var texts = "hello, individual. welcome to my sanctuary.";
-            var index = 0;
-            var speed = 1; // milliseconds per character
-            function typeWriter() {
-                if (index < text.length) {
-                    var char = text.charAt(index);
-                    if (char === '\n') {
-                        document.getElementById("typewriter").innerHTML += "<br>";
-                    } else {
-                        document.getElementById("typewriter").innerHTML += char;
-                    }
-                    index++;
-                    setTimeout(typeWriter, speed);
-                }
+
+
+    //apple things
+    const applecont = document.getElementById('applescontainer')
+    const apples = document.querySelectorAll('.apple');
+    
+    //end apple things
+
+    document.querySelector('.quantum-sponge').addEventListener('click', () => {
+        sponge.style.display = "none";
+        text.style.display = "none";
+        typewriterContainer.style.display = "block";
+        typeWriter();
+    });
+
+    const texts = "Hello, individual. Welcome to my sanctuary.\n\n What brings you here?\n\nMoney?\nWealth?\nFame?\nGlory?\n\nOr is it something greater?\n Something more powerful?\n Please do indulge me.\r";
+    let text2 = '\v \n\n\n\n\nAh, you wish to desire for\n\n"3 apples?"\n\n Very well.\r';
+    let text3 = "\v I hope this quells your needs.\n\n\n\n\n goodbye human.\r"
+    let huh = "Your Response:  ";
+    let index = 0;
+    let index2 = 0;
+    let index3 = 0;
+    let index5 = 0;
+    let userResponse = "";  // Declared globally
+    let speed = 40;
+
+    function typeWriter() {
+        if (index < texts.length) {
+            let char = texts.charAt(index);
+            if (char === '\n') {
+                typewriter.innerHTML += "<br>";
+            } else if (char === '\r') {
+                // Capture user input and store it globally
+                userResponse = prompt("What would you like to ask?");
+                console.log("User Response:", userResponse); // Debug: Check if userResponse is captured
+
+                // Show next typewriter containers and start typeWriter2
+                typewriterContainer.style.display = "none";
+                typewriter2Container.style.display = "block";
+                typewriter3Container.style.display = "block";
+                typewriter4Container.style.display = "block";
+                
+                index = 0; // Reset index for text2
+                typeWriter2(); // Start typeWriter2
+                return;
+            } else {
+                typewriter.innerHTML += char;
             }
-    </script>
+            index++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    function typeWriter2() {
+        if (index < text2.length) {
+            let char = text2.charAt(index);
+            if (char === '\n') {
+                typewriter2.innerHTML += "<br>";
+            }
+            else if (char === '\r') {
+                // Call displayUserResponse after
+                fadeInApples();
+            } 
+            else if (char === '\v') {
+                // Call displayNonUser first
+                displayNonUser();
+                return;  // Wait until displayNonUser completes
+                
+            } else {
+                typewriter2.innerHTML += char;
+            }
+            index++;
+            setTimeout(typeWriter2, speed);
+        }
+    }
+
+    function displayUserResponse() {
+        console.log("displayUserResponse function called, userResponse:", userResponse);
+        if (index2 < userResponse.length) {
+            let char = userResponse.charAt(index2);
+            console.log("Adding char to typewriter2:", char); // Debug each char being added
+            userrespo.innerHTML += char;
+            index2++;
+            setTimeout(displayUserResponse, speed);
+        } else {
+            index++;  // Continue with text2
+            typeWriter2();  // Return to main text
+        }
+    }
+
+    function displayNonUser(){
+        console.log("displayNonUser function called, userResponse:", userResponse);
+        if (index3 < huh.length) {
+            let char = huh.charAt(index3);
+            console.log("Adding char to typewriter2:", char); // Debug each char being added
+            userrespo2.innerHTML += char;
+            index3++;
+            setTimeout(displayNonUser, speed);
+        } else {
+            index++;  // Continue with text2
+            displayUserResponse();  // Return to main text
+        }
+    }
+
+
+
+     // Function to add the "visible" class to each apple with a delay
+     function fadeInApples() {
+            iterator = 0;
+            console.log("fadeInApples has been called");
+            typewriter2Container.style.display = "none";
+            typewriter3Container.style.display = "none";
+            applecont.style.display = "flex";
+            apples.forEach((apple, index4) => {
+                console.log("fadeInApples has summoned ONE apple");
+                setTimeout(() => {
+                    apple.classList.add('visible');
+                    iterator++;
+                    if (index4 >= 2){
+                        typeWriter3()
+                        
+                    }
+                }, index4 * 1000); // Delay each apple by 1 second
+            });
+            console.log("fadeInApples has finished summoning apples, running next code");
+            return;
+            // if (iterator === 2){
+            //     typeWriter3();
+            //     // setTimeout(() => {
+            //     //     typeWriter3()
+            //     // },3000);
+            // }
+        }
+
+        function typeWriter3() {
+            fadeOutApples();
+
+            if (index5 < text3.length) {
+                let char = text3.charAt(index5);
+                if (char === '\n') {
+                    typewriter4.innerHTML += "<br>";
+                }
+                else if (char === '\r') {
+                    typewriterContainer.style.display = "block";
+                    typewriter2Container.style.display = "none";
+                    typewriter3Container.style.display = "none";
+                    typewriter4Container.style.display = "none";
+                    // Call displayUserResponse after
+                    return;
+                } 
+                else if (char === '\v'){
+                    applecont.style.display = "none";
+                }
+                else {
+                    typewriter4.innerHTML += char;
+                }
+                    index5++;
+                    setTimeout(typeWriter2, speed);
+            }
+        }
+
+        function fadeOutApples(){
+            apples.forEach((apple, index4) => {
+                console.log("fadeOutApples has Removed ONE apple");
+                setTimeout(() => {
+                    apple.classList.remove('visible');
+                    iterator++;
+                }, index4 * 1000); // Delay each apple by 1 second
+            });
+        }
+</script>
+
 </body>
 </html>
