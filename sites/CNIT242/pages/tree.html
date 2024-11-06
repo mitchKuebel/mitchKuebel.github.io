@@ -5,14 +5,87 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>transform!!</title>
         <style>
+            html{
+                width: 100%;
+                height: 100%;
+                /* cursor: url(../img/cursor\ \(1\).png), auto; */
+            }
             body{
                 background-color: rgb(21, 128, 92);
-                background-image: url(../img/trees.png);
+                width:100%;
+                height:100%;
+                overflow: hidden;
                 
+            }
+            
+            #treebacking{
+                filter:blur(10px);
+                background-image: url(../img/trees.png);
+                background-size: 50%;
+                background-repeat: no-repeat;
+                background-position-y:top;
+                background-position-x: center;
+                /*background-size: cover;
+                background-size: 50px;
+                background-repeat: space; */
+                z-index: 10;
+                width:100%;
+                height:100%;
+                position: absolute;
+                
+            }
+
+
+            #content{
+                margin:auto;
+                text-align: center;
+                z-index:100;
+                position: relative;
+                padding:10px;
+                height:100%;
+                width:100%;
+                display: flex;
+               
+            }
+            #treeify{
+                margin:auto;
+            }
+
+
+            /* button:hover,img:hover,a:hover{
+                
+            } */
+            .custom-cursor {
+                cursor: url(../img/pointer.png),auto;
+            }
+            .custom-cursors {
+                cursor: url(../img/cursor.png),auto;
             }
         </style>
     </head>
     <body>
-
+        <div id = "treebacking"></div>
+        <div id = "content">
+            <button onclick = toggleCursor() id = "treeify">Become A Tree</button>
+        </div>
+        
     </body>
+
+    <script>
+        const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+        function toggleCursor() {
+            const pointers = document.querySelectorAll('button, img, a');
+            const cursors = document.querySelectorAll('html');
+            pointers.forEach(pointers => {
+                pointers.classList.toggle('custom-cursor');
+            });
+            cursors.forEach(cursors => {
+                cursors.classList.toggle('custom-cursors');
+            });
+        }
+
+        // Adding event listeners to the button and link
+        // document.getElementById('content').addEventListener('click', toggleCursor);
+    </script>
 </html>
