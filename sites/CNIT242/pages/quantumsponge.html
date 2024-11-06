@@ -66,8 +66,9 @@
         }
 
         .warning-text {
-            position: absolute;
+            /* position: absolute; */
             top: 200px;
+            padding-left:20px;
             max-width: 600px;
             color: #0f0;
             font-size: 20px;
@@ -177,6 +178,7 @@
     let index5 = 0;
     let userResponse = "";  // Declared globally
     let speed = 40;
+    let blingovar = true;
 
     function typeWriter() {
         if (index < texts.length) {
@@ -288,10 +290,13 @@
         }
 
         async function typeWriter3() {
-            await sleep(500);
+            if (blingovar == true){
+                await sleep(500);
+            }
+            
             fadeOutApples();
-
             if (index5 < text3.length) {
+                blingovar = false;
                 let char = text3.charAt(index5);
                 if (char === '\n') {
                     typewriter4.innerHTML += "<br>";
