@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cube Game Footage</title>
+  <style>
+    /* Basic reset and full viewport */
+    body, html {
+      /* margin: auto; */
+      margin-top: auto;
+      margin-bottom:auto;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      /* background: url('../img/house.png') center/cover no-repeat; */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Background image */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('../img/house.png') center/cover no-repeat;
+      z-index: -2;
+      filter: blur(5px) brightness(0.5); /* Frosty effect */
+    }
+
+    /* Frosted overlay */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      z-index: -1;
+    }
+
+    /* Centering the video */
+    iframe {
+      /* width: 70%; */
+      /* max-width: 800px; */
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <iframe width="1120" height="630" src="https://www.youtube.com/embed/rGwpZJRfdHk?si=QkXpMRoNU6_8_Tq-&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>
