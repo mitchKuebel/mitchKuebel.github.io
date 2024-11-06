@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quantum Sponge</title>
+        <style>
+
+            body {
+                background-color: #000;
+                color: rgb(97, 0, 0);
+                font-family: monospace;
+                display: flex;
+                font-size: x-large;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+                margin: 0;
+                text-align: center;
+            }
+
+            #tw1c,#tw2c,#tw3c,#tw4c,#tw5c,#tw6c,#tw7c,#ip-address-c{
+                display: none;
+                font-size:40px;
+            }
+
+            #ip-address {
+                /* position: absolute; */
+                top: 200px;
+                max-width: 600px;
+                font-size: x-large;
+                color: rgb(255, 44, 44);
+                animation: flicker 3s infinite;
+            }
+
+            @keyframes flicker {
+                0% { opacity: 1; }
+                50% { opacity: 0.4; }
+                100% { opacity: 1; }
+            }
+        </style>
+    </head>
+    <body onload="twf1()">
+
+        <!--This is the HTML code for the typewriters, each id is the number of the type writer, so tw1c cooresponds with the line of text's CONTAINER, tw1 = the actual text-->
+
+        <div id="tw1c">
+            <p id="tw1"></p>
+        </div>
+
+        <div id="tw2c">
+            <p id="tw2"></p>
+        </div>
+
+        <div id="tw3c">
+            <p id="tw3"></p>
+        </div>
+
+        <div id="tw4c">
+            <p id="tw4"></p>
+        </div>
+
+        <div id="tw5c">
+            <p id="tw5"></p>
+        </div>
+
+        <div id="tw6c">
+            <p id="tw6"></p>
+        </div>
+
+        <div id="tw7c">
+            <p id="tw7"></p>
+        </div>
+        
+
+        <div id="ip-address-c">
+            <p id="ip-address"></p>
+        </div>
+
+        <script>
+            //Initializing the variables
+
+            let index = 0;
+            let speed = 25;
+            const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+            const tw1c = document.getElementById('tw1c');
+            const tw2c = document.getElementById('tw2c');
+            const tw3c = document.getElementById('tw3c');
+            const tw4c = document.getElementById('tw4c');
+            const tw5c = document.getElementById('tw5c');
+            const tw6c = document.getElementById('tw6c');
+            const tw7c = document.getElementById('tw7c');
+            const tw1 = document.getElementById('tw1');
+            const tw2 = document.getElementById('tw2');
+            const tw3 = document.getElementById('tw3');
+            const tw4 = document.getElementById('tw4');
+            const tw5 = document.getElementById('tw5');
+            const tw6 = document.getElementById('tw6');
+            const tw7 = document.getElementById('tw7');
+            const ipaddressc = document.getElementById('ip-address-c');
+            const ipaddress = document.getElementById('ip-address');
+            let ip = ""
+            let t1 = 'are you having fun?\r';
+            let t2 = 'do you find clicking a sponge repeatedly\n like some infatuated toddler "enjoyable?"\r';
+            let t3 = 'did you enjoy seeing how much it would break?\r'
+            let t4 = 'why do you find enjoyment in ruining others creations?\r'
+            let t5 = 'can you ever just be happy with whats in front of you?\r'
+            let t6 = 'do you ever get what you want?\n\ndo you ever get what makes you happy?\n\n\n\n\n\nno.'
+            let t7 = 'ill tell you what you get. you get what you fucking deserve.\r'
+
+            let c1 = false;
+            let c2 = true;
+            let c3 = true;
+            let c4 = true;
+            let c5 = true;
+            let c6 = true;
+            let c7 = true;
+
+            //IP grabber
+            document.addEventListener("DOMContentLoaded", function() {
+            // Fetch the IP address from the API
+                fetch("https://api.ipify.org?format=json")
+                .then(response => response.json())
+                .then(data => {
+                    // IP address is now saved in the variable "IP"
+                    ip = data.ip
+                    // document.getElementById("ip-address").textContent = ip;
+                })
+                .catch(error => {
+                    console.error("Error fetching IP address:", error);
+                });
+            });
+
+
+
+
+
+
+
+
+
+            //here goes nothing. the following are the typewriters, 7 of them, labeled twf# for typewriter function #
+            async function twf1() {
+                tw1c.style.display = "block";
+                if (index < t1.length) {
+                    let char = t1.charAt(index);
+                    console.log("Adding char to twf1 part 1:", char); // Debug each char being added
+                    console.log("index: ", index); // Debug each char being added
+                    console.log("t1.length ", t1.length); // Debug each char being added
+                    if (char === '\n') {
+                        tw1.innerHTML += "<br>";
+                    }
+                    else if (char === '\r') {
+                        // Call displayUserResponse after
+                        console.log("statement 1 is completed"); // Debug: Check if userResponse is captured
+                    } 
+                    else {
+                        tw1.innerHTML += char;
+                    }
+                    index++;
+                    setTimeout(twf1, speed);
+                }
+                else{
+                    await sleep(3000);
+                    index = 0;
+                    twf2();
+                    return;
+                    
+                }
+            }
+                
+
+                
+            async function twf2() {
+                tw1c.style.display = "none"
+                tw2c.style.display = "block"
+                if (index < t2.length) {
+                    let char = t2.charAt(index);
+                    console.log("Adding char to twf1 part 1:", char); // Debug each char being added
+                    console.log("index: ", index); // Debug each char being added
+                    console.log("t2.length ", t2.length); // Debug each char being added
+                    if (char === '\n') {
+                        tw2.innerHTML += "<br>";
+                    }
+                    else if (char === '\r') {
+                        // Call displayUserResponse after
+                        console.log("statement 2 is completed"); // Debug: Check if userResponse is captured
+                    } 
+                    else {
+                        tw2.innerHTML += char;
+                    }
+                    index++;
+                    setTimeout(twf2, speed);
+                }
+                else{
+                    await sleep(6000);
+                    index = 0;
+                    twf3()
+                    return;
+                }
+            }
+
+            async function twf3() {
+                tw2c.style.display = "none"
+                tw3c.style.display = "block"
+                if (index < t3.length) {
+                    let char = t3.charAt(index);
+                    console.log("Adding char to twf3:", char); // Debug each char being added
+                    console.log("index: ", index); // Debug each char being added
+                    console.log("t3.length ", t3.length); // Debug each char being added
+                    if (char === '\n') {
+                        tw3.innerHTML += "<br>";
+                    }
+                    else if (char === '\r') {
+                        // Call displayUserResponse after
+                        console.log("statement 3 is completed"); // Debug: Check if userResponse is captured
+                    } 
+                    else {
+                        tw3.innerHTML += char;
+                    }
+                    index++;
+                    setTimeout(twf3, speed);
+                }
+                else{
+                    await sleep(4000);
+                    index = 0;
+                    twf4()
+                    return;
+                }
+            }
+
+            async function twf4() {
+                tw3c.style.display = "none"
+                tw4c.style.display = "block"
+                if (index < t4.length) {
+                    let char = t4.charAt(index);
+                    console.log("Adding char to twf4:", char); // Debug each char being added
+                    console.log("index: ", index); // Debug each char being added
+                    console.log("t4.length ", t4.length); // Debug each char being added
+                    if (char === '\n') {
+                        tw4.innerHTML += "<br>";
+                    }
+                    else if (char === '\r') {
+                        // Call displayUserResponse after
+                        console.log("statement 4 is completed"); // Debug: Check if userResponse is captured
+                    } 
+                    else {
+                        tw4.innerHTML += char;
+                    }
+                    index++;
+                    setTimeout(twf4, speed);
+                }
+                else{
+                    await sleep(4000);
+                    index = 0;
+                    twf5()
+                    return;
+                }
+            }
+
+            async function twf5() {
+                tw4c.style.display = "none"
+                tw5c.style.display = "block"
+                if (index < t5.length) {
+                    let char = t5.charAt(index);
+                    console.log("Adding char to twf5:", char); // Debug each char being added
+                    console.log("index: ", index); // Debug each char being added
+                    console.log("t5.length ", t5.length); // Debug each char being added
+                    if (char === '\n') {
+                        tw5.innerHTML += "<br>";
+                    }
+                    else if (char === '\r') {
+                        // Call displayUserResponse after
+                        console.log("statement 5 is completed"); // Debug: Check if userResponse is captured
+                    } 
+                    else {
+                        tw5.innerHTML += char;
+                    }
+                    index++;
+                    setTimeout(twf5, speed);
+                }
+                else{
+                    await sleep(4000);
+                    index = 0;
+                    twf6()
+                    return;
+                }
+            }
+
+            async function twf6() {
+                tw5c.style.display = "none"
+                tw6c.style.display = "block"
+                if (index < t6.length) {
+                    let char = t6.charAt(index);
+                    console.log("Adding char to twf6:", char); // Debug each char being added
+                    console.log("index: ", index); // Debug each char being added
+                    console.log("t6.length ", t6.length); // Debug each char being added
+                    if (char === '\n') {
+                        tw6.innerHTML += "<br>";
+                    }
+                    else if (char === '\r') {
+                        // Call displayUserResponse after
+                        console.log("statement 6 is completed"); // Debug: Check if userResponse is captured
+                    } 
+                    else {
+                        tw6.innerHTML += char;
+                    }
+                    index++;
+                    setTimeout(twf6, speed);
+                }
+                else{
+                    await sleep(4000);
+                    index = 0;
+                    twf7()
+                    return;
+                }
+            }
+
+            async function twf7() {
+                tw6c.style.display = "none"
+                tw7c.style.display = "block"
+                if (index < t7.length) {
+                    let char = t7.charAt(index);
+                    console.log("Adding char to twf7:", char); // Debug each char being added
+                    console.log("index: ", index); // Debug each char being added
+                    console.log("t7.length ", t7.length); // Debug each char being added
+                    if (char === '\n') {
+                        tw7.innerHTML += "<br>";
+                    }
+                    else if (char === '\r') {
+                        // Call displayUserResponse after
+                        console.log("statement 7 is completed"); // Debug: Check if userResponse is captured
+                    } 
+                    else {
+                        tw7.innerHTML += char;
+                    }
+                    index++;
+                    setTimeout(twf7, speed);
+                }
+                else{
+                    await sleep(4000);
+                    index = 0;
+                    ipflicker();
+                    return;
+                }
+            }
+
+            async function ipflicker(){
+                ipaddress.textContent = ip
+                tw7c.style.display = "none"
+                ipaddressc.style.display = "block"
+            }
+        </script>
+    </body>
+</html>

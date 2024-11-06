@@ -13,6 +13,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            font-size: 40px;
             overflow: hidden;
             margin: 0;
             text-align: center;
@@ -27,7 +28,7 @@
             /* color:blue; */
     /* } */
 
-        #text::after {
+        /* #text::after {
             content: '|';
             margin-left: 5px;
             animation: blink 0.7s infinite;
@@ -35,7 +36,7 @@
         @keyframes blink {
             0% { opacity: 1; }
             100% { opacity: 0; }
-        }
+        } */
 
         .quantum-sponge {
             width: 300px;
@@ -69,7 +70,7 @@
             top: 200px;
             max-width: 600px;
             color: #0f0;
-            font-size: 1.2em;
+            font-size: 20px;
             animation: flicker 3s infinite;
         }
 
@@ -128,6 +129,7 @@
     </div>
   
     <script>
+    const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
     const sponge = document.getElementById('sponge');
     const text = document.getElementById('text');
     const typewriterContainer = document.getElementById('typewrites');
@@ -140,7 +142,7 @@
     const typewriter4Container = document.getElementById('typewrite4');
     const typewriter4 = document.getElementById('typewriter4');
 
-
+    let iteration = 0;
 
     //apple things
     const applecont = document.getElementById('applescontainer')
@@ -153,6 +155,16 @@
         text.style.display = "none";
         typewriterContainer.style.display = "block";
         typeWriter();
+        iteration++;
+        if (iteration === 10){
+            sponge.style.display = "none";
+            text.style.display = "none";
+            typewriterContainer.style.display = "none";
+            typewriter2Container.style.display = "none";
+            typewriter3Container.style.display = "none";
+            typewriter4Container.style.display = "none";
+            window.location.href = 'why.html'
+        }
     });
 
     const texts = "Hello, individual. Welcome to my sanctuary.\n\n What brings you here?\n\nMoney?\nWealth?\nFame?\nGlory?\n\nOr is it something greater?\n Something more powerful?\n Please do indulge me.\r";
@@ -193,7 +205,7 @@
         }
     }
 
-    function typeWriter2() {
+    async function typeWriter2() {
         if (index < text2.length) {
             let char = text2.charAt(index);
             if (char === '\n') {
@@ -201,10 +213,12 @@
             }
             else if (char === '\r') {
                 // Call displayUserResponse after
+                await sleep(3000);
                 fadeInApples();
             } 
             else if (char === '\v') {
                 // Call displayNonUser first
+                
                 displayNonUser();
                 return;  // Wait until displayNonUser completes
                 
@@ -259,8 +273,7 @@
                     apple.classList.add('visible');
                     iterator++;
                     if (index4 >= 2){
-                        typeWriter3()
-                        
+                        fadeOutApples();
                     }
                 }, index4 * 1000); // Delay each apple by 1 second
             });
@@ -274,7 +287,8 @@
             // }
         }
 
-        function typeWriter3() {
+        async function typeWriter3() {
+            await sleep(500);
             fadeOutApples();
 
             if (index5 < text3.length) {
@@ -283,11 +297,10 @@
                     typewriter4.innerHTML += "<br>";
                 }
                 else if (char === '\r') {
-                    typewriterContainer.style.display = "block";
-                    typewriter2Container.style.display = "none";
-                    typewriter3Container.style.display = "none";
+                    await sleep(2000);
+                    sponge.style.display = "block";
+                    text.style.display = "block";
                     typewriter4Container.style.display = "none";
-                    // Call displayUserResponse after
                     return;
                 } 
                 else if (char === '\v'){
@@ -297,17 +310,19 @@
                     typewriter4.innerHTML += char;
                 }
                     index5++;
-                    setTimeout(typeWriter2, speed);
+                    setTimeout(typeWriter3, speed);
             }
         }
 
         function fadeOutApples(){
-            apples.forEach((apple, index4) => {
-                console.log("fadeOutApples has Removed ONE apple");
+            apples.forEach((apple, index5) => {
+                console.log("fadeInApples has summoned ONE apple");
                 setTimeout(() => {
                     apple.classList.remove('visible');
-                    iterator++;
-                }, index4 * 1000); // Delay each apple by 1 second
+                    if (index5 >= 2){
+                        typeWriter3();
+                    }
+                }, index5 * 1000); // Delay each apple by 1 second
             });
         }
 </script>
