@@ -65,6 +65,14 @@
                 border-radius: 25px;
             }
 
+            .nextpage{
+                margin:auto;
+                padding:10px;
+                font-size: 20px;
+                background-color: aquamarine;
+                font-family: nature, sans-serif;
+                border-radius: 25px;
+            }
             
             /* button:hover,img:hover,a:hover{
                 
@@ -76,7 +84,7 @@
                 cursor: url(../img/cursor.png),auto;
             }
 
-            #contentpost{
+            #contentpost1{
                 display: none;
                 margin:auto;
                 text-align: center;
@@ -131,15 +139,29 @@
                 text-align: left;
                 padding:2.5px;
             }
+            #contentpost2{
+                display: none;
+                margin:auto;
+                text-align: center;
+                z-index:100;
+                position: relative;
+                padding:10px;
+                height:100%;
+                width:100%;
+                justify-content: space-around; /* Space out the items evenly */
+                align-items: flex-start; /* Align items at the start */
+                font-family: learn, sans-serif;
+                font-size:large;
+            }
 
         </style>
     </head>
     <body>
         <div id = "treebacking"></div>
         <div id = "contentpre">
-            <button onclick = toggleCursor() id = "treeify">Become A Tree</button>
+            <button onclick = "toggleCursor()" id = "treeify">Become A Tree</button>
         </div>
-        <div id = "contentpost">
+        <div id = "contentpost1">
             <div id = "information">
                 <div class="content">
                     <h1>hey! hey you!</h1>
@@ -171,15 +193,64 @@
                 <!-- <iframe src = "https://www.janavirgin.com/CO2/" width="90%" height="40%"></iframe> -->
             </div>
             <div id = "information3">
-                <div class="content">
-                    <h1>what can you do?</h1>
+                <div class="content" >
+                    <h1 style = "padding:1px">what can you do?</h1>
                     <h3>im glad you asked.</h3>
-                    <p>and to be completely honest, im wondering the same thing.</p>
-                    <p>i do not know the solution, but maybe there are things that can help. </p>
-                    <p>my main thing, simply be a little more mindful. if you want to use chatgpt, or google something, maybe just consider it, ask yourself if its worth it.</p>
-                    <p>obviously im not saying dont use these insanly helpful tools, but i am saying i like the planet, i like air, and i like trees.</p>
-                    <p>there is organizations that plant trees! maybe you could try to offset your emmisions with a small donation! a dollar a tree!</p>
-                    <p><a href = "https://onetreeplanted.org/products/one-dollar">onetreeplanted.org</a> is a wonderful example. but do your own research!</p> 
+                    <p style = "padding:1px">and to be completely honest, im wondering the same thing.</p>
+                    <p style = "padding:1px">i do not know the solution, but maybe there are things that can help. </p>
+                    <p style = "padding:1px">my main thing, simply be a little more mindful. if you want to use chatgpt, or google something, maybe just consider it, ask yourself if its worth it.</p>
+                    <p style = "padding:1px">obviously im not saying dont use these insanly helpful tools, but i am saying i like the planet, i like air, and i like trees.</p>
+                    <p style = "padding:1px">there is organizations that plant trees! maybe you could try to offset your emmisions with a small donation! a dollar a tree!</p>
+                    <p style = "padding:1px"><a href = "https://onetreeplanted.org/products/one-dollar">onetreeplanted.org</a> is a wonderful example. but do your own research!</p> 
+                    <button class = "nextpage" onclick= "nextpage()">even more information</button>
+                </div>
+                <div class = "background"></div>
+                <!-- <iframe src = "https://www.janavirgin.com/CO2/" width="90%" height="40%"></iframe> -->
+            </div>
+        </div>
+
+
+        <div id = "contentpost2">
+            <div id = "information">
+                <div class="content">
+                    <h1>how does donating a tree work?</h1>
+                    <p>its extremely easy. even i was able to do it.</p>
+                    <p>every dollar is one more tree that the organization will plant, if you donate 5 bucks, the company plants 5 trees!</p>
+                    <p>there are plenty of organizations that do this, im just providing the one i used, heres the <a href = "https://plantatree.fs.usda.gov/">official governments page</a> on the topic.</p>
+                    <p>plus if you donate you get one of these really neat certificates</p>
+                    <img src = "../img/certificate.png" width=200px/>
+                    <button class = "nextpage" onclick= "priorpage()">even less information</button>
+                </div>
+                <div class = "background" style = "background-color: #aeaff8;"></div>
+                <div class = "nooverflow">
+                    
+                </div>
+            </div>
+            <div id = "information2">
+                <div class="content">
+                    <h1>these are just numbers here</h1>
+                    <h3>take them with grains of salt.</h3>
+                    <p>Project CO2GLE is a project designed to help people understand the impact of a google search.</p>
+                    <p>below is their estimated amount of co2 emmisions google.com has used since you opened this page.</p>
+                    <p>this is just math, its fixed, and from 2015, so the number could be higher, lower. its just an estimate</p>
+                    <hr/>
+                    <h3 id = "co2gle" style = "color:rgb(145, 9, 9); font-size: xx-large;"></h3>
+                    <hr/>
+                </div>
+                <div class = "background"></div>
+                <!-- <iframe src = "https://www.janavirgin.com/CO2/" width="90%" height="40%"></iframe> -->
+            </div>
+            <div id = "information3">
+                <div class="content" >
+                    <h1 style = "padding:1px">how do you know im telling the truth</h1>
+                    <h3>you dont i suppose, but heres all the sources i used here</h3>
+                    <p style = "padding:1px">and to be completely honest, im wondering the same thing.</p>
+                    <p style = "padding:1px">i do not know the solution, but maybe there are things that can help. </p>
+                    <p style = "padding:1px">my maAHHHHHHhhhre mindful. if you want to use chatgpt, or google something, maybe just consider it, ask yourself if its worth it.</p>
+                    <p style = "padding:1px">obviously im not saying dont use these insanly helpful tools, but i am saying i like the planet, i like air, and i like trees.</p>
+                    <p style = "padding:1px">there is organizations that plant trees! maybe you could try to offset your emmisions with a small donation! a dollar a tree!</p>
+                    <p style = "padding:1px"><a href = "https://onetreeplanted.org/products/one-dollar">onetreeplanted.org</a> is a wonderful example. but do your own research!</p> 
+                    <!-- <button class = "nextpage" onclick= "nextpage()">even more information</button> -->
                 </div>
                 <div class = "background"></div>
                 <!-- <iframe src = "https://www.janavirgin.com/CO2/" width="90%" height="40%"></iframe> -->
@@ -190,9 +261,70 @@
 
     <script>
         const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-        const contentpre = document.getElementById("contentpre")
-        const contentpost = document.getElementById("contentpost")
+        const contentpre = document.getElementById("contentpre");
+        // const contentpost1 = document.getElementById("contentpost1");
+        // const contentpostnew = document.getElementById("contentpost2")
+        let x = 1;
+        let pagename = "contentpost1";
+        let pagenamenew = "contentpost2";
+        let currentElementId = 'contentpost1'
+        let lastElementId = 'contentpost1'
+        let nextElementId = 'contentpost2'
 
+        function priorpage(){
+            currentElementId = 'contentpost' + x;
+            console.log("x was " +x)
+            x=x-1;
+            lastElementId = 'contentpost' + (x);
+            console.log("x is now " +x)
+            const currentPage = document.getElementById(currentElementId);
+            const lastPage = document.getElementById(lastElementId);
+
+            console.log(currentElementId + " " + lastElementId);
+
+            if (currentPage) { // Check if the current element exists
+                currentPage.style.display = "none";
+            } else {
+                console.error("Element with ID '" + currentElementId + "' not found.");
+            }
+
+            if (lastPage) { // Check if the next element exists
+                lastPage.style.display = "flex";
+                // x++; // Increment x only if the next page exists
+            } else {
+                console.error("Element with ID '" + lastElementId + "' not found.");
+                // Consider what you want to happen if there's no next page.
+                // You might want to stop the function or display a message.
+            }
+        }
+        function nextpage() {
+            currentElementId = 'contentpost' + x;
+            console.log("x was " +x)
+            x=x+1;
+            nextElementId = 'contentpost' + (x);
+            console.log("x is now " +x)
+
+            console.log(x)
+            const currentPage = document.getElementById(currentElementId);
+            const nextPage = document.getElementById(nextElementId);
+
+            console.log(currentElementId + " " + nextElementId);
+
+            if (currentPage) { // Check if the current element exists
+                currentPage.style.display = "none";
+            } else {
+                console.error("Element with ID '" + currentElementId + "' not found.");
+            }
+
+            if (nextPage) { // Check if the next element exists
+                nextPage.style.display = "flex";
+                // x++; // Increment x only if the next page exists
+            } else {
+                console.error("Element with ID '" + nextElementId + "' not found.");
+                // Consider what you want to happen if there's no next page.
+                // You might want to stop the function or display a message.
+            }
+        }
         function toggleCursor() {
             const pointers = document.querySelectorAll('button, img, a');
             const cursors = document.querySelectorAll('html');
@@ -204,11 +336,12 @@
             });
 
             contentpre.style.display = "none"
-            contentpost.style.display = "flex"
+            contentpost1.style.display = "flex"
 
 
 
 
+            
 
 
 
