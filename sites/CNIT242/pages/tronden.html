@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <title>Welcome to Tronden</title>
+        <style>
+            body{
+                background-image: url(../img/space.jpg);
+                background-size: cover;
+                overflow: hidden;
+                background-repeat: no-repeat;
+                background-color: rgb(27, 7, 45);
+            }
+
+
+            .x {
+                animation: x 33s linear infinite alternate;
+                /* background-color: black; */
+                width:max-content;
+                height:max-content;
+                border:1px rgb(0, 255, 42) solid;
+            }
+
+            .y {
+                /* animation: y 24s linear infinite alternate; */
+                animation-name: y, x, rotating;
+                animation-duration: 24s, 33s, 20s;
+                animation-iteration-count: infinite, infinite, infinite;
+                animation-direction: alternate, alternate, alternate;
+                animation-timing-function: linear,linear, linear;
+
+
+                color:rgb(0, 0, 0);
+                border:1px red solid;
+                width:max-content;
+                height:max-content;
+                background-color: rgba(250, 235, 215, 0.594);
+                border-radius: 10px;
+            }
+
+            /* .background{
+                animation-name: y, x, rotating;
+                animation-duration: 24s, 33s, 20s;
+                animation-iteration-count: infinite, infinite, infinite;
+                animation-direction: alternate, alternate, alternate;
+                animation-timing-function: linear,linear, linear;
+
+                background-color: antiquewhite;
+                width:100%;
+                height:100%;
+                border:3px rgb(255, 0, 132) solid;
+                filter:opacity(0.5);
+                position: relative;
+            } */
+
+            @keyframes x {
+                100% {
+                    transform: translateX(calc(100vw - 20px));
+                }
+            }
+
+            @keyframes y {
+                100% {
+                    transform: translateY(calc(100vh - 20px));
+                }
+            }
+            
+
+            #contents{
+                width:100%;
+                height:100%;
+                border:2px rgb(0, 195, 255) solid;
+            }
+
+            /* .background{
+                /* animation: x 24s linear infinite alternate; */
+                /* background-color: antiquewhite;
+                width:100%;
+                height:100%;
+                border:3px rgb(255, 0, 132) solid;
+                filter:opacity(0.5);
+                position: relative;
+            } */ 
+            /* #contents h1, #contents h2, #contents h3, #contents h4, #contents h5, #contents h6, #contents p, #contents a{
+                filter: opacity(100%);
+            } */
+
+
+            @keyframes rotating /* Safari and Chrome */ {
+                    100%{
+                        transform: rotate(200deg);
+                    }
+            }
+            /* @keyframes rotating {
+                from {
+                    -ms-transform: rotate(0deg);
+                    -moz-transform: rotate(0deg);
+                    -webkit-transform: rotate(0deg);
+                    -o-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                to {
+                    -ms-transform: rotate(360deg);
+                    -moz-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            } */
+
+        </style>
+    </head>
+    <body>
+        <div class="y">
+            <!-- <div id = "contents" class = "y"> -->
+                <div id = "pre">
+                    <h1>Welcome to Tronden!</h1>
+                    <h3>Exchange your human currency here!</h3>
+                    <label for="GBP">Your amount in Quid:</label>
+                    <input type="text" name="GBP" size="20" oninput="gbp()" id = "GBP" />
+                    <h1>Your amount in Tronden Dollars is: </h1>
+                    <h1 id = "trondollars" style = "color:rgb(230, 0, 0)"></h1>
+                    
+                </div>
+                
+
+            <!-- </div> -->
+            <!-- <div class = "background"></div> -->
+        </div>
+    </body>
+
+    <script>
+
+        function gbp(){
+            let rand = Math.floor(Math.random() * 10);
+            const total = document.getElementById("GBP").value;
+            let td = total*rand;
+            const trondollars = document.getElementById("trondollars");
+            trondollars.innerHTML = td;
+        }
+    </script>
+</html>

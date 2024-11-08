@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ChrisCam</title>
+        <style>
+            html{
+                height:100%;
+            }
+            body{
+                background-color: rgb(255, 231, 196);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                overflow: hidden;
+            }
+            #content{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                
+            }
+            #picture{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                filter:drop-shadow(7px 10px 12px black)
+            }
+
+            img{
+                filter:saturate(1.5)
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id = "content">
+            <div id = "picture">
+                <img src = "../img/IMG_7391.jpg" width=400px/>
+            </div>
+            <!-- <div id = "frame">
+                <img src = "../img/picture_frame_PNG220.png" width=400px/>
+            </div> -->
+        </div>
+        
+    </body>
+</html>
