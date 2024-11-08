@@ -8,11 +8,12 @@
             }
             body{
                 background-color: rgb(255, 231, 196);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: column-reverse;
+    align-items: center;
             }
             #content{
                 display: flex;
@@ -36,6 +37,7 @@
         </style>
     </head>
     <body>
+        <button onclick="engage()" style = "position: relative; font-size: large; background-color: aquamarine;">I GOT ENGAGED</button>
         <div id = "content">
             <div id = "picture">
                 <img src = "../img/IMG_7391.jpg" width=400px/>
@@ -46,4 +48,10 @@
         </div>
         
     </body>
+
+    <script>
+        function engage(){
+            window.location.href = 'engage.html'
+        }
+    </script>
 </html>
