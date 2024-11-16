@@ -22,6 +22,9 @@ nav a {
     color: white;
     text-decoration: none;
 }
+#dispatchC{
+    display: none;
+}
 
 .section {
     padding: 2rem;
@@ -35,7 +38,9 @@ nav a {
     font-style: italic;
     font-weight: 200;
 }
+/* #dispatchButton{
 
+} */
 button {
     padding: 0.5rem 1rem;
     color: white;

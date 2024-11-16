@@ -1,3 +1,12 @@
+const sleeps = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+let isClockedIn = false; // Tracks whether the user is clocked in
+const sleep = (ms) =>
+    new Promise(resolve => setTimeout(resolve, ms));
+let clockInTime;
+let clockInterval;
+i=3000
+const dispatch = document.getElementById('dispatchC');
+
 // Handle Login
 function handleLogin(event) {
     event.preventDefault(); // Prevent form submission
@@ -109,67 +118,70 @@ function startCallLogging() {
     }, 10000); // Simulate call logging delay
 }
 
+
 /*
 THE CODE FOR THE CLOCK IN AND CLOCK OUT IS BELOW
 THIS COUNTS THE SECONDS THEN MINUTES THEN HOURS THEN LETS YOU KNOW HOW LONG YOU CLOCKED IN FOR
 */
-const sleep = (ms) =>
-    new Promise(resolve => setTimeout(resolve, ms));
-let clockInTime;
-let clockInterval;
-let isClockedIn = false;
-i=3000
 
-function verifyAndClockIn() {
-    // Step 1: Show "Verifying Location" for 3 seconds
+
+
+// function verifyAndClockIn() {
+//     // Step 1: Show "Verifying Location" for 3 seconds
+//     if (!isClockedIn) {
+//         document.getElementById('timeOnClock').innerText = "Verifying location...";
+//         // setTimeout(function() {
+//             // Step 2: Show "Location Verified"
+//         setTimeout(() => {
+//             document.getElementById('timeOnClock').innerText = "Location Verified";
+//             i=i+50
+//             // Step 3: Ask for employee ID
+
+//                 let employeeId = prompt("Please enter your Employee ID:");
+
+//             // Step 4: Confirm the employee ID
+//             if (employeeId) {
+//                 alert("Employee ID " + employeeId + " confirmed.");
+
+//                 // Step 5: Proceed to start the clock
+//                 toggleClock(); // This is your clock function from the original code
+//             } else {
+//                 alert("Clock-in cancelled. No Employee ID entered.");
+//             }
+//         }, (i));
+//         // }, 3000);  // Wait for 3 seconds before showing the next message
+//     }
+//     else{
+//         toggleClock();
+//     }
+// }
+
+
+async function verifyAndClockIn() {
     if (!isClockedIn) {
         document.getElementById('timeOnClock').innerText = "Verifying location...";
-        // setTimeout(function() {
-            // Step 2: Show "Location Verified"
-        setTimeout(() => {
-            document.getElementById('timeOnClock').innerText = "Location Verified";
-            i=i+50
-            // Step 3: Ask for employee ID
-            
-                let employeeId = prompt("Please enter your Employee ID:");
-
-            // Step 4: Confirm the employee ID
-            if (employeeId) {
-                alert("Employee ID " + employeeId + " confirmed.");
-                
-                // Step 5: Proceed to start the clock
-                toggleClock(); // This is your clock function from the original code
-            } else {
-                alert("Clock-in cancelled. No Employee ID entered.");
-            }
-        }, (i));
-        // }, 3000);  // Wait for 3 seconds before showing the next message
-    }
-    else{
-        toggleClock();
+        await sleep(3000); // Wait for 3 seconds
+        document.getElementById('timeOnClock').innerText = "Location Verified";
+        
+        let employeeId = prompt("Please enter your Employee ID:");
+        if (employeeId) {
+            alert("Employee ID " + employeeId + " confirmed.");
+            clockInTime = Date.now(); // Record the clock-in time
+            isClockedIn = true; // Mark as clocked in
+            startTimer(); // Start the timer
+            document.getElementById('clockButton').innerText = "Clock Out!";
+        } else {
+            alert("Clock-in cancelled. No Employee ID entered.");
+        }
+    } else {
+        // Handle clock out
+        clearInterval(clockInterval);
+        isClockedIn = false;
+        document.getElementById('timeOnClock').innerText = "Clocked Out!";
+        document.getElementById('clockButton').innerText = "Clock In!";
     }
 }
-    function toggleClock() {
-        if (!isClockedIn) {
-            // Clock In
-            clockInTime = Date.now();
-            isClockedIn = true;
-            document.getElementById('clockButton').innerText = 'Clock Out';
-            startTimer();
-        } else {
-            // Clock Out
-            clearInterval(clockInterval);
-            let clockOutTime = Date.now();
-            let duration = (clockOutTime - clockInTime) / 1000; // Time in seconds
-            let hours = Math.floor(duration / 3600);
-            let minutes = Math.floor((duration % 3600) / 60);
-            let seconds = Math.floor(duration % 60);
-            alert(`You were clocked in for ${hours}h ${minutes}m ${seconds}s`);
-            document.getElementById('timeOnClock').innerText = '00:00:00';
-            document.getElementById('clockButton').innerText = 'Clock In!';
-            isClockedIn = false;
-        }
-    }
+
 
     function startTimer() {
         clockInterval = setInterval(function () {
@@ -178,14 +190,14 @@ function verifyAndClockIn() {
             let hours = Math.floor(elapsedTime / 3600);
             let minutes = Math.floor((elapsedTime % 3600) / 60);
             let seconds = Math.floor(elapsedTime % 60);
-            
+
             document.getElementById('timeOnClock').innerText = 
                 (hours < 10 ? '0' + hours : hours) + ':' + 
                 (minutes < 10 ? '0' + minutes : minutes) + ':' + 
                 (seconds < 10 ? '0' + seconds : seconds);
         }, 1000);
+        dispatchC.style.display="block"
     }
-
 
     function recordCutScene() {
         // Step 1: Show "Verifying Location" for 3 seconds
@@ -231,4 +243,10 @@ function verifyAndClockIn() {
         setTimeout(() => {
             document.getElementById('label').innerText = "Connected to system, Information Uploaded Successfully.";
         }, (5000));
+    }
+
+    async function dispatchTeam(){
+        userResponse = prompt("Where is the emergency (Please enter an address):");
+        await sleeps(3000);
+        alert("A dispatch team has been sent to " + userResponse);
     }
