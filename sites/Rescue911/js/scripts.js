@@ -104,6 +104,10 @@ form.addEventListener("submit", (event) => {
 
 // Simulate Call Logging
 function startCallLogging() {
+    
+}
+
+function second() { 
     const logMessage = document.getElementById('logMessage');
     const begin = document.getElementById('begin');
     const log = document.getElementById('log');
@@ -117,8 +121,6 @@ function startCallLogging() {
         log.textContent = "Link to Log";
     }, 10000); // Simulate call logging delay
 }
-
-
 /*
 THE CODE FOR THE CLOCK IN AND CLOCK OUT IS BELOW
 THIS COUNTS THE SECONDS THEN MINUTES THEN HOURS THEN LETS YOU KNOW HOW LONG YOU CLOCKED IN FOR
