@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rescue911 ERIS System</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        #emt-profile
+        {
+            display :block;
+
+        }
+
+        #emt2, #part2{
+            display:none;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -26,6 +37,7 @@
         <h1 id="timeOnClock">Waiting for request!</h1>
         <button onclick="recordCutScene()" id="recordButton">Request files from patient</button> 
         <button onclick="generateReport()" id="reportButton">Generate Report</button>
+        <button onclick="appoint()" id = "appointButton">Appoint an EMT a role</button>
     </section>
 
     <!-- Log In Section -->
@@ -41,7 +53,11 @@
             <br/>
             <hr/>
             <br/>
-            <p>In order to generate a report, click the button NEXT to records, titled "Generate a Report"</p>
+            <p>In order to generate a report, click the button next to records, titled "Generate a Report"</p>
+            <br/>
+            <hr/>
+            <br/>
+            <p>In order to appoint a role to an EMT click the button next to report, titled "Appoint an EMT a role"</p>
         </div>
     </section>
     <hr/>

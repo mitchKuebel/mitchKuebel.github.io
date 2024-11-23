@@ -52,6 +52,28 @@ function generateReport(){
     window.location.href = 'report.html'
 }
 
+function appoint(){
+    window.location.href = 'appoint.html'
+}
+
+function assignRole(role){
+    const roley= document.getElementById("chosen")
+    roley.textContent = role;
+}
+
+function sendrole(){
+    const roley= document.getElementById("chosen2")
+    const roley2= document.getElementById("chosen")
+    const sec1= document.getElementById("emt-profile")
+    const sec2= document.getElementById("emt2")
+    let val = roley2.textContent
+
+    sec1.style.display= "none"
+    sec2.style.display = "block"
+    roley.textContent = val;
+
+}
+
 function report(event) {
     event.preventDefault();
     const casenum= document.getElementById("caseNum").value;
@@ -101,17 +123,21 @@ form.addEventListener("submit", (event) => {
   // Do something with the data, e.g., send it to an API
   console.log("Form data:", name); 
 });
-
+let choice = 0;
 // Simulate Call Logging
 function startCallLogging() {
-    
+    const begin = document.getElementById('begining');
+    const second = document.getElementById('second');
+    begin.style.display = "none";
+    second.style.display = "block";
 }
 
 function second() { 
     const logMessage = document.getElementById('logMessage');
     const begin = document.getElementById('begin');
     const log = document.getElementById('log');
-    logMessage.textContent = 'Logging call...';
+    const slider = document.getElementById("scale")
+    logMessage.textContent = 'You selected Emergency Level ' + slider.value + ', Logging call...';
     begin.textContent = 'Logging call...';
     log.textContent = "";
     

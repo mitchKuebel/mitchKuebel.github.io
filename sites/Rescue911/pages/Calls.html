@@ -6,6 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rescue911 ERIS System</title>
     <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        :root {
+            --thumb-image: url("../img/face.png"); /* Default thumb image */
+        }
+
+        .slidecontainer {
+            width: 100%;
+        }
+        
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        
+        .slider:hover {
+            opacity: 1;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-image: var(--thumb-image);
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        /* Optional: Add Mozilla Firefox support */
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-image: var(--thumb-image);
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        #second{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -28,15 +79,19 @@
     <!-- Log Calls Section -->
     <section id="log-calls" class="section">
         <h2>Call a Representative</h2>
-        <div id="callStatus">Awaiting calls...</div>
-        <button onclick="startCallLogging()" id = "begin">Begin a Call</button>
-        <p id="logMessage"></p>
-        <a href = "log.html" id = "log"></a>
-        <div id = "second">
-            <input type="range" id="scale" name="scale" min="1" max="10">
-            <button onclick = "second()">Start Call</button>
+        <div id = "begining">
+            <div id="callStatus">Awaiting calls...</div>
+            <button onclick="startCallLogging()" id="begin">Begin a Call</button>
         </div>
-        
+        <p id="logMessage"></p>
+        <a href="log.html" id="log"></a>
+        <div id="second">
+            <label for="scale">Please Rank Your Emergency 1-10:</label>
+            <div class="slidecontainer">
+                <input type="range" id="scale" name="scale" min="1" max="10" class="slider" oninput="change()">
+            </div>
+            <button onclick="second()">Start Call</button>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -47,8 +102,43 @@
     <div class="footer">
         <p>Rescue911 ERIS | Emergency Response Information System | All Rights Reserved © 2024</p>
     </div>
-
-
     <script src="../js/scripts.js"></script>
+    <script>
+        const slider = document.getElementById("scale")
+        function change() {
+            // Change the CSS variable for the thumb image dynamically
+            if (slider.value ==1){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/1.png')");
+            }
+            else if (slider.value ==2){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/2.png')");
+            }
+            else if (slider.value ==3){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/3.png')");
+            }
+            else if (slider.value == 4){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/4.png')");
+            }
+            else if (slider.value == 5){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/5.png')");
+            }
+            else if (slider.value == 6){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/6.png')");
+            }
+            else if (slider.value ==7){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/7.png')");
+            }
+            else if (slider.value ==8){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/8.png')");
+            }
+            else if (slider.value ==9){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/9.png')");
+            }
+            else if (slider.value ==10){
+                document.documentElement.style.setProperty('--thumb-image', "url('../img/10.png')");
+            }
+
+        }
+    </script>
 </body>
 </html>

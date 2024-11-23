@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescue911 ERIS System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #333;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 10px 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .profile-container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .profile-container h3 {
+            margin: 0 0 10px;
+        }
+
+        .profile-container p {
+            margin: 5px 0;
+        }
+
+        .profile-container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-container ul li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="../pages/main.html">Home</a></li>
+            <li><a href="#emt-profile">EMT Profiles</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Welcome to Rescue911 ERIS</h1>
+        <p>View details of a sample EMT below:</p>
+        <button onclick="document.getElementById('emt-profile').scrollIntoView()">View Sample Profile</button>
+    </section>
+
+    <!-- EMT Profile Section -->
+    <section id="emt-profile" class="section">
+        <h2>Sample EMT Profile</h2>
+        <div class="profile-container">
+            <h3>John Doe</h3>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+            <p><strong>Phone:</strong> 555-123-4567</p>
+            <p><strong>Certifications:</strong></p>
+            <ul>
+                <li>EMT-Basic</li>
+                <li>CPR Certified</li>
+                <li>Advanced Cardiac Life Support (ACLS)</li>
+            </ul>
+            <p><strong>Years of Experience:</strong> 5 years</p>
+            <p><strong>Special Skills:</strong></p>
+            <ul>
+                <li>Skilled in administering intravenous therapy</li>
+                <li>Expert in patient triage and prioritization</li>
+                <li>Experienced in trauma response and stabilization</li>
+            </ul>
+            <p><strong>Availability:</strong> Monday to Friday, 9 AM - 5 PM</p>
+            <br>
+            <div class="role-assignment">
+                <h3>Assign a Role</h3>
+                <p>Select a role for this EMT based on their skills:</p>
+                <ul>
+                    <li><button onclick="assignRole('Responder')">Responder</button></li>
+                    <li><button onclick="assignRole('Team Leader')">Team Leader</button></li>
+                    <li><button onclick="assignRole('Trainer')">Trainer</button></li>
+                    <li><button onclick="assignRole('Triage Specialist')">Triage Specialist</button></li>
+                </ul>
+                <p id="selectedRole"><strong>Selected Role:</strong></p>
+                <p id = "chosen">None</p>
+
+                <button onclick = "sendrole()">Submit Role Choice</button>
+
+            </div>
+        </div>
+        <!-- Admin Role Assignment Section -->
+    </section>
+
+    <section id = "emt2" class="section">
+        <div id = "part2">
+            <hr/>
+            <h1>John Doe:</h1>
+            <p><strong>Chosen Role:</strong></p>
+            <p id = "chosen2">None</p>
+            <br/>
+            <!-- <br/> -->
+            <h1>Your choice has been submitted.</h1>
+            <hr/>
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>For support, email us at support@rescue911.com</p>
+    </section>
+    <div class="footer">
+        <p>Rescue911 ERIS | Emergency Response Information System | All Rights Reserved © 2024</p>
+    </div>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
