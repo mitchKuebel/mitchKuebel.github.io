@@ -21,8 +21,11 @@ jobs:
         run: |
           npm install fs path
 
+      - name: Change to script directory
+        run: cd sites/PictureFrame
+
       - name: Run script
-        run: node sites/PictureFrame/updateImageList.js
+        run: node updateImageList.js
 
       - name: Commit and push changes
         run: |
