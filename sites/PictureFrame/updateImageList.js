@@ -16,5 +16,5 @@ const data = {
 };
 
 // Write to JSON file
-fs.writeFileSync('imageList.json', JSON.stringify(data, null, 4));
+fs.writeFileSync('sites/PictureFrame/imageList.json', JSON.stringify(data, null, 4));
 console.log('imageList.json updated!');
