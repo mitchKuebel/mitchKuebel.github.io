@@ -1,0 +1,38 @@
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  html{
+    height:100%;
+    width:100%;
+  }
+  
+  /* Terminal styling */
+  .terminal {
+    background-color: black;
+    border: 2px solid #00ff00;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+    /*max-width: 600px;*/
+    color: #00ff00;
+    font-size: 23px;
+    font-weight: 900;
+    line-height: 1.5;
+    overflow-y: auto;
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  /* Output text styling */
+  .output {
+    white-space: pre-wrap; /* Preserves line breaks and spacing */
+  }
+  
