@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kovan Shadewalker</title>
+        <style>
+            @font-face {
+                font-family: nature;
+                src: url(../../fonts/Naturaly.otf);
+            }
+            @font-face {
+                font-family: nosy;
+                src: url(../../fonts/nosynoteDEMO.otf);
+            }
+            @font-face {
+                font-family: cloudyday;
+                src: url(../../fonts/../fonts/KBCloudyDay.ttf);
+            }
+
+            html{
+                height:100vh;
+                width:100vw;
+            }
+            body{
+                background-color: rgb(57, 49, 49);
+                height:100vh;
+                width: 100vw;
+                color:white;
+                font-family: nature, Arial, Helvetica, sans-serif;
+                overflow: hidden;
+            }
+            body h1{
+                z-index: 10;
+                font-size: 50px;
+                font-variant: small-caps;
+                text-decoration: underline;
+                margin:5px;
+                position: relative;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+            }
+            body li{
+                z-index:10;
+                font-size: 35px;
+                font-variant: small-caps;
+                margin:0px;
+                position: relative;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+            }
+            .menu{
+                z-index: 10;
+                display: flex;
+                height:60%;
+                width:100%;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+                align-content: flex-start;
+                position: relative;
+                
+            }
+            button{
+                z-index:10;
+                border-radius: 12px;
+                position: relative;
+                font-size: 25px;
+                font-family: cloudyday, Arial, Helvetica, sans-serif;
+                margin: 10px;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+                
+            }
+            #backdrop{
+                z-index:1;
+                background-color: rgb(101, 91, 91);
+                filter: blur(5px) opacity(.5) drop-shadow(5px 4px black) ;
+                width:100vw;
+                height:100vh;
+                position: absolute;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <button onclick = "changePersona('../main.html')">Back to Main Page</button>
+        <h1>Kovan Shadewalker 1</h1>
+        <ul>
+            <li>Race: Changling</li>
+            <li>Class: Artificer</li>
+            <li>Alignment: [Insert Alignment]</li>
+            <ul>
+                <li>Definition: [insert definition here]</li>
+            </ul>
+            <li>Appearance:</li>
+            <ul>
+                <li>[insert physical traits]</li>
+                <li>[insert auidible traits]</li>
+                <li>[insert character traits]</li>
+            </ul>
+        </ul>
+
+        
+        <hr/>
+        <br>
+
+    </body>
+    <script>
+        function changePersona(x){
+            window.location.href = x;
+        }
+    </script>
+</html>

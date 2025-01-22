@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kovan Shadewalker</title>
+        <style>
+            @font-face {
+                font-family: nature;
+                src: url(../../fonts/Naturaly.otf);
+            }
+            @font-face {
+                font-family: nosy;
+                src: url(../../fonts/nosynoteDEMO.otf);
+            }
+            @font-face {
+                font-family: cloudyday;
+                src: url(../../fonts/../fonts/KBCloudyDay.ttf);
+            }
+
+            html{
+                height:100vh;
+                width:100vw;
+            }
+            body{
+                background-color: rgb(57, 49, 49);
+                height:100vh;
+                width: 100vw;
+                color:white;
+                font-family: nature, Arial, Helvetica, sans-serif;
+                overflow: hidden;
+            }
+            body h1{
+                z-index: 10;
+                font-size: 50px;
+                font-variant: small-caps;
+                text-decoration: underline;
+                margin:5px;
+                position: relative;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+            }
+            body li{
+                z-index:10;
+                font-size: 35px;
+                font-variant: small-caps;
+                margin:0px;
+                position: relative;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+            }
+            .menu{
+                z-index: 10;
+                display: flex;
+                height:60%;
+                width:100%;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+                align-content: flex-start;
+                position: relative;
+                
+            }
+            button{
+                z-index:10;
+                border-radius: 12px;
+                position: relative;
+                font-size: 25px;
+                font-family: cloudyday, Arial, Helvetica, sans-serif;
+                margin: 10px;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+                
+            }
+            #backdrop{
+                z-index:-1;
+                background-color: rgb(101, 91, 91);
+                filter: blur(5px) opacity(.5) drop-shadow(5px 4px black) ;
+                width:100vw;
+                height:100vh;
+                position: absolute;
+            }
+            table{
+                z-index: 10;
+            }
+            td{
+                z-index: 10;
+                margin:10px;
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <button onclick = "changePersona('../main.html')">Back to Main Page</button>
+        <button onclick = "changePersona('../KovanChar.html')">Kovans Char Sheet</button>
+        <h1> Character Information</h1>
+        <table>
+            <tr>
+                <th>Character Name:  </th>
+                <td id="editor1" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Player Name</td>
+            </tr>
+            <tr>
+                <th>Class and Level:  </th>
+                <td id="editor2" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Class and Level</td>
+            </tr>
+            <tr>
+                <th>Race:  </th>
+                <td id="editor3" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Race</td>
+            </tr>
+            <tr>
+                <th>Background:  </th>
+                <td id="editor4" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+            </tr>
+        </table>
+
+        <h1>Roll Information</h1>
+        <table>
+            <tr>
+                <th>NAME</th>
+                <th>SCORE</th>
+                <th>MODIFIER</th>
+            </tr>
+            <tr>
+                <th>Strength:  </th>
+                <td id="editor5" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                <td id="editor6" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+            </tr>
+            <tr>
+                <th>Dexterity:  </th>
+                <td id="editor7" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                <td id="editor8" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+            </tr>
+            <tr>
+                <th>Constitution:  </th>
+                <td id="editor9" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                <td id="editor10" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+            </tr>
+            <tr>
+                <th>Intelligence:  </th>
+                <td id="editor11" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                <td id="editor12" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+            </tr>
+            <tr>
+                <th>Wisdom:  </th>
+                <td id="editor13" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                <td id="editor14" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+            </tr>
+            <tr>
+                <th>Charisma:  </th>
+                <td id="editor15" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                <td id="editor16" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+            </tr>
+            
+        </table>
+
+    </body>
+    <script>
+        function changePersona(x){
+            window.location.href = x;
+        }
+    </script>
+
+        <!--Below this is the script for the saving and loading of information-->
+    <script>
+
+
+        const editor1 = document.getElementById('editor1');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor1.addEventListener('input', () => {
+            const content1 = editor1.innerHTML;
+            localStorage.setItem('editorContent1', content1);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent1 = localStorage.getItem('editorContent1');
+        if (savedContent1) {
+            editor1.innerHTML = savedContent1;
+        }
+        //editor 2
+        const editor2 = document.getElementById('editor2');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor2.addEventListener('input', () => {
+            const content1 = editor2.innerHTML;
+            localStorage.setItem('editorContent2', content1);
+        });
+
+        // Load content from local storage on page load
+        const savedContent2 = localStorage.getItem('editorContent2');
+        if (savedContent2) {
+            editor1.innerHTML = savedContent2;
+        }
+        
+        const editor3 = document.getElementById('editor3');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor3.addEventListener('input', () => {
+            const content3 = editor3.innerHTML;
+            localStorage.setItem('editorContent3', content3);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent3 = localStorage.getItem('editorContent3');
+        if (savedContent3) {
+            editor3.innerHTML = savedContent3;
+        }
+        const editor4 = document.getElementById('editor4');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor4.addEventListener('input', () => {
+            const content4 = editor4.innerHTML;
+            localStorage.setItem('editorContent4', content4);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent4 = localStorage.getItem('editorContent4');
+        if (savedContent4) {
+            editor4.innerHTML = savedContent4;
+        }
+        
+        const editor5 = document.getElementById('editor5');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor5.addEventListener('input', () => {
+            const content5 = editor5.innerHTML;
+            localStorage.setItem('editorContent5', content5);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent5 = localStorage.getItem('editorContent5');
+        if (savedContent5) {
+            editor5.innerHTML = savedContent5;
+        }
+
+        const editor6 = document.getElementById('editor6');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor6.addEventListener('input', () => {
+            const content6 = editor6.innerHTML;
+            localStorage.setItem('editorContent6', content6);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent6 = localStorage.getItem('editorContent6');
+        if (savedContent6) {
+            editor6.innerHTML = savedContent6;
+        }
+
+        const editor7 = document.getElementById('editor7');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor7.addEventListener('input', () => {
+            const content7 = editor7.innerHTML;
+            localStorage.setItem('editorContent7', content7);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent7 = localStorage.getItem('editorContent7');
+        if (savedContent7) {
+            editor7.innerHTML = savedContent7;
+        }
+
+        const editor8 = document.getElementById('editor8');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor8.addEventListener('input', () => {
+            const content8 = editor8.innerHTML;
+            localStorage.setItem('editorContent8', content8);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent8 = localStorage.getItem('editorContent8');
+        if (savedContent8) {
+            editor8.innerHTML = savedContent8;
+        }
+
+        const editor9 = document.getElementById('editor9');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor9.addEventListener('input', () => {
+            const content9 = editor9.innerHTML;
+            localStorage.setItem('editorContent9', content9);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent9 = localStorage.getItem('editorContent9');
+        if (savedContent9) {
+            editor9.innerHTML = savedContent9;
+        }
+
+        const editor10 = document.getElementById('editor10');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor10.addEventListener('input', () => {
+            const content10 = editor10.innerHTML;
+            localStorage.setItem('editorContent10', content10);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent10 = localStorage.getItem('editorContent10');
+        if (savedContent10) {
+            editor10.innerHTML = savedContent10;
+        }
+
+        const editor11 = document.getElementById('editor11');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor11.addEventListener('input', () => {
+            const content11 = editor11.innerHTML;
+            localStorage.setItem('editorContent11', content11);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent11 = localStorage.getItem('editorContent11');
+        if (savedContent11) {
+            editor11.innerHTML = savedContent11;
+        }
+
+        const editor12 = document.getElementById('editor12');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor12.addEventListener('input', () => {
+            const content12 = editor12.innerHTML;
+            localStorage.setItem('editorContent12', content12);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent12 = localStorage.getItem('editorContent12');
+        if (savedContent12) {
+            editor12.innerHTML = savedContent12;
+        }
+
+        const editor13 = document.getElementById('editor13');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor13.addEventListener('input', () => {
+            const content13 = editor13.innerHTML;
+            localStorage.setItem('editorContent13', content13);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent13 = localStorage.getItem('editorContent13');
+        if (savedContent13) {
+            editor13.innerHTML = savedContent13;
+        }
+
+        const editor14 = document.getElementById('editor14');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor14.addEventListener('input', () => {
+            const content14 = editor14.innerHTML;
+            localStorage.setItem('editorContent14', content14);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent14 = localStorage.getItem('editorContent14');
+        if (savedContent14) {
+            editor14.innerHTML = savedContent14;
+        }
+
+        const editor15 = document.getElementById('editor15');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor15.addEventListener('input', () => {
+            const content15 = editor15.innerHTML;
+            localStorage.setItem('editorContent15', content15);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent15 = localStorage.getItem('editorContent15');
+        if (savedContent15) {
+            editor15.innerHTML = savedContent15;
+        }
+
+        const editor16 = document.getElementById('editor16');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor16.addEventListener('input', () => {
+            const content16 = editor16.innerHTML;
+            localStorage.setItem('editorContent16', content16);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent16 = localStorage.getItem('editorContent16');
+        if (savedContent16) {
+            editor16.innerHTML = savedContent16;
+        }
+
+        const editorxyzd = document.getElementById('editorxyzd');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorxyzd.addEventListener('input', () => {
+            const contentxyzd = editorxyzd.innerHTML;
+            localStorage.setItem('editorContentxyzd', contentxyzd);
+        });
+    
+        // Load content from local storage on page load
+        const savedContentxyzd = localStorage.getItem('editorContentxyzd');
+        if (savedContentxyzd) {
+            editorxyzd.innerHTML = savedContentxyzd;
+        }
+    </script>
+</html>
