@@ -26,7 +26,8 @@
                 width: 100vw;
                 color:white;
                 font-family: nature, Arial, Helvetica, sans-serif;
-                overflow: hidden;
+                overflow-y:scroll;
+                overflow-x: hidden;
             }
             body h1{
                 z-index: 10;
@@ -74,31 +75,49 @@
                 width:100vw;
                 height:100vh;
                 position: absolute;
-
+            }
+            #traitlist{
+                max-width: 90%;
+            }
+            #traitlist li{
+                font-size: 30px;
             }
         </style>
     </head>
     <body>
         <div id = "backdrop"></div>
         <button onclick = "changePersona('../main.html')">Back to Main Page</button>
-        <button onclick = "changePersona('../KovanChar.pdf')">Kovans Char Sheet</button>
+        <button onclick = "changePersona('../KovanChar.html')">Kovans Character Sheet</button>
         <h1>Kovan Shadewalker 1</h1>
-        <ul>
-            <li>Race: Changling</li>
-            <li>Class: Artificer</li>
-            <li>Alignment: [Insert Alignment]</li>
+        <div id = "traitlist">
             <ul>
-                <li>Definition: [insert definition here]</li>
+                <li>Race: Changling</li>
+                <li>Class: Artificer</li>
+                <li>Alignment: Lawful Good</li>
+                <ul>
+                    <li>Definition: A lawful good character typically acts with compassion and always with honor and a sense of duty. However, lawful good characters will often regret taking any action they fear would violate their code, even if they recognize such action as being good. Such characters include gold dragons, righteous knights, paladins, and most dwarves</li>
+                </ul>
+                <li>Appearance:</li>
+                <ul>
+                    <li>[insert physical traits]</li>
+                    <li>[insert auidible traits]</li>
+                    <li>[insert character traits]</li>
+                </ul>
+                <li>Likes:</li>
+                <ul>
+                    <li>[insert his likes]</li>
+                </ul>
+                <li>Dislikes:</li>
+                <ul>
+                    <li>[insert his dislikes]</li>
+                </ul>
+                <li>Goal: [insert his ultimate goal]</li>
+                <li>Picture:</li>
+                <ul>
+                    <li><img src = "../../img/kovan2.pdf"></li>
+                </ul>
             </ul>
-            <li>Appearance:</li>
-            <ul>
-                <li>[insert physical traits]</li>
-                <li>[insert auidible traits]</li>
-                <li>[insert character traits]</li>
-            </ul>
-        </ul>
-
-        
+        </div>
         <hr/>
         <br>
 

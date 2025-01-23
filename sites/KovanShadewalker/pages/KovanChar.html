@@ -5,15 +5,15 @@
         <style>
             @font-face {
                 font-family: nature;
-                src: url(../../fonts/Naturaly.otf);
+                src: url(../fonts/Naturaly.otf);
             }
             @font-face {
                 font-family: nosy;
-                src: url(../../fonts/nosynoteDEMO.otf);
+                src: url(../fonts/nosynoteDEMO.otf);
             }
             @font-face {
                 font-family: cloudyday;
-                src: url(../../fonts/../fonts/KBCloudyDay.ttf);
+                src: url(../fonts/../fonts/KBCloudyDay.ttf);
             }
 
             html{
@@ -25,7 +25,7 @@
                 height:100vh;
                 width: 100vw;
                 color:white;
-                font-family: nature, Arial, Helvetica, sans-serif;
+                font-family: Arial, Helvetica, sans-serif;
                 overflow: hidden;
             }
             body h1{
@@ -83,71 +83,264 @@
                 margin:10px;
                 padding:5px;
             }
+            #tables{
+                display:flex;
+                justify-content: space-evenly;
+                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+            #tables div{
+                border:1px white solid;
+                text-align: center;
+                padding:10px;
+            }
+            #tables div table{
+                margin:auto
+            }
         </style>
     </head>
     <body>
         <div id = "backdrop"></div>
-        <button onclick = "changePersona('../main.html')">Back to Main Page</button>
-        <button onclick = "changePersona('../KovanChar.html')">Kovans Char Sheet</button>
-        <h1> Character Information</h1>
-        <table>
-            <tr>
-                <th>Character Name:  </th>
-                <td id="editor1" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Player Name</td>
-            </tr>
-            <tr>
-                <th>Class and Level:  </th>
-                <td id="editor2" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Class and Level</td>
-            </tr>
-            <tr>
-                <th>Race:  </th>
-                <td id="editor3" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Race</td>
-            </tr>
-            <tr>
-                <th>Background:  </th>
-                <td id="editor4" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
-            </tr>
-        </table>
+        <button onclick = "changePersona('main.html')">Back to Main Page</button>
+        <button onclick = "changePersona('inventory.html')">Inventory</button>
+        <h1 style = "text-align: center; font-family: nature, monospace;">KOVAN SHADEWALKER</h1>
+        <div id = "tables">
+            <!--Char Informations-->
+            <div id = "charInfo">
+                <h1> Character Information</h1>
+                <table>
+                    <tr>
+                        <th>Character Name:  </th>
+                        <td id="editor1" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Player Name</td>
+                    </tr>
+                    <tr>
+                        <th>Class and Level:  </th>
+                        <td id="editor2" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Class and Level</td>
+                    </tr>
+                    <tr>
+                        <th>Race:  </th>
+                        <td id="editor3" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Race</td>
+                    </tr>
+                    <tr>
+                        <th>Background:  </th>
+                        <td id="editor4" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Level:  </th>
+                        <td id="level" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Languages and Proficiencies:  </th>
+                        <td id="lang" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
 
-        <h1>Roll Information</h1>
-        <table>
-            <tr>
-                <th>NAME</th>
-                <th>SCORE</th>
-                <th>MODIFIER</th>
-            </tr>
-            <tr>
-                <th>Strength:  </th>
-                <td id="editor5" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
-                <td id="editor6" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
-            </tr>
-            <tr>
-                <th>Dexterity:  </th>
-                <td id="editor7" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
-                <td id="editor8" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
-            </tr>
-            <tr>
-                <th>Constitution:  </th>
-                <td id="editor9" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
-                <td id="editor10" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
-            </tr>
-            <tr>
-                <th>Intelligence:  </th>
-                <td id="editor11" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
-                <td id="editor12" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
-            </tr>
-            <tr>
-                <th>Wisdom:  </th>
-                <td id="editor13" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
-                <td id="editor14" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
-            </tr>
-            <tr>
-                <th>Charisma:  </th>
-                <td id="editor15" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
-                <td id="editor16" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
-            </tr>
-            
-        </table>
+                    <tr>
+                        <th>Armour Class:  </th>
+                        <td id="ac" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Speed:  </th>
+                        <td id="speed" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Max HP:  </th>
+                        <td id="maxhp" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Current HP:  </th>
+                        <td id="hp" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>temp hp:  </th>
+                        <td id="temphp" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Hit Dice:  </th>
+                        <td id="hitdice" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Age:  </th>
+                        <td id="age" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Height:  </th>
+                        <td id="height" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                    <tr>
+                        <th>Weight:  </th>
+                        <td id="weight" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Background</td>
+                    </tr>
+                </table>
+            </div>
+            <!---------------------------->
+
+            <!--Roll Information-->
+            <div id = "rollInfo">
+                <h1>Roll Information</h1>
+                <table>
+                    <tr>
+                        <th>NAME</th>
+                        <th>SCORE</th>
+                        <th>MODIFIER</th>
+                    </tr>
+                    <tr>
+                        <th>Strength:  </th>
+                        <td id="editor5" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                        <td id="editor6" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Dexterity:  </th>
+                        <td id="editor7" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                        <td id="editor8" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Constitution:  </th>
+                        <td id="editor9" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                        <td id="editor10" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Intelligence:  </th>
+                        <td id="editor11" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                        <td id="editor12" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Wisdom:  </th>
+                        <td id="editor13" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                        <td id="editor14" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Charisma:  </th>
+                        <td id="editor15" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Strength</td>
+                        <td id="editor16" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                </table>
+            </div>
+            <!------------------------->
+
+            <!--Saving Throws-->
+            <div id = "savingThrow">
+                <h1>Saving Throws</h1>
+                <table>
+                    <tr>
+                        <th>NAME</th>
+                        <th>MODIFIER</th>
+                    </tr>
+                    <tr>
+                        <th>Strength:  </th>
+                        <td id="editor17" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Dexterity:  </th>
+                        <td id="editor18" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Constitution:  </th>
+                        <td id="editor19" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Intelligence:  </th>
+                        <td id="editor20" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Wisdom:  </th>
+                        <td id="editor21" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Charisma:  </th>
+                        <td id="editor22" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                </table>
+            </div>
+            <!-------------------->
+            <!--Skills-->
+            <div id = "skills">
+                <h1>Skills</h1>
+                <table>
+                    <tr>
+                        <th>NAME</th>
+                        <th>MODIFIER</th>
+                    </tr>
+                    <tr>
+                        <th>Acrobatics:  </th>
+                        <td id="editor23" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Animal Handling:  </th>
+                        <td id="editor24" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Arcana:  </th>
+                        <td id="editor25" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Athletics:  </th>
+                        <td id="editor26" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Deception:  </th>
+                        <td id="editor27" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>History:  </th>
+                        <td id="editor28" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Insight:  </th>
+                        <td id="editor29" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Intimidation:  </th>
+                        <td id="editor30" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Investigation:  </th>
+                        <td id="editor31" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Medicine:  </th>
+                        <td id="editor32" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Nature:  </th>
+                        <td id="editor33" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Perception:  </th>
+                        <td id="editor34" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Performance:  </th>
+                        <td id="editor35" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Persuasion:  </th>
+                        <td id="editor36" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Religion:  </th>
+                        <td id="editor37" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Slight of Hand:  </th>
+                        <td id="editor38" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Stealth:  </th>
+                        <td id="editor39" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                    <tr>
+                        <th>Survival:  </th>
+                        <td id="editor40" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Modifier</td>
+                    </tr>
+                </table>
+            </div>
+            <!----------------->
+        </div>
+        
+        
+
+        
+
 
     </body>
     <script>
@@ -173,6 +366,165 @@
         if (savedContent1) {
             editor1.innerHTML = savedContent1;
         }
+
+        const editorac = document.getElementById('ac');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorac.addEventListener('input', () => {
+            const contentac = editorac.innerHTML;
+            localStorage.setItem('editorContentac', contentac);
+        });
+    
+        // Load content from local storage on page load
+        const savedContentac = localStorage.getItem('editorContentac');
+        if (savedContentac) {
+            editorac.innerHTML = savedContentac;
+        }
+
+        const editorspeed = document.getElementById('speed');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorspeed.addEventListener('input', () => {
+            const contentspeed = editorspeed.innerHTML;
+            localStorage.setItem('editorContentspeed', contentspeed);
+        });
+    
+        // Load content from local storage on page load
+        const savedContentspeed = localStorage.getItem('editorContentspeed');
+        if (savedContentspeed) {
+            editorspeed.innerHTML = savedContentspeed;
+        }
+
+        const editormaxhp = document.getElementById('maxhp');
+        //char name
+        // Save content to local storage whenever changes occur
+        editormaxhp.addEventListener('input', () => {
+            const contentmaxhp = editormaxhp.innerHTML;
+            localStorage.setItem('editorContentmaxhp', contentmaxhp);
+        });
+    
+        // Load content from local storage on page load
+        const savedContentmaxhp = localStorage.getItem('editorContentmaxhp');
+        if (savedContentmaxhp) {
+            editormaxhp.innerHTML = savedContentmaxhp;
+        }
+        
+
+        const editorhp = document.getElementById('hp');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorhp.addEventListener('input', () => {
+            const contenthp = editorhp.innerHTML;
+            localStorage.setItem('editorContenthp', contenthp);
+        });
+    
+        // Load content from local storage on page load
+        const savedContenthp = localStorage.getItem('editorContenthp');
+        if (savedContenthp) {
+            editorhp.innerHTML = savedContenthp;
+        }
+        
+
+        const editortemphp = document.getElementById('temphp');
+        //char name
+        // Save content to local storage whenever changes occur
+        editortemphp.addEventListener('input', () => {
+            const contenttemphp = editortemphp.innerHTML;
+            localStorage.setItem('editorContenttemphp', contenttemphp);
+        });
+    
+        // Load content from local storage on page load
+        const savedContenttemphp = localStorage.getItem('editorContenttemphp');
+        if (savedContenttemphp) {
+            editortemphp.innerHTML = savedContenttemphp;
+        }
+
+        const editorhitdice = document.getElementById('hitdice');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorhitdice.addEventListener('input', () => {
+            const contenthitdice = editorhitdice.innerHTML;
+            localStorage.setItem('editorContenthitdice', contenthitdice);
+        });
+    
+        // Load content from local storage on page load
+        const savedContenthitdice = localStorage.getItem('editorContenthitdice');
+        if (savedContenthitdice) {
+            editorhitdice.innerHTML = savedContenthitdice;
+        }
+
+        
+        const editorlang = document.getElementById('lang');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorlang.addEventListener('input', () => {
+            const contentlang = editorlang.innerHTML;
+            localStorage.setItem('editorContentlang', contentlang);
+        });
+    
+        // Load content from local storage on page load
+        const savedContentlang = localStorage.getItem('editorContentlang');
+        if (savedContentlang) {
+            editorlang.innerHTML = savedContentlang;
+        }
+
+        const editorage = document.getElementById('age');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorage.addEventListener('input', () => {
+            const contentage = editorage.innerHTML;
+            localStorage.setItem('editorContentage', contentage);
+        });
+    
+        // Load content from local storage on page load
+        const savedContentage = localStorage.getItem('editorContentage');
+        if (savedContentage) {
+            editorage.innerHTML = savedContentage;
+        }
+        
+        const editorheight = document.getElementById('height');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorheight.addEventListener('input', () => {
+            const contentheight = editorheight.innerHTML;
+            localStorage.setItem('editorContentheight', contentheight);
+        });
+    
+        // Load content from local storage on page load
+        const savedContentheight = localStorage.getItem('editorContentheight');
+        if (savedContentheight) {
+            editorheight.innerHTML = savedContentheight;
+        }
+
+        const editorweight = document.getElementById('weight');
+        //char name
+        // Save content to local storage whenever changes occur
+        editorweight.addEventListener('input', () => {
+            const contentweight = editorweight.innerHTML;
+            localStorage.setItem('editorContentweight', contentweight);
+        });
+    
+        // Load content from local storage on page load
+        const savedContentweight = localStorage.getItem('editorContentweight');
+        if (savedContentweight) {
+            editorweight.innerHTML = savedContentweight;
+        }
+
+        const level = document.getElementById('level');
+        //char name
+        // Save content to local storage whenever changes occur
+        level.addEventListener('input', () => {
+            const content1 = level.innerHTML;
+            localStorage.setItem('levelContent1', content1);
+        });
+    
+        // Load content from local storage on page load
+        const levelContent1 = localStorage.getItem('levelContent1');
+        if (levelContent1) {
+            level.innerHTML = levelContent1;
+        }
+
+
         //editor 2
         const editor2 = document.getElementById('editor2');
         //char name
@@ -185,7 +537,7 @@
         // Load content from local storage on page load
         const savedContent2 = localStorage.getItem('editorContent2');
         if (savedContent2) {
-            editor1.innerHTML = savedContent2;
+            editor2.innerHTML = savedContent2;
         }
         
         const editor3 = document.getElementById('editor3');
@@ -383,18 +735,340 @@
             editor16.innerHTML = savedContent16;
         }
 
-        const editorxyzd = document.getElementById('editorxyzd');
+        const editor17 = document.getElementById('editor17');
         //char name
         // Save content to local storage whenever changes occur
-        editorxyzd.addEventListener('input', () => {
-            const contentxyzd = editorxyzd.innerHTML;
-            localStorage.setItem('editorContentxyzd', contentxyzd);
+        editor17.addEventListener('input', () => {
+            const content17 = editor17.innerHTML;
+            localStorage.setItem('editorContent17', content17);
         });
     
         // Load content from local storage on page load
-        const savedContentxyzd = localStorage.getItem('editorContentxyzd');
-        if (savedContentxyzd) {
-            editorxyzd.innerHTML = savedContentxyzd;
+        const savedContent17 = localStorage.getItem('editorContent17');
+        if (savedContent17) {
+            editor17.innerHTML = savedContent17;
+        }
+
+        const editor18 = document.getElementById('editor18');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor18.addEventListener('input', () => {
+            const content18 = editor18.innerHTML;
+            localStorage.setItem('editorContent18', content18);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent18 = localStorage.getItem('editorContent18');
+        if (savedContent18) {
+            editor18.innerHTML = savedContent18;
+        }
+
+        const editor19 = document.getElementById('editor19');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor19.addEventListener('input', () => {
+            const content19 = editor19.innerHTML;
+            localStorage.setItem('editorContent19', content19);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent19 = localStorage.getItem('editorContent19');
+        if (savedContent19) {
+            editor19.innerHTML = savedContent19;
+        }
+
+        const editor20 = document.getElementById('editor20');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor20.addEventListener('input', () => {
+            const content20 = editor20.innerHTML;
+            localStorage.setItem('editorContent20', content20);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent20 = localStorage.getItem('editorContent20');
+        if (savedContent20) {
+            editor20.innerHTML = savedContent20;
+        }
+
+        const editor21 = document.getElementById('editor21');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor21.addEventListener('input', () => {
+            const content21 = editor21.innerHTML;
+            localStorage.setItem('editorContent21', content21);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent21 = localStorage.getItem('editorContent21');
+        if (savedContent21) {
+            editor21.innerHTML = savedContent21;
+        }
+
+        const editor22 = document.getElementById('editor22');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor22.addEventListener('input', () => {
+            const content22 = editor22.innerHTML;
+            localStorage.setItem('editorContent22', content22);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent22 = localStorage.getItem('editorContent22');
+        if (savedContent22) {
+            editor22.innerHTML = savedContent22;
+        }
+
+        const editor23 = document.getElementById('editor23');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor23.addEventListener('input', () => {
+            const content23 = editor23.innerHTML;
+            localStorage.setItem('editorContent23', content23);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent23 = localStorage.getItem('editorContent23');
+        if (savedContent23) {
+            editor23.innerHTML = savedContent23;
+        }
+
+        const editor24 = document.getElementById('editor24');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor24.addEventListener('input', () => {
+            const content24 = editor24.innerHTML;
+            localStorage.setItem('editorContent24', content24);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent24 = localStorage.getItem('editorContent24');
+        if (savedContent24) {
+            editor24.innerHTML = savedContent24;
+        }
+
+        const editor25 = document.getElementById('editor25');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor25.addEventListener('input', () => {
+            const content25 = editor25.innerHTML;
+            localStorage.setItem('editorContent25', content25);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent25 = localStorage.getItem('editorContent25');
+        if (savedContent25) {
+            editor25.innerHTML = savedContent25;
+        }
+        
+        const editor26 = document.getElementById('editor26');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor26.addEventListener('input', () => {
+            const content26 = editor26.innerHTML;
+            localStorage.setItem('editorContent26', content26);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent26 = localStorage.getItem('editorContent26');
+        if (savedContent26) {
+            editor26.innerHTML = savedContent26;
+        }
+
+        const editor27 = document.getElementById('editor27');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor27.addEventListener('input', () => {
+            const content27 = editor27.innerHTML;
+            localStorage.setItem('editorContent27', content27);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent27 = localStorage.getItem('editorContent27');
+        if (savedContent27) {
+            editor27.innerHTML = savedContent27;
+        }
+
+        const editor28 = document.getElementById('editor28');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor28.addEventListener('input', () => {
+            const content28 = editor28.innerHTML;
+            localStorage.setItem('editorContent28', content28);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent28 = localStorage.getItem('editorContent28');
+        if (savedContent28) {
+            editor28.innerHTML = savedContent28;
+        }
+
+        const editor29 = document.getElementById('editor29');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor29.addEventListener('input', () => {
+            const content29 = editor29.innerHTML;
+            localStorage.setItem('editorContent29', content29);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent29 = localStorage.getItem('editorContent29');
+        if (savedContent29) {
+            editor29.innerHTML = savedContent29;
+        }
+
+        const editor30 = document.getElementById('editor30');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor30.addEventListener('input', () => {
+            const content30 = editor30.innerHTML;
+            localStorage.setItem('editorContent30', content30);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent30 = localStorage.getItem('editorContent30');
+        if (savedContent30) {
+            editor30.innerHTML = savedContent30;
+        }
+
+        const editor31 = document.getElementById('editor31');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor31.addEventListener('input', () => {
+            const content31 = editor31.innerHTML;
+            localStorage.setItem('editorContent31', content31);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent31 = localStorage.getItem('editorContent31');
+        if (savedContent31) {
+            editor31.innerHTML = savedContent31;
+        }
+
+        const editor32 = document.getElementById('editor32');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor32.addEventListener('input', () => {
+            const content32 = editor32.innerHTML;
+            localStorage.setItem('editorContent32', content32);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent32 = localStorage.getItem('editorContent32');
+        if (savedContent32) {
+            editor32.innerHTML = savedContent32;
+        }
+
+        const editor33 = document.getElementById('editor33');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor33.addEventListener('input', () => {
+            const content33 = editor33.innerHTML;
+            localStorage.setItem('editorContent33', content33);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent33 = localStorage.getItem('editorContent33');
+        if (savedContent33) {
+            editor33.innerHTML = savedContent33;
+        }
+
+        const editor34 = document.getElementById('editor34');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor34.addEventListener('input', () => {
+            const content34 = editor34.innerHTML;
+            localStorage.setItem('editorContent34', content34);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent34 = localStorage.getItem('editorContent34');
+        if (savedContent34) {
+            editor34.innerHTML = savedContent34;
+        }
+
+        const editor35 = document.getElementById('editor35');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor35.addEventListener('input', () => {
+            const content35 = editor35.innerHTML;
+            localStorage.setItem('editorContent35', content35);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent35 = localStorage.getItem('editorContent35');
+        if (savedContent35) {
+            editor35.innerHTML = savedContent35;
+        }
+
+        const editor36 = document.getElementById('editor36');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor36.addEventListener('input', () => {
+            const content36 = editor36.innerHTML;
+            localStorage.setItem('editorContent36', content36);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent36 = localStorage.getItem('editorContent36');
+        if (savedContent36) {
+            editor36.innerHTML = savedContent36;
+        }
+
+        const editor37 = document.getElementById('editor37');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor37.addEventListener('input', () => {
+            const content37 = editor37.innerHTML;
+            localStorage.setItem('editorContent37', content37);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent37 = localStorage.getItem('editorContent37');
+        if (savedContent37) {
+            editor37.innerHTML = savedContent37;
+        }
+
+        const editor38 = document.getElementById('editor38');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor38.addEventListener('input', () => {
+            const content38 = editor38.innerHTML;
+            localStorage.setItem('editorContent38', content38);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent38 = localStorage.getItem('editorContent38');
+        if (savedContent38) {
+            editor38.innerHTML = savedContent38;
+        }
+
+        const editor39 = document.getElementById('editor39');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor39.addEventListener('input', () => {
+            const content39 = editor39.innerHTML;
+            localStorage.setItem('editorContent39', content39);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent39 = localStorage.getItem('editorContent39');
+        if (savedContent39) {
+            editor39.innerHTML = savedContent39;
+        }
+
+        const editor40 = document.getElementById('editor40');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor40.addEventListener('input', () => {
+            const content40 = editor40.innerHTML;
+            localStorage.setItem('editorContent40', content40);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent40 = localStorage.getItem('editorContent40');
+        if (savedContent40) {
+            editor40.innerHTML = savedContent40;
         }
     </script>
 </html>

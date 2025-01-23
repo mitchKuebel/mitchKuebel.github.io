@@ -26,7 +26,8 @@
                 width: 100vw;
                 color:white;
                 font-family: nature, Arial, Helvetica, sans-serif;
-                overflow: hidden;
+                overflow-y:scroll;
+                overflow-x: hidden;
             }
             body h1{
                 z-index: 10;
@@ -74,30 +75,49 @@
                 width:100vw;
                 height:100vh;
                 position: absolute;
-
+            }
+            #traitlist{
+                max-width: 90%;
+            }
+            #traitlist li{
+                font-size: 30px;
             }
         </style>
     </head>
     <body>
         <div id = "backdrop"></div>
         <button onclick = "changePersona('../main.html')">Back to Main Page</button>
-        <h1>Kovan Shadewalker 1</h1>
-        <ul>
-            <li>Race: Changling</li>
-            <li>Class: Artificer</li>
-            <li>Alignment: [Insert Alignment]</li>
+        <button onclick = "changePersona('../KovanChar.html')">Kovans Character Sheet</button>
+        <h1>Kovan Shadewalker 2</h1>
+        <div id = "traitlist">
             <ul>
-                <li>Definition: [insert definition here]</li>
+                <li>Race: Changling</li>
+                <li>Class: Artificer</li>
+                <li>Alignment: Neutral good</li>
+                <ul>
+                    <li>Definition: A neutral good character typically acts altruistically, without regard for or against lawful precepts such as rules or tradition. A neutral good character has no problems with cooperating with lawful officials, but does not feel beholden to them. In the event that doing the right thing requires the bending or breaking of rules, they do not suffer the same inner conflict that a lawful good character would. Examples of this alignment include many celestials, some cloud giants, and most gnomes</li>
+                </ul>
+                <li>Appearance:</li>
+                <ul>
+                    <li>[insert physical traits]</li>
+                    <li>[insert auidible traits]</li>
+                    <li>[insert character traits]</li>
+                </ul>
+                <li>Likes:</li>
+                <ul>
+                    <li>[insert his likes]</li>
+                </ul>
+                <li>Dislikes:</li>
+                <ul>
+                    <li>[insert his dislikes]</li>
+                </ul>
+                <li>Goal: [insert his ultimate goal]</li>
+                <li>Picture:</li>
+                <ul>
+                    <li><img src = "../../img/kovan2.pdf"></li>
+                </ul>
             </ul>
-            <li>Appearance:</li>
-            <ul>
-                <li>[insert physical traits]</li>
-                <li>[insert auidible traits]</li>
-                <li>[insert character traits]</li>
-            </ul>
-        </ul>
-
-        
+        </div>
         <hr/>
         <br>
 

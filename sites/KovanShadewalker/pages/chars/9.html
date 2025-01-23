@@ -26,7 +26,8 @@
                 width: 100vw;
                 color:white;
                 font-family: nature, Arial, Helvetica, sans-serif;
-                overflow: hidden;
+                overflow-y:scroll;
+                overflow-x: hidden;
             }
             body h1{
                 z-index: 10;
@@ -37,7 +38,7 @@
                 position: relative;
                 filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
             }
-            body h3{
+            body li{
                 z-index:10;
                 font-size: 35px;
                 font-variant: small-caps;
@@ -74,18 +75,49 @@
                 width:100vw;
                 height:100vh;
                 position: absolute;
-
+            }
+            #traitlist{
+                max-width: 90%;
+            }
+            #traitlist li{
+                font-size: 30px;
             }
         </style>
     </head>
     <body>
         <div id = "backdrop"></div>
         <button onclick = "changePersona('../main.html')">Back to Main Page</button>
-        <h1>Kovan Shadewalker</h1>
-        <h3>Race: Changling</h3>
-        <h3>Class: Artificer</h3>
-        <h3>Alignment: Lawful Good</h3>
-        
+        <button onclick = "changePersona('../KovanChar.html')">Kovans Character Sheet</button>
+        <h1>Kovan Shadewalker 9</h1>
+        <div id = "traitlist">
+            <ul>
+                <li>Race: Changling</li>
+                <li>Class: Artificer</li>
+                <li>Alignment: Chaotic evil</li>
+                <ul>
+                    <li>Definition: A chaotic evil character tends to have no respect for rules, other people's lives, or anything but their own desires, which are typically selfish and cruel. They set a high value on personal freedom, but do not have much regard for the lives or freedom of other people. Chaotic evil characters do not work well in groups because they resent being given orders and usually do not behave themselves unless there is no alternative. Examples of this alignment include higher forms of undead (such as liches), violent killers who strike for pleasure rather than profit, demons, red dragons, and orcs</li>
+                </ul>
+                <li>Appearance:</li>
+                <ul>
+                    <li>[insert physical traits]</li>
+                    <li>[insert auidible traits]</li>
+                    <li>[insert character traits]</li>
+                </ul>
+                <li>Likes:</li>
+                <ul>
+                    <li>[insert his likes]</li>
+                </ul>
+                <li>Dislikes:</li>
+                <ul>
+                    <li>[insert his dislikes]</li>
+                </ul>
+                <li>Goal: [insert his ultimate goal]</li>
+                <li>Picture:</li>
+                <ul>
+                    <li><img src = "../../img/kovan2.pdf"></li>
+                </ul>
+            </ul>
+        </div>
         <hr/>
         <br>
 

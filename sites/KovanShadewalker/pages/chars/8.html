@@ -26,7 +26,8 @@
                 width: 100vw;
                 color:white;
                 font-family: nature, Arial, Helvetica, sans-serif;
-                overflow: hidden;
+                overflow-y:scroll;
+                overflow-x: hidden;
             }
             body h1{
                 z-index: 10;
@@ -37,7 +38,7 @@
                 position: relative;
                 filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
             }
-            body h3{
+            body li{
                 z-index:10;
                 font-size: 35px;
                 font-variant: small-caps;
@@ -74,17 +75,51 @@
                 width:100vw;
                 height:100vh;
                 position: absolute;
-
+            }
+            #traitlist{
+                max-width: 90%;
+            }
+            #traitlist li{
+                font-size: 30px;
             }
         </style>
     </head>
     <body>
         <div id = "backdrop"></div>
         <button onclick = "changePersona('../main.html')">Back to Main Page</button>
-        <h1>Kovan Shadewalker</h1>
-        <h3>Race: Changling</h3>
-        <h3>Class: Artificer</h3>
-        <h3>Alignment: Lawful Good</h3>
+        <button onclick = "changePersona('../KovanChar.html')">Kovans Character Sheet</button>
+        <h1>Kovan Shadewalker 8</h1>
+        <div id = "traitlist">
+            <ul>
+                <li>Race: Changling</li>
+                <li>Class: Artificer</li>
+                <li>Alignment: Neutral evil</li>
+                <ul>
+                    <li>Definition: A neutral evil character is typically selfish and has no qualms about turning on allies-of-the-moment, and usually makes allies primarily to further their own goals. A neutral evil character has no compunctions about harming others to get what they want, but neither will they go out of their way to cause carnage or mayhem when they see no direct benefit for themselves. Another valid interpretation of neutral evil holds up evil as an ideal, doing evil for evil's sake and trying to spread its influence. Examples of the first type are an assassin who has little regard for formal laws but does not needlessly kill, a henchman who plots behind their superior's back, or a mercenary who readily switches sides if made a better offer. An example of the second type would be a masked killer who strikes only for the sake of causing fear and distrust in the community. Examples of this alignment include many drow, some cloud giants, and yugoloths.</li>
+                </ul>
+                <li>Appearance:</li>
+                <ul>
+                    <li>[insert physical traits]</li>
+                    <li>[insert auidible traits]</li>
+                    <li>[insert character traits]</li>
+                </ul>
+                <li>Likes:</li>
+                <ul>
+                    <li>[insert his likes]</li>
+                </ul>
+                <li>Dislikes:</li>
+                <ul>
+                    <li>[insert his dislikes]</li>
+                </ul>
+                <li>Goal: [insert his ultimate goal]</li>
+                <li>Picture:</li>
+                <ul>
+                    <li><img src = "../../img/kovan2.pdf"></li>
+                </ul>
+            </ul>
+        </div>
+        
+
         
         <hr/>
         <br>

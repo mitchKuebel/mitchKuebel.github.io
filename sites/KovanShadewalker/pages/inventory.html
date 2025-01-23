@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kovan Shadewalker</title>
+        <style>
+            @font-face {
+                font-family: nature;
+                src: url(../fonts/Naturaly.otf);
+            }
+            @font-face {
+                font-family: nosy;
+                src: url(../fonts/nosynoteDEMO.otf);
+            }
+            @font-face {
+                font-family: cloudyday;
+                src: url(../fonts/../fonts/KBCloudyDay.ttf);
+            }
+
+            html{
+                height:100vh;
+                width:100vw;
+            }
+            body{
+                background-color: rgb(57, 49, 49);
+                height:100vh;
+                width: 100vw;
+                color:white;
+                font-family: Arial, Helvetica, sans-serif;
+                overflow: hidden;
+            }
+            body h1{
+                z-index: 10;
+                font-size: 50px;
+                font-variant: small-caps;
+                text-decoration: underline;
+                margin:5px;
+                position: relative;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+            }
+            body li{
+                z-index:10;
+                font-size: 35px;
+                font-variant: small-caps;
+                margin:0px;
+                position: relative;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+            }
+            .menu{
+                z-index: 10;
+                display: flex;
+                height:60%;
+                width:100%;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+                align-content: flex-start;
+                position: relative;
+                
+            }
+            button{
+                z-index:10;
+                border-radius: 12px;
+                position: relative;
+                font-size: 25px;
+                font-family: cloudyday, Arial, Helvetica, sans-serif;
+                margin: 10px;
+                filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+                
+            }
+            #backdrop{
+                z-index:-1;
+                background-color: rgb(101, 91, 91);
+                filter: blur(5px) opacity(.5) drop-shadow(5px 4px black) ;
+                width:100vw;
+                height:100vh;
+                position: absolute;
+            }
+            table{
+                z-index: 10;
+            }
+            td{
+                z-index: 10;
+                margin:10px;
+                padding:5px;
+            }
+            #tables{
+                display:flex;
+                justify-content: space-evenly;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                height:100vh;
+                width:100vw;
+            }
+
+            #tables div table{
+                margin:auto
+            }
+
+            #money, #spells, #inventory{
+                height:80%;
+                width:30%;
+                border:1px white solid;
+                text-align: center;
+                padding:10px;
+            }
+            .editor{
+                width:90%;
+                height:85%;
+                margin:auto;
+                border: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <button onclick = "changePersona('main.html')">Back to Main Page</button>
+        <button onclick = "changePersona('KovanChar.html')">Character Sheet</button>
+        <h1 style = "text-align: center; font-family: nature, monospace;">KOVAN SHADEWALKER INVENTORY</h1>
+        <div id = "tables">
+            <div id = "money">
+                <h1> Money</h1>
+                <table>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>AMOUNT</th>
+                    </tr>
+                    <tr>
+                        <th>Copper Pieces:  </th>
+                        <td id="editor1i" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> copper</td>
+                    </tr>
+                    <tr>
+                        <th>Silver Pieces:  </th>
+                        <td id="editor2i" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> silver</td>
+                    </tr>
+                    <tr>
+                        <th>Electrum Pieces:  </th>
+                        <td id="editor3i" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> electrum</td>
+                    </tr>
+                    <tr>
+                        <th>Gold Pieces:  </th>
+                        <td id="editor4i" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> gold</td>
+                    </tr>
+                    <tr>
+                        <th>Platinum Pieces:  </th>
+                        <td id="editor5i" contenteditable="true" style = "z-index:1000; width:auto; max-width:75%; height: 1em;margin:15px; text-overflow: ellipsis; clear: right; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> platinum</td>
+                    </tr>
+                </table>
+            </div>
+            <!------------------------->
+
+            <!--Saving Throws-->
+            <div id = "spells">
+                <h1>Spells and Cantrips:</h1>
+                <div class="editor" contenteditable="true" id = "editor6i" style = "margin-right: 2%;">
+                    Write General Notes Here
+                </div>
+            </div>
+            <!-------------------->
+            <!--Inv-->
+            <div id = "inventory">
+                <h1>Inventory:</h1>
+                <div class="editor" contenteditable="true" id = "editor7i" style = "margin-right: 2%;">
+                    Write General Notes Here
+                </div>
+            </div>
+            <!----------------->
+        </div>
+        
+        
+
+        
+
+
+    </body>
+    <script>
+        function changePersona(x){
+            window.location.href = x;
+        }
+    </script>
+
+        <!--Below this is the script for the saving and loading of information-->
+    <script>
+
+
+        const editor1i = document.getElementById('editor1i');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor1i.addEventListener('input', () => {
+            const content1 = editor1i.innerHTML;
+            localStorage.setItem('editorContent1i', content1);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent1 = localStorage.getItem('editorContent1i');
+        if (savedContent1) {
+            editor1i.innerHTML = savedContent1;
+        }
+
+
+        //editor 2
+        const editor2i = document.getElementById('editor2i');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor2i.addEventListener('input', () => {
+            const content1 = editor2i.innerHTML;
+            localStorage.setItem('editorContent2i', content1);
+        });
+
+        // Load content from local storage on page load
+        const savedContent2 = localStorage.getItem('editorContent2i');
+        if (savedContent2) {
+            editor2i.innerHTML = savedContent2;
+        }
+        
+
+        
+        const editor3i = document.getElementById('editor3i');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor3i.addEventListener('input', () => {
+            const content3 = editor3i.innerHTML;
+            localStorage.setItem('editorContent3i', content3);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent3 = localStorage.getItem('editorContent3i');
+        if (savedContent3) {
+            editor3i.innerHTML = savedContent3;
+        }
+        const editor4i = document.getElementById('editor4i');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor4i.addEventListener('input', () => {
+            const content4 = editor4i.innerHTML;
+            localStorage.setItem('editorContent4i', content4);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent4 = localStorage.getItem('editorContent4i');
+        if (savedContent4) {
+            editor4i.innerHTML = savedContent4;
+        }
+        
+        const editor5i = document.getElementById('editor5i');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor5i.addEventListener('input', () => {
+            const content5 = editor5i.innerHTML;
+            localStorage.setItem('editorContent5i', content5);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent5 = localStorage.getItem('editorContent5i');
+        if (savedContent5) {
+            editor5i.innerHTML = savedContent5;
+        }
+
+        const editor6i = document.getElementById('editor6i');
+        // Save content to local storage whenever changes occur
+        editor6i.addEventListener('input', () => {
+            const content6 = editor6i.innerHTML;
+            localStorage.setItem('editor6iContent', content6);
+        });
+
+        // Load content from local storage on page load
+        const savedContent = localStorage.getItem('editor6iContent');
+        if (savedContent) {
+            editor6i.innerHTML = savedContent;
+        }
+
+        const editor7i = document.getElementById('editor7i');
+        // Save content to local storage whenever changes occur
+        editor7i.addEventListener('input', () => {
+            const content7 = editor7i.innerHTML;
+            localStorage.setItem('editor7iContent', content7);
+        });
+
+        // Load content from local storage on page load
+        const savedContent7i = localStorage.getItem('editor7iContent');
+        if (savedContent7i) {
+            editor7i.innerHTML = savedContent7i;
+        }
+    
+        // Load content from local storage on page load
+        const savedContent6 = localStorage.getItem('editorContent6');
+        if (savedContent6) {
+            editor6.innerHTML = savedContent6;
+        }
+
+        const editor7 = document.getElementById('editor7');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor7.addEventListener('input', () => {
+            const content7 = editor7.innerHTML;
+            localStorage.setItem('editorContent7', content7);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent7 = localStorage.getItem('editorContent7');
+        if (savedContent7) {
+            editor7.innerHTML = savedContent7;
+        }
+
+        const editor8 = document.getElementById('editor8');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor8.addEventListener('input', () => {
+            const content8 = editor8.innerHTML;
+            localStorage.setItem('editorContent8', content8);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent8 = localStorage.getItem('editorContent8');
+        if (savedContent8) {
+            editor8.innerHTML = savedContent8;
+        }
+
+        const editor9 = document.getElementById('editor9');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor9.addEventListener('input', () => {
+            const content9 = editor9.innerHTML;
+            localStorage.setItem('editorContent9', content9);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent9 = localStorage.getItem('editorContent9');
+        if (savedContent9) {
+            editor9.innerHTML = savedContent9;
+        }
+
+        const editor10 = document.getElementById('editor10');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor10.addEventListener('input', () => {
+            const content10 = editor10.innerHTML;
+            localStorage.setItem('editorContent10', content10);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent10 = localStorage.getItem('editorContent10');
+        if (savedContent10) {
+            editor10.innerHTML = savedContent10;
+        }
+
+        const editor11 = document.getElementById('editor11');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor11.addEventListener('input', () => {
+            const content11 = editor11.innerHTML;
+            localStorage.setItem('editorContent11', content11);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent11 = localStorage.getItem('editorContent11');
+        if (savedContent11) {
+            editor11.innerHTML = savedContent11;
+        }
+
+        const editor12 = document.getElementById('editor12');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor12.addEventListener('input', () => {
+            const content12 = editor12.innerHTML;
+            localStorage.setItem('editorContent12', content12);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent12 = localStorage.getItem('editorContent12');
+        if (savedContent12) {
+            editor12.innerHTML = savedContent12;
+        }
+
+        const editor13 = document.getElementById('editor13');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor13.addEventListener('input', () => {
+            const content13 = editor13.innerHTML;
+            localStorage.setItem('editorContent13', content13);
+        });
+    
+        // Load content from local storage on page load
+        const savedContent13 = localStorage.getItem('editorContent13');
+        if (savedContent13) {
+            editor13.innerHTML = savedContent13;
+        }
+
+        const editor14 = document.getElementById('editor14');
+        //char name
+        // Save content to local storage whenever changes occur
+        editor14.addEventListener('input', () => {
+            const content14 = editor14.innerHTML;
+            localStorage.setItem('editorContent14', content14);
+        });
+    
+
+    </script>
+</html>
