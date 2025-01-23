@@ -1,0 +1,37 @@
+.information{
+    font-size: 35px;
+    position: relative;
+    z-index: 100;
+    color:white;
+}
+.information li:hover{
+    color:aqua
+}
+
+.nav{
+    z-index:10;
+    border-radius: 12px;
+    font-size: 25px;
+    font-family: cloudyday, Arial, Helvetica, sans-serif;
+    margin: 10px;
+    filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+    position: relative;
+    text-align: center;
+}
+.nav:hover{
+    background-color: aquamarine;
+}
+
+#noteinfo{
+    width:100%;
+    height:100%;
+}
+#noteinfo p{
+    padding:10px;
+}
+li a{
+    color:aliceblue;
+}
+li a:hover{
+    color:brown;
+}

@@ -41,15 +41,7 @@ body h3{
     position: relative;
     
 }
-.menu button{
-    z-index:10;
-    border-radius: 12px;
-    font-size: 25px;
-    font-family: cloudyday, Arial, Helvetica, sans-serif;
-    margin: 10px;
-    filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
-    
-}
+
 #backdrop{
     z-index:1;
     background-color: rgb(101, 91, 91);
@@ -60,16 +52,23 @@ body h3{
 }
 
 #home{
-    z-index:10;
-    border-radius: 12px;
-    font-size: 25px;
-    font-family: cloudyday, Arial, Helvetica, sans-serif;
-    margin: 10px;
-    filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
     position: relative;
     text-align: center;
 }
 
 #homebuttondiv{
     text-align: center;
+}
+
+
+.buttonsy{
+    z-index:10;
+    border-radius: 12px;
+    font-size: 25px;
+    font-family: cloudyday, Arial, Helvetica, sans-serif;
+    margin: 10px;
+    filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+}
+.buttonsy:hover{
+    background-color: aquamarine;
 }

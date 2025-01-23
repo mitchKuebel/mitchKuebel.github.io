@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DND Campaign</title>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/fonts.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/looks.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/subpages.css"/>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <div id = "homebuttondiv">
+            <button onclick = "changePage('../../main.html')" class = "nav">Home</button>
+            <button onclick = "changePage('../../players.html')" class = "nav">Players</button>
+            <hr/>
+        </div>
+        <div class = "information">
+            <h1>Player Name: Alex</h1>
+            <ul>
+                <li>Character Name: </li>
+                <li>Link to Character Sheet: </li>
+                <li>Digital Character Sheet: </li>
+                <li>Backstory: </li>
+            </ul>
+        </div>
+
+        
+    </body>
+    <script>
+        function changePage(x){
+            window.location.href = x;
+        }
+    </script>
+</html>

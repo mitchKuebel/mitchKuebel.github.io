@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DND Campaign</title>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/fonts.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/looks.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/subpages.css"/>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <div id = "homebuttondiv">
+            <button onclick = "changePage('../../main.html')" class = "nav">Home</button>
+            <button onclick = "changePage('../../notes.html')" class = "nav">Notes</button>
+            <hr/>
+        </div>
+        <div class = "information" id = "noteinfo">
+            <h1>Session 1 Notes: </h1>
+            <p id="notes" contenteditable="true" style = "z-index:1000; width:auto; max-width:95%; height: 60%;margin:15px; text-overflow: ellipsis; flex-wrap: nowrap; overflow-y: hidden; overflow: hidden; border: 1px solid white"> Race<p></p>
+        </div>
+
+        
+    </body>
+    <script>
+        function changePage(x){
+            window.location.href = x;
+        }
+    </script>
+
+    <script>
+        const notes = document.getElementById('notes');
+        //char name
+        // Save content to local storage whenever changes occur
+        notes.addEventListener('input', () => {
+            const contentnotes = notes.innerHTML;
+            localStorage.setItem('editorContentnotes', contentnotes);
+        });
+
+        // Load content from local storage on page load
+        const savedContentnotes = localStorage.getItem('editorContentnotes');
+        if (savedContentnotes) {
+            notes.innerHTML = savedContentnotes;
+        }
+    </script>
+</html>
