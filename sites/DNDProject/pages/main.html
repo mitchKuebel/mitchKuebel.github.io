@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DND Campaign</title>
+        <link rel = "stylesheet" type="text/css" href= "../css/fonts.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../css/looks.css"/>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <div class = "menu">
+            <button onclick = "changePage('players.html')">Players</button>
+            <button onclick = "changePage('npc.html')">NPCs</button>
+            <button onclick = "changePage('factions.html')">Factions</button>
+            <button onclick = "changePage('locations.html')">Locations</button>
+            <button onclick = "changePage('enemies.html')">Enemies</button>
+            <button onclick = "changePage('bosses.html')">Bosses</button>
+            <button onclick = "changePage('puzzles.html')">Puzzles</button>
+            <button onclick = "changePage('traps.html')">Traps</button>
+            <button onclick = "changePage('quests.html')">Quests</button>
+            <button onclick = "changePage('items.html')">Items</button>
+            <button onclick = "changePage('lore.html')">Lore</button>
+            <button onclick = "changePage('rules.html')">Rules and Mechanics</button>
+            <button onclick = "changePage('notes.html')">Session Notes</button>
+            <button onclick = "changePage('events.html')">Random Events</button>
+        </div>
+        
+    </body>
+    <script>
+        function changePage(x){
+            window.location.href = x;
+        }
+    </script>
+</html>
