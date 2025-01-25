@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DND Campaign</title>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/fonts.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/looks.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/subpages.css"/>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <div id = "homebuttondiv">
+            <button onclick = "changePage('../../main.html')" class = "nav">Home</button>
+            <button onclick = "changePage('../../locations.html')" class = "nav">Locations</button>
+            <hr/>
+        </div>
+        <div class = "information">
+            <h1>Location Name: Ardenton</h1>
+            <h1>Role: Kingdom</h1>
+            <ul>
+                <li>Factions: <a href = "../factions/royalty.html">Royalty</a></li>
+                <li>Languages: Common, Elvish</li>
+                <li>Features: Large castle, 250 Houses, Tons of shops</li>
+                <li>Map: </li>
+            </ul>
+        </div>
+
+        
+    </body>
+    <script>
+        function changePage(x){
+            window.location.href = x;
+        }
+    </script>
+</html>
