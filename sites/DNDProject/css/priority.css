@@ -1,0 +1,28 @@
+.pri1:hover{
+    background-color: red;
+    
+}
+
+.pri2:hover{
+    background-color: orange;
+}
+
+.pri3:hover{
+    background-color: yellow;
+}
+.pri4:hover{
+    background-color: green;
+}
+.pri5:hover{
+    background-color: lightskyblue;
+}
+.menu button{
+    z-index:10;
+    border-radius: 12px;
+    font-size: 25px;
+    font-family: cloudyday, Arial, Helvetica, sans-serif;
+    margin: 10px;
+    filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+    background-color: rgb(133, 89, 89);
+    border: 1px solid black;
+}

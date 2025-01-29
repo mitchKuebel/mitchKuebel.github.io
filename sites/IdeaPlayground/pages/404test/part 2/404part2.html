@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST PAGE</title>
+        <link id = "theme" rel = "stylesheet" type="text/css" href= "../css/css1.css"/>
+        <!-- <link id = "normalize" rel = "stylesheet" type="text/css" href= "css/normalize.css"/> -->
+        <!-- <style>
+            #body1{
+                display: block;
+            }
+            #body2{
+                display:hidden;
+            }
+        </style> -->
+    </head>
+    <body>
+        <div id = "body1">
+            <form id="b" accept-charset="utf-8" action="/s" method="GET" role="search">
+                <a href="/">
+                  <img id="c" src="https://images-na.ssl-images-amazon.com/images/G/01/error/logo._TTD_.png"
+                  alt="Amazon.com">
+                </a>
+              </form>
+              <div id="h">
+                <div>
+                  <p>
+                    <img src="../amazon.png"
+                    alt="Sorry! We couldn't find that page. Please try to reload the page!"
+                    cursorshover="true">
+                  <p>
+                </div>
+                <p>
+                  <img id="d" alt="Dogs of Amazon" src="https://images-na.ssl-images-amazon.com/images/G/01/error/28._TTD_.jpg"
+                  cursorshover="true">
+                  <script>
+                    document.getElementById("d").src = "https://images-na.ssl-images-amazon.com/images/G/01/error/" + (Math.floor(Math.random() * 200) + 1) + "._TTD_.jpg";
+                  </script>
+                <p>
+              </div>
+        </div>
+        <div id = "body2">
+            <!-- Navigation Bar -->
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#login">Log In</a></li>
+                    <li><a href="../pages/Calls.html">Call in</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Home Section -->
+            <section id="home" class="section">
+                <h1>Welcome to Rescue911 ERIS</h1>
+                <p>Streamlining emergency response systems.</p>
+                <button onclick="document.getElementById('login').scrollIntoView()">Get Started</button>
+            </section>
+            <hr/>
+
+            <!-- Log In Section -->
+            <section id="login" class="section">
+                <h2>Log In</h2>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class = "protoMessage">
+                        <p>for prototype purpose:</p>
+                        <p>  - username and password for a typical user is: user and password</p>
+                        <p>  - username and password for an employee is: employee and password</p>
+                        <p>  - username and password for an admin is: admin and password</p>
+                    </div>
+                    
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Log In</button>
+                    <p id="loginError" class="error-message"></p>
+                </form>
+            </section>
+        <h1 id = "or">OR</h1>
+
+            <section id="createUser" class="section">
+                <button id = "signUp" onclick="window.location.href = 'signUp.html'">Sign Up!</button>
+
+            </section>
+
+
+            <hr/>
+
+            
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2>Contact Us</h2>
+                <p>For support, email us at support@rescue911.com</p>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2>About</h2>
+                <p>Rescue911 ERIS is a cutting-edge system designed to enhance emergency response efficiency.</p>
+            </section>
+            <div class="footer">
+                <p>Rescue911 ERIS | Emergency Response Information System | All Rights Reserved © 2024</p>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const themeLink = document.getElementById("theme");
+        if (sessionStorage.getItem('hasReloaded')) {
+            // Redirect to the real site
+            themeLink.setAttribute("href","../css/css2.css");
+            sessionStorage.removeItem('hasReloaded');
+        } else {
+            // Set the reload flag for next time
+            sessionStorage.setItem('hasReloaded', true);
+            themeLink.setAttribute("href","../css/css1.css");
+        }
+        </script>
+</html>

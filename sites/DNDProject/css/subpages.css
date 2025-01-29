@@ -5,7 +5,9 @@
     color:white;
 }
 .information li:hover{
-    color:aqua
+    background-color: rgb(78, 199, 158);
+    color:black;
+    opacity: .75;
 }
 
 .nav{
@@ -19,7 +21,7 @@
     text-align: center;
 }
 .nav:hover{
-    background-color: aquamarine;
+    background-color: rgb(78, 199, 158);
 }
 
 #noteinfo{
