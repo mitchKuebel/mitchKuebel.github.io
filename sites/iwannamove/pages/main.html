@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>i want to move</title>
+        <style>
+            body{
+                background-color: aqua;
+                background-image: none;
+            }
+        </style>
+    </head>
+    <body id = "bod">
+        <div id = heading>
+            <h1>hello. i desire to go somewhere</h1>
+            <h4>for 1 year.</h4>
+            <progress id = "money" value = "3600" max = "80000"></progress>
+        </div>
+    </body>
+    <script>
+        async function showSlides(n) {
+            let i;
+            let names = [["ireland1.jpg","ireland2.jpg","ireland3.jpg","ireland4.jpg","ireland5.jpg","ireland6.jpg","ireland7.jpg","ireland8.jpg","ireland9.jpg","ireland10.jpg","portugal1.jpg","portugal2.jpg","portugal3.jpg","portugal4.jpg","portugal5.jpg","portugal6.jpg","portugal7.jpg","portugal8.jpg","portugal9.jpg","portugal10.jpg"],["hi!"]];
+            let slides = document.getElementById("bod");
+            if (n > 30) {slideIndex = 1}
+            // if (n < 1) {slideIndex = 30}
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</html>
