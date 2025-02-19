@@ -29,7 +29,8 @@ body h3{
     filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
     text-align: center;
 }
-.menu{
+/*displays all items in same line*/
+/* .menu{
     z-index: 10;
     display: flex;
     height:60%;
@@ -40,6 +41,18 @@ body h3{
     align-content: flex-start;
     position: relative;
     
+} */
+
+/*displays all items on seperate lines*/
+.menu{
+    z-index: 10;
+    display: flex;
+    height: 95%;
+    width: 100%;
+    flex-wrap: nowrap;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #backdrop{
@@ -68,7 +81,28 @@ body h3{
     font-family: cloudyday, Arial, Helvetica, sans-serif;
     margin: 10px;
     filter:drop-shadow(-7px 7px 7px rgb(0, 0, 0)) ;
+    background-color: rgb(133, 89, 89);
+    border: 1px solid black;
+
 }
 .buttonsy:hover{
-    background-color: aquamarine;
+    background-color: rgb(78, 199, 158);
+}
+
+.pri1:hover{
+    background-color: red;
+}
+
+.pri2:hover{
+    background-color: orange;
+}
+
+.pri3:hover{
+    background-color: yellow;
+}
+.pri4:hover{
+    background-color: green;
+}
+.pri5:hover{
+    background-color: lightskyblue;
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DND Campaign</title>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/fonts.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/looks.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../../../css/subpages.css"/>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <div id = "homebuttondiv">
+            <button onclick = "changePage('../../main.html')" class = "nav">Home</button>
+            <button onclick = "changePage('../../factions.html')" class = "nav">Factions</button>
+            <hr/>
+        </div>
+        <div class = "information">
+            <h1>Faction Name: The Pirates</h1>
+            <h1>Head Figure: Kira Frozensword</h1>
+            <ul>
+                <li>Likes: </li>
+                <li>Dislikes: </li>
+                <li>NPCs: <a href = "../npcs/captain.html">Kira Frozensword</a></li>
+                <li>Perks to joining: </li>
+                <li>Allies: </li>
+                <li>Enemies: </li>
+            </ul>
+        </div>
+
+        
+    </body>
+    <script>
+        function changePage(x){
+            window.location.href = x;
+        }
+    </script>
+</html>

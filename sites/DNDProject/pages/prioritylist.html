@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DND Campaign</title>
+        <link rel = "stylesheet" type="text/css" href= "../css/fonts.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../css/looks.css"/>
+        <link rel = "stylesheet" type="text/css" href= "../css/priority.css"/>
+    </head>
+    <body>
+        <div id = "backdrop"></div>
+        <div class = "menu">
+            <button onclick = "changePage('players.html')" class = "pri5">Players</button>
+            <button onclick = "changePage('npc.html')" class = "pri1">NPCs</button>
+            <button onclick = "changePage('factions.html')" class = "pri1">Factions</button>
+            <button onclick = "changePage('locations.html')" class = "pri2">Locations</button>
+            <button onclick = "changePage('enemies.html')" class = "pri5">Enemies</button>
+            <button onclick = "changePage('bosses.html')" class = "pri5">Bosses</button>
+            <button onclick = "changePage('puzzles.html')" class = "pri4">Puzzles</button>
+            <button onclick = "changePage('traps.html')" class = "pri4">Traps</button>
+            <button onclick = "changePage('quests.html')" class = "pri4">Quests</button>
+            <button onclick = "changePage('items.html')" class = "pri3">Items</button>
+            <button onclick = "changePage('lore.html')" class = "pri3">Lore</button>
+            <button onclick = "changePage('rules.html')" class = "pri5">Rules and Mechanics</button>
+            <button onclick = "changePage('notes.html')" class = "pri5">Session Notes</button>
+            <button onclick = "changePage('events.html')" class = "pri4">Random Events</button>
+        </div>
+        
+    </body>
+    <script>
+        function changePage(x){
+            window.location.href = x;
+        }
+    </script>
+</html>
