@@ -17,16 +17,21 @@
         </div>
     </body>
     <script>
-        async function showSlides(n) {
-            let i;
-            let names = [["ireland1.jpg","ireland2.jpg","ireland3.jpg","ireland4.jpg","ireland5.jpg","ireland6.jpg","ireland7.jpg","ireland8.jpg","ireland9.jpg","ireland10.jpg","portugal1.jpg","portugal2.jpg","portugal3.jpg","portugal4.jpg","portugal5.jpg","portugal6.jpg","portugal7.jpg","portugal8.jpg","portugal9.jpg","portugal10.jpg"],["hi!"]];
-            let slides = document.getElementById("bod");
-            if (n > 30) {slideIndex = 1}
-            // if (n < 1) {slideIndex = 30}
-            for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
         }
+        async function showSlides(n) {
+            let i = 1;
+            let names = [["ireland1.jpg","ireland2.jpg","ireland3.jpg","ireland4.jpg","ireland5.jpg","ireland6.jpg","ireland7.jpg","ireland8.jpg","ireland9.jpg","ireland10.jpg","portugal1.jpg","portugal2.jpg","portugal3.jpg","portugal4.jpg","portugal5.jpg","portugal6.jpg","portugal7.jpg","portugal8.jpg","portugal9.jpg","portugal10.jpg","scotland1.jpg","scotland2.jpg","scotland3.jpg","scotland4.jpg","scotland5.jpg","scotland6.jpg","scotland7.jpg","scotland8.jpg","scotland9.jpeg","scotland10.jpg"],["hi!"]];
+            let slides = document.getElementById("bod");
+            if (n > 30) {i = 1}
+            // if (n < 1) {slideIndex = 30}
+            while (i<30) {
+                slides.style.backgroundImage = "../img/"+names[i];
+                await sleep(1000);
+                i++;
+            }
+        }
+        showSlides();
     </script>
 </html>

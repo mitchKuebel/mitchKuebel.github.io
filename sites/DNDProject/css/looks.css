@@ -89,20 +89,3 @@ body h3{
     background-color: rgb(78, 199, 158);
 }
 
-.pri1:hover{
-    background-color: red;
-}
-
-.pri2:hover{
-    background-color: orange;
-}
-
-.pri3:hover{
-    background-color: yellow;
-}
-.pri4:hover{
-    background-color: green;
-}
-.pri5:hover{
-    background-color: lightskyblue;
-}
