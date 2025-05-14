@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Player Selector!</title>
+    </head>
+    <body>
+        <!-- html/set-user.html -->
+        <select id="userSelect">
+            <option value="mitch">Mitch</option>
+            <option value="hands">Hands</option>
+            ...
+        </select>
+        <button onclick="setUser()">Set</button>
+        
+        <script>
+        function setUser() {
+            const name = document.getElementById('userSelect').value;
+            localStorage.setItem('username', name);
+            window.location.href = './index.html';
+        }
+        </script>
+  
+    </body>
+</html>

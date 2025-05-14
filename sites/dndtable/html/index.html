@@ -1,0 +1,60 @@
+<!-- DND TABLE MAIN PAGE -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>D&D Table Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- PAGE: Set user identity only once -->
+<!-------------------------------------------------------------->
+<div id="setUserPage" class="page">
+    <h2>Select Your Name</h2>
+    <select id="userSelect">
+        <option value="mitch">Mitch</option>
+        <option value="hands">Hands</option>
+        <option value="zephyr">Zephyr</option>
+        <option value="ash">Ash</option>
+        <option value="kai">Kai</option>
+    </select>
+    <button onclick="setUser()">Set</button>
+</div>
+<!-------------------------------------------------------------->
+
+<!-- PAGE: Notes system for taking session notes -->
+<!-------------------------------------------------------------->
+<div id="notesPage" class="page" style="display: none;">
+    <h2>Your Notes</h2>
+    <textarea id="notesArea" rows="10" cols="50"></textarea><br>
+    <button onclick="saveNotes()">Save Notes</button>
+</div>
+<!-------------------------------------------------------------->
+
+<!-- PAGE: Messaging system to talk to other players -->
+<!-------------------------------------------------------------->
+<div id="messagingPage" class="page" style="display: none;">
+    <h2>Send a Message</h2>
+    <select id="recipientSelect">
+        <option value="mitch">Mitch</option>
+        <option value="hands">Hands</option>
+        <option value="zephyr">Zephyr</option>
+        <option value="ash">Ash</option>
+        <option value="kai">Kai</option>
+    </select>
+    <input type="text" id="messageInput" placeholder="Write a message">
+    <button onclick="sendMessage()">Send</button>
+
+    <div id="inbox">
+        <h3>Inbox</h3>
+        <ul id="messagesList"></ul>
+    </div>
+</div>
+<!-------------------------------------------------------------->
+
+<!-- Load the frontend script to tie it all together -->
+<script src="../js/frontend.js"></script>
+
+</body>
+</html>

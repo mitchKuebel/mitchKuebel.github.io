@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DnD Messaging</title>
+</head>
+<body>
+  <h1>Messaging</h1>
+
+  <input id="from" placeholder="Your name">
+  <input id="to" placeholder="Send to">
+  <input id="text" placeholder="Message">
+  <button onclick="sendMessage()">Send</button>
+
+  <h2>Inbox</h2>
+  <ul id="inbox"></ul>
+
+  <script>
+    const username = localStorage.getItem('username');
+    const backendURL = 'http://127.0.0.1:8080'; // Replace this
+    console.log(username)
+    function sendMessage() {
+      const from = document.getElementById('from').value;
+      const to = document.getElementById('to').value;
+      const text = document.getElementById('text').value;
+
+      fetch(`${backendURL}/send`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ from, to, text })
+      });
+    }
+
+    function fetchInbox() {
+      const name = document.getElementById('from').value;
+      if (!name) return;
+
+      fetch(`${backendURL}/inbox/${name}`)
+        .then(res => res.json())
+        .then(data => {
+          const inbox = document.getElementById('inbox');
+          inbox.innerHTML = '';
+          data.forEach(msg => {
+            const li = document.createElement('li');
+            li.textContent = `${msg.from}: ${msg.text}`;
+            inbox.appendChild(li);
+          });
+        });
+    }
+
+    // Poll inbox every 2 seconds
+    setInterval(fetchInbox, 2000);
+  </script>
+</body>
+</html>

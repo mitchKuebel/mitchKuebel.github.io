@@ -3,13 +3,38 @@
     <head>
         <title>i want to move</title>
         <style>
+            html{
+                height:100%;
+                width:100%;
+                overflow: hidden;
+                margin:0;
+            }
             body{
+                background-color: lime;
+                width: 100%;
+                height:100%;
+                overflow: hidden;
+                margin:0;
+            }
+            #backdrop{
+                width: 100%;
+                height:100%;
                 background-color: aqua;
                 background-image: none;
+                /* background-size: cover; */
+                background-size:cover;
+                background-repeat: no-repeat;
+                overflow: hidden;
+                margin:0;
             }
         </style>
+        <link rel="stylesheet" type="text/css" href="../css/css.css"/>
     </head>
     <body id = "bod">
+        <div id = "backdrop">
+            <img id = "backing" class = "fade-out" style = "z-index: 1000; position: absolute;" src = "../img/ireland1.jpg"/>
+            <img id = "backingtemp" style = "z-index: 100;position: absolute;" src = "../img/ireland1.jpg"/>
+        </div>
         <div id = heading>
             <h1>hello. i desire to go somewhere</h1>
             <h4>for 1 year.</h4>
@@ -22,13 +47,19 @@
         }
         async function showSlides(n) {
             let i = 1;
-            let names = [["ireland1.jpg","ireland2.jpg","ireland3.jpg","ireland4.jpg","ireland5.jpg","ireland6.jpg","ireland7.jpg","ireland8.jpg","ireland9.jpg","ireland10.jpg","portugal1.jpg","portugal2.jpg","portugal3.jpg","portugal4.jpg","portugal5.jpg","portugal6.jpg","portugal7.jpg","portugal8.jpg","portugal9.jpg","portugal10.jpg","scotland1.jpg","scotland2.jpg","scotland3.jpg","scotland4.jpg","scotland5.jpg","scotland6.jpg","scotland7.jpg","scotland8.jpg","scotland9.jpeg","scotland10.jpg"],["hi!"]];
-            let slides = document.getElementById("bod");
+            let names = ["ireland1.jpg","ireland2.jpg","ireland3.jpg","ireland4.jpg","ireland5.jpg","ireland6.jpg","ireland7.jpg","ireland8.jpg","ireland9.jpg","ireland10.jpg","portugal1.jpg","portugal2.jpg","portugal3.jpg","portugal4.jpg","portugal5.jpg","portugal6.jpg","portugal7.jpg","portugal8.jpg","portugal9.jpg","portugal10.jpg","scotland1.jpg","scotland2.jpg","scotland3.jpg","scotland4.jpg","scotland5.jpg","scotland6.jpg","scotland7.jpg","scotland8.jpg","scotland9.jpeg","scotland10.jpg"];
+            let slides = document.getElementById("backdrop");
+            let slide = document.getElementById("backing");
+            let temp = document.getElementById("backingtemp");
             if (n > 30) {i = 1}
             // if (n < 1) {slideIndex = 30}
             while (i<30) {
-                slides.style.backgroundImage = "../img/"+names[i];
-                await sleep(1000);
+                temp.src = "../img/"+names[i+1];
+                // slide.style.animation = "fade-out";
+                await sleep(4000);
+                slide.src = "../img/"+names[i];
+                await sleep(6000);
+                // slide.style.animation = "fade-out";
                 i++;
             }
         }

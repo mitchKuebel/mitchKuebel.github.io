@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #18181B;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .page{
+            width: 100VW;
+            height: 100Vh;
+            text-align: center;
+            margin: -1px;
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+        iframe{
+                border:0px;
+        }
+        #pictureframe{
+            display: block;
+            z-index: 10000000;
+        }
+        #chat {
+            width: 80%;
+            /* background-image: url("images/logo.png"); */
+            height: 80%;
+            overflow-y: auto;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #1E1E24;
+        }
+        .message {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            /*justify-content: space-evenly;*/
+        }
+
+        #cover{
+            filter: opacity(0.0);
+            /* background-color: white; */
+            z-index: 1000;
+        }
+        .badges {
+            margin-right: 5px;
+            display: flex;
+            -ms-flex-align: center;
+        }
+        .username {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .reward {
+            background-color: #FA2929;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 0.9em;
+        }
+	.rewardsy{
+	    font-weight: bold;
+            margin-right: 5px;
+	    margin-left:5px;
+    }
+        .messages{
+            margin-left:5px;
+            overflow-wrap: anywhere;
+        }
+        #twitchchats{
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width:100%;
+            height:100%;
+        }
+        #twitchfeed{
+            display: none;
+        }
+        #notes{
+            display:none;
+        }
+        #notearena{
+            margin:auto;
+            width: 80%;
+            /* background-image: url("images/logo.png"); */
+            height: 80%;
+            overflow-y: auto;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #1E1E24;
+            font-size: larger;
+        }
+        #general{
+            display:flex;
+            flex-direction: row;
+            align-items:center;
+            width:100vw;
+            height:100vh;
+        }
+        .exitoverride{
+            background-color:bisque;
+            font-family: monospace;
+            height:10%;
+            width:30%;
+            font-size: xx-large;
+        }
+        .thingy{
+            height: 100%;
+            align-content: center;
+            text-align: center; 
+            width:100%; 
+            float:left;
+        }
+
+        #time{
+            font-family: 'Inter', sans-serif;
+        }
+        #local1{
+            text-align: center;
+            font-size: 600%;
+            color: indianred;
+        }
+        #streamtime1{
+            text-align: center;
+            font-size: 200%;
+            color: indianred;
+        }
+        #local2{
+            text-align: center;
+            font-size: 200%;
+            color: indianred;
+        }
+        #streamtime2{
+            text-align: center;
+            font-size: 600%;
+            color: indianred;
+        }
+        #isLive{
+            display: none;
+        }
+        #notLive{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--this is the code for the iframe on the twitch video feed page; ie "V" on the keyboard-->
+    <!-------------------------------------------------------------------------------------------------------------->
+        <div id= "twitchfeed" class = "page">
+            <iframe src="https://player.twitch.tv/?channel=celerycontrol&parent=localhost&muted=true" height="100%" width="100%" allowfullscreen></iframe>
+        </div>
+    <!-------------------------------------------------------------------------------------------------------------->
+
+
+    <!--this is the code for the iframe on the picture frame page; ie "P" on the keyboard-->
+    <!-------------------------------------------------------------------------------------------------------------->
+        <div class = "page" id = "pictureframe">
+            <div class = "page" id ="cover"></div>
+            <iframe src = "../picture-frame/pages/index.html" class = "page" style = "z-index: 100;" width="100%" height="100%"></iframe>
+        </div>
+    <!-------------------------------------------------------------------------------------------------------------->
+
+
+    <!--this is the code for the iframe on the twitch chat page; ie "C" on the keyboard-->
+    <!-------------------------------------------------------------------------------------------------------------->
+        <div id ="twitchchats">
+            <div id="chat"></div>
+
+
+            <!--This is the script made for socket.io, NOT MY CODE; DEPENDANCY-->
+            <!-------------------------------------------------------------------------------------------------------------->
+                <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+            <!-------------------------------------------------------------------------------------------------------------->
+
+
+
+            <!--this is the script for the twitch chat-->
+            <!-------------------------------------------------------------------------------------------------------------->
+                <script>
+                    const chatContainer = document.getElementById('chat');
+                    const socket = io('http://localhost:8080'); // Ensure it's your local IP if not running on localhost
+
+                    // In your frontend:
+                    socket.on('channelPointRedemption', (data) => {
+                        console.log('Received redemption data:', data);  // Add this line for debugging
+                        const messageDiv = document.createElement('div');
+                        messageDiv.className = 'message';
+                        messageDiv.innerHTML = `
+                            <span class="username">${data.user}:</span> 
+                            <span class="redeem"> Redeemed </span> 
+                            <span class="rewardsy" style="color: ${data.color}">${data.reward}</span>
+                            ${data.input ? ` with input: ${data.input}` : ''}
+                        `;
+                        chatContainer.appendChild(messageDiv);
+                        chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll
+                    });
+                
+                
+
+
+                    // Handle incoming chat messages
+                    socket.on('chatMessage', (data) => {
+                        const messageDiv = document.createElement('div');
+                        messageDiv.className = 'message';
+
+                        // Create badges
+                        const badgesDiv = document.createElement('span');
+                        badgesDiv.className = 'badges';
+                        if (data.badges) {
+                            for (const [badge, version] of Object.entries(data.badges)) {
+                                const badgeImg = document.createElement('img');
+                                badgeImg.src = `images/${badge}.png`; // Adjust URL as needed
+                                badgeImg.alt = badge;
+                                badgeImg.style.height = '16px';
+                                badgeImg.style.marginRight = '2px';
+                                badgesDiv.appendChild(badgeImg);
+                            }
+                        }
+
+                        // Create username with color
+                        const usernameSpan = document.createElement('span');
+                        usernameSpan.className = 'username';
+                        usernameSpan.textContent = `${data.user}: `;
+                        if (data.color) {
+                            usernameSpan.style.color = data.color;
+                        }
+
+                        // Append message
+                        const messageSpan = document.createElement('span');
+                        messageSpan.className = 'messages';
+                        messageSpan.textContent = data.message;
+
+                        // Append elements to message div
+                        messageDiv.appendChild(badgesDiv);
+                        messageDiv.appendChild(usernameSpan);
+                        messageDiv.appendChild(messageSpan);
+
+                        // Handle channel point redemptions
+                        if (data.reward) {
+                            const rewardSpan = document.createElement('span');
+                            rewardSpan.className = 'reward';
+                            rewardSpan.textContent = `Reward: ${data.reward}`;
+                            messageDiv.appendChild(rewardSpan);
+                        }
+
+                        chatContainer.appendChild(messageDiv);
+                        chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll to the latest message
+                    });
+                </script>
+            </div>
+        <!-------------------------------------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+
+    <!--this is the code for the notes page.; ie "C" on the keyboard-->
+    <!-------------------------------------------------------------------------------------------------------------->
+        <div id ="notes">
+            <div id = "general">
+                <div class = "thingy">
+                    <h1>NOTES FROM STREAM</h1>
+                    <hr style = "width:50%; text-align: center;border-color: black;"/>
+                    <br>
+                    <button onclick="exitOverride()" class = "exitoverride">Back to Twitch Chat</button>
+                </div>
+                <!-- <textarea id="notearena" contenteditable="true" rows="40" cols="90"></textarea>  -->
+                <div class="editor" contenteditable="true" id = "notearena" style = "clear:both; margin-right: 2%;">
+                    Write General Notes Here
+                </div>
+            </div>
+        </div>
+    <!-------------------------------------------------------------------------------------------------------------->
+
+
+        <!--this is the code for the time page.; ie "T" on the keyboard-->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <div id ="time">
+        <!-- <h1>Live Stream Info</h1> -->
+         <div id = "notLive">
+            <p class="info" id = "local1">Local Time: <span id = "localTime1">Loading...</span></p>
+            <p class="info" id = "streamtime1">Stream Length: <span id="streamLength1">Loading...</span></p>
+         </div>
+        <div id = "isLive">
+            <p class="info" id = "streamtime2">Stream Length: <span id ="streamLength2">Loading...</span></p>
+            <p class="info" id = "local2">Local Time: <span id="localTime2">Loading...</span></p>
+        </div>
+    </div>
+<!-------------------------------------------------------------------------------------------------------------->
+
+
+<!--this is the code to literally iframe google.-->
+<!-------------------------------------------------------------------------------------------------------------->
+    <div id= "google" class = "page" style="background-color: wheat;">
+        <iframe src="https://www.google.com/webhp?igu=1" height="100%" width="95%" allowfullscreen></iframe>
+
+        
+    </div>
+<!-------------------------------------------------------------------------------------------------------------->
+    
+    
+    <!--SCRIPTS NOT TO THE TWITCH CHAT PAGE BELOW THIS LINE-->
+    <!-------------------------------------------------------------------------------------------------------------->
+
+
+
+
+    <!--This is the script for the switching of the pages-->
+    <!-------------------------------------------------------------------------------------------------------------->
+        <script>
+            // URLs for the two pages
+            // const twitchChatUrl = 'http://localhost:8080';  // Replace with your Pi's IP if necessary
+            // const pictureFrameUrl = 'http://localhost:8081'; // Replace with your Pi's IP if necessary
+            // const frame = getElementById("pictureframe");
+            // const chat = getElementById("twitchchats");
+            // Listen for keypresses
+            let override = false;
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'c' && override === false) {
+                    // Switch to the Twitch chat page
+                    document.getElementById("twitchchats").style.display = "flex"; 
+                    document.getElementById("pictureframe").style.display = "none"; 
+                    document.getElementById("twitchfeed").style.display = "none";
+                    document.getElementById("notes").style.display = "none";
+                    document.getElementById("time").style.display = "none";
+                    document.getElementById("google").style.display = "none";
+                } 
+                else if (event.key === 'p' && override === false) {
+                    // Switch to the picture frame page
+                    document.getElementById("pictureframe").style.display = "block";
+                    document.getElementById("twitchchats").style.display = "none"; 
+                    document.getElementById("twitchfeed").style.display = "none";
+                    document.getElementById("notes").style.display = "none";
+                    document.getElementById("time").style.display = "none";
+                    document.getElementById("google").style.display = "none";
+                }
+                else if (event.key === 'v' && override === false) {
+                    // Switch to the video feed page
+                    document.getElementById("twitchfeed").style.display = "block";
+                    document.getElementById("pictureframe").style.display = "none"; 
+                    document.getElementById("twitchchats").style.display = "none";
+                    document.getElementById("notes").style.display = "none";
+                    document.getElementById("time").style.display = "none";
+                    document.getElementById("google").style.display = "none";
+                }
+                else if (event.key === 'n' && override == false) {
+                    // Switch to the notes page
+                    document.getElementById("twitchfeed").style.display = "none";
+                    document.getElementById("pictureframe").style.display = "none"; 
+                    document.getElementById("twitchchats").style.display = "none";
+                    document.getElementById("notes").style.display = "block";
+                    document.getElementById("time").style.display = "none";
+                    document.getElementById("google").style.display = "none";
+                    override = true;
+                }
+                else if (event.key === 't' && override == false){
+                    // Switch to the time page
+                    document.getElementById("twitchfeed").style.display = "none";
+                    document.getElementById("pictureframe").style.display = "none"; 
+                    document.getElementById("twitchchats").style.display = "none";
+                    document.getElementById("notes").style.display = "none";
+                    document.getElementById("time").style.display = "block";
+                    document.getElementById("google").style.display = "none";
+                }
+                else if (event.key === 'g' && override == false){
+                    // Switch to the google
+                    document.getElementById("twitchfeed").style.display = "none";
+                    document.getElementById("pictureframe").style.display = "none"; 
+                    document.getElementById("twitchchats").style.display = "none";
+                    document.getElementById("notes").style.display = "none";
+                    document.getElementById("time").style.display = "none";
+                    document.getElementById("google").style.display = "block";
+                }
+            });
+
+            function exitOverride(){
+                document.getElementById("twitchchats").style.display = "flex"; 
+                document.getElementById("pictureframe").style.display = "none"; 
+                document.getElementById("twitchfeed").style.display = "none";
+                document.getElementById("notes").style.display = "none";
+                document.getElementById("time").style.display = "none";
+                document.getElementById("google").style.display = "none";
+                override = false;
+            }
+        </script>
+    <!-------------------------------------------------------------------------------------------------------------->
+
+
+    <!--This is the script for the notes app-->
+    <!-------------------------------------------------------------------------------------------------------------->
+        <script>
+            const editor = document.getElementById('notearena');
+            // Save content to local storage whenever changes occur
+            editor.addEventListener('input', () => {
+                const content = editor.innerHTML;
+                localStorage.setItem('editorContent', content);
+            });
+    
+            // Load content from local storage on page load
+            const savedContent = localStorage.getItem('editorContent');
+            if (savedContent) {
+                editor.innerHTML = savedContent;
+            }
+        </script>
+    <!-------------------------------------------------------------------------------------------------------------->
+
+    <!--This is the script for the time page-->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <script>
+        const clientId = "gp762nuuoqcoxypju8c569th9wz7q5";  
+        const accessToken = "4nckhlrp6a6ygmk6hx1de0pmdncubn";  
+        const channelName = "CeleryControl";  
+        let streamStartTime = null;
+
+        async function fetchStreamInfo() {
+            try {
+                const response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${channelName}`, {
+                    headers: {
+                        "Client-ID": clientId,
+                        "Authorization": `Bearer ${accessToken}`
+                    }
+                });
+                const data = await response.json();
+                
+                if (data.data.length > 0) {
+                    streamStartTime = new Date(data.data[0].started_at);
+                    document.getElementById("isLive").style.display = "block";
+                    document.getElementById("notLive").style.display = "none";
+
+                } else {
+                    document.getElementById("streamLength1").textContent = "Stream is not live.";
+                    document.getElementById("isLive").style.display = "none";
+                    document.getElementById("notLive").style.display = "block";
+                }
+            } catch (error) {
+                console.error("Error fetching stream info:", error);
+            }
+        }
+
+        function updateTime() {
+            // Update local time
+            document.getElementById("localTime1").textContent = new Date().toLocaleTimeString();
+            document.getElementById("localTime2").textContent = new Date().toLocaleTimeString();
+
+            // Update stream length if it's live
+            if (streamStartTime) {
+                const elapsedTime = Math.floor((new Date() - streamStartTime) / 1000);
+                const hours = Math.floor(elapsedTime / 3600);
+                const minutes = Math.floor((elapsedTime % 3600) / 60);
+                const seconds = elapsedTime % 60;
+                document.getElementById("streamLength2").textContent = `${hours}h ${minutes}m ${seconds}s`;
+            }
+        }
+
+        // Initial fetch
+        fetchStreamInfo().then(() => {
+            // Update the time every second
+            setInterval(updateTime, 1000);
+        });
+    </script>
+    <!-------------------------------------------------------------------------------------------------------------->
+</body>
+</html>
